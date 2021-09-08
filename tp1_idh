@@ -1,0 +1,38 @@
+CREATE (c:USER{name: 'Bob',createAt:'02/03/15'}) 
+CREATE (c:USER{name: 'Alice', createAt:'23/07/19'}) 
+CREATE (c:USER{name: 'Ben', createAt:'14/08/20'}) 
+CREATE (c:HASHTAG{hashtag:'rentree'}) 
+CREATE (c:HASHTAG{hashtag:'2122'})
+CREATE (c:HASHTAG{hashtag:'LISNUPS'}) 
+CREATE (c:TWEET{text:'Dernières infos sur la rentrée : amphi Cotton à 10h le 1/9', date:'28/08/21', nb_favorites:5})
+CREATE (c:TWEET{text:'N’oubliez pas les inscriptions administratives!', date:'30/08/21'})
+CREATE (c:TWEET{text:'Contente de vous revoir bientôt!', date:'30/08/21',nb_favorites:1})
+
+MATCH (a:USER{name:'Alice'}), (b:USER{name:'Bob'}) CREATE (a)-[:FOLLOWS]->(b) 
+MATCH (a:USER{name:'Ben'}), (b:USER{name:'Bob'}) CREATE (a)-[:FOLLOWS]->(b) 
+MATCH (a:USER{name:'Ben'}), (b:USER{name:'Alice'}) CREATE (a)-[:FOLLOWS]->(b) 
+MATCH (n) return (n)
+MATCH (a:USER{name:'Bob'}), (t:TWEET{text:'Dernières infos sur la rentrée : amphi Cotton à 10h le 1/9'}) CREATE (a)-[:WRITES]->(t) 
+MATCH (a:USER{name:'Bob'}), (t:TWEET{ text : 'N’oubliez pas les inscriptions administratives!'}) CREATE (a)-[:WRITES]->(t) 
+MATCH (a:USER{name:'Alice'}), (t:TWEET{text : 'Contente de vous revoir bientôt!'}) CREATE (a)-[:WRITES]->(t) 
+
+MATCH (a),(b) where id(a) = 6 and id(b) = 3 create (a)-[:CONTAINS]->(b)
+MATCH (a),(b) where id(a) = 6 and id(b) = 4 create (a)-[:CONTAINS]->(b)
+MATCH (a),(b) where id(a) = 6 and id(b) = 5 create (a)-[:CONTAINS]->(b)
+MATCH (a),(b) where id(a) = 7 and id(b) = 5 create (a)-[:CONTAINS]->(b)
+MATCH (a),(b) where id(a) = 8 and id(b) = 3 create (a)-[:CONTAINS]->(b)
+MATCH (a),(b) where id(a) = 1 and id(b) = 6 create (a)-[:RETWEET]->(b)
+MATCH (a),(b) where id(a) = 2 and id(b) = 6 create (a)-[:RETWEET]->(b)
+
+MATCH (a:USER{name:'Bob'}) SET a.name = 'Jack', date = '3/3/15'
+MATCH (a) where id(a) = 6  SET a.nb_favorites = a.nb_favorites + 2
+
+MATCH (u:USER) -[:WRITES]-> (t:TWEET) 
+WHERE t.nb_favorites > 5
+RETURN DISTINCT u.name
+
+MATCH (u:USER) -[:WRITES]-> (t:TWEET) -[:CONTAINS]-> (h:hashtag{hashtag:'rentree'})
+RETURN DISTINCT u.name
+
+MATCH (u:USER) -[:FOLLOWS]-> (u2:USER) <-[:FOLLOWS]- (u3:USER{name:'Jack'})
+RETURN u.name
