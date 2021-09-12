@@ -2,16 +2,16 @@ from py2neo import Graph
 
 graph = Graph("bolt://localhost:7687", auth=("neo4j", "a"))
 
-test = "{name:'Newark Chesterton'}"
-test2 = "{name:'Going Home'}"
+test = "Newark Chesterton"
+test2 = "Going Home"
 
 def fb(u,t):
     listGenre = []
-    q = f"match (:Person{u})-[]->(:Track )-[]->(:Album)-[]->(:Artist)-[]->(g:Genre) return distinct g.name"
+    q = f"match (:Person{{name:'{u}'}})-[]->(:Track )-[]->(:Album)-[]->(:Artist)-[]->(g:Genre) return distinct g.name"
     res = graph.run(q).to_table()
     for el in res : 
         listGenre.append(el[0])
-    q = f"match (:Track{t})-[]->(:Album)-[]->(:Artist)-[]->(g:Genre) return distinct g.name"
+    q = f"match (:Track{{name:'{t}'}})-[]->(:Album)-[]->(:Artist)-[]->(g:Genre) return distinct g.name"
     res = graph.run(q).to_table()
     for el in res:
         if el[0] in listGenre:
