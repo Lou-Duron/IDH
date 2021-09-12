@@ -44,6 +44,41 @@ def ft(u,t):
     """
     Cohérence thématique (Jaccard mes couilles)
     """
+    #Get tracks liked by user u
+    tracksliked = []
+    q=(f"MATCH (p:Person{{name:{u}}})-[:LIKE]->(t:Track)"
+       f"RETURN t.name")
+    res = graph.run(q).to_table()
+    for el in res : 
+        trackliked.append(el[0])
+
+    #computes jaccard coefficient for each track pair
+    jaccard = []
+    for track in tracksliked:
+        q=(f"MATCH (p:Person{{name:'{u}'}})-[:LIKE]->(t1:Trac{{name:'{track}'}})<-[:WORD_OF]-(w:Word)-[:WORD_OF]->(t2:Track{{name:'{t}'}})"
+           f"RETURN COUNT (distinct w.name)"
+        )
+
+        res = graph.run(q).to_table()
+        intercept = res[O] 
+        print(intercept)
+        
+        union = []
+        q=(f"MATCH (p:Person{{name:'{u}'}})-[:LIKE]->(t1:Track{{name:'{track}'}})<-[:WORD_OF]-(w1:Word)"
+           f"RETURN distinct w1.name AS word"
+           f"UNION"
+           f"MATCH (w2:Word)-[:WORD_OF]->(t2:Track{{name:'{t}'}})"
+           f"RETURN distinct w2.name AS word"
+        )
+        res = graph.run(q).to_table()
+        union = length(res)
+        print(union)
+        coeff = intercept/union
+        jaccard.append(coeff)
+
+    #Get max jaccard coefficient
+    return max(jaccard)
+    
 
 def score(u, t,a=0.25, b=0.75):
     return fb(u,t) * (a * fs(u,t) + b * ft(u,t))
@@ -52,3 +87,5 @@ def score(u, t,a=0.25, b=0.75):
 
 print(fs(test, test2))
 
+aze = ft('Bogota Worcestershire', 'Going Home')
+print(aze)
