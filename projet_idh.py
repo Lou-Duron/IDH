@@ -82,17 +82,18 @@ if __name__ == "__main__":
         exit()
     
     # Tracks retrieval (already liked tracks are excluded)
-    q = f"match (:Person{{name:'{args.username}'}})-[]->(t:Track) with collect(distinct t) as test match (t2:Track) where  NOT t2 IN test  return distinct t2.name"
+    q = f"match (:Person{{name:'{args.username}'}})-[]->(t:Track) with collect(distinct t) as likedTracks match (t2:Track)-[]->(:Album)-[]->(a:Artist) where  NOT t2 IN likedTracks  return distinct t2.name, a.name"
     res = graph.run(q).to_table()
     tracks = []
     cpt = 0
     for el in res:
         cpt += 1
         print(f"In progress : {cpt}/{len(res)} track's scores computed", end = "\r") 
-        tracks.append([el[0],score(args.username, el[0], args.alpha, args.beta)])
+        tracks.append([el[0],score(args.username, el[0], args.alpha, args.beta), el[1]])
     tracks = sorted(tracks, key=lambda x:x[1], reverse = True)
     print("\nTracks recommendation : ")
     for n in range(20):
-        print(tracks[n][0] + " -> Score = " + str(round(tracks[n][1], 2)))
+        print(tracks[n][0] + " by " + tracks[n][2])
+        print("Score = " + str(round(tracks[n][1], 2)))
 
 
