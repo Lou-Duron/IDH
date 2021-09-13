@@ -21,12 +21,12 @@ graph = Graph("bolt://localhost:7687", auth=("neo4j", args.password))
 def fb(u,t):
     # User liked genre retrieval
     listGenre = []
-    q = f"match (:Person{{name:'{u}'}})-[]->(:Track )-[]->(:Album)-[]->(:Artist)-[]->(g:Genre) return distinct g.name"
+    q = f"match (:Person{{name:'{u}'}})-[]->(:Track)-[]->(:Album)-[]->(:Artist)-[]->(g:Genre) return distinct g.name"
     res = graph.run(q).to_table()
     for el in res : 
         listGenre.append(el[0])
     # Track genre retrieval
-    q = f"match (:Track{{name:'{t}'}})-[]->(:Album)-[]->(:Artist)-[]->(g:Genre) return distinct g.name"
+    q = f"match (t:Track)-[]->(:Album)-[]->(:Artist)-[]->(g:Genre) where id(t) = {t} return distinct g.name"
     res = graph.run(q).to_table()
     for el in res:
         if el[0] in listGenre:
@@ -36,7 +36,7 @@ def fb(u,t):
 # Social factor
 def fs(u,t):
     # Shortest path length and number retrieval
-    q = f"match path=allShortestPaths((u:Person{{name:'{u}'}})-[*]->(t:Track{{name:'{t}'}})) RETURN length(path), count(*)"
+    q = f"match path=allShortestPaths((u:Person{{name:'{u}'}})-[*]->(t:Track)) where id(t) = {t} RETURN length(path), count(*)"
     res = graph.run(q).to_table()
     return res[0][0] * res[0][1]
 
@@ -45,24 +45,25 @@ def ft(u,t):
     #Get tracks liked by user u
     tracksliked = []
     q=(f"MATCH (p:Person{{name:'{u}'}})-[:LIKE]->(t:Track)"
-       f"RETURN t.name")
+       f"RETURN id(t)")
     res = graph.run(q).to_table()
     for el in res : 
         tracksliked.append(el[0])
     #computes jaccard coefficient for each track pair
     jaccard = []
     for track in tracksliked:
-        q=(f"MATCH (t1:Track{{name:'{track}'}})<-[:WORD_OF]-(w:Word)-[:WORD_OF]->(t2:Track{{name:'{t}'}})"
+        q=(f"MATCH (t1:Track)<-[:WORD_OF]-(w:Word)-[:WORD_OF]->(t2:Track) WHERE id(t1) = {track} AND id(t2) = {t} "
            f"RETURN COUNT (distinct w.name)")
         res = graph.run(q).to_table()
         intercept = res[0][0] 
-        q=(f"MATCH (p:Person{{name:'{u}'}})-[:LIKE]->(t1:Track{{name:'{track}'}})<-[:WORD_OF]-(w1:Word)"
-           f"RETURN distinct w1.name AS word "
+        q=(f"MATCH (p:Person{{name:'{u}'}})-[:LIKE]->(t1:Track)<-[:WORD_OF]-(w1:Word)"
+           f"WHERE id(t1) = {track} RETURN distinct lower(w1.name) AS word " # Case insensitive
            f"UNION "
-           f"MATCH (w2:Word)-[:WORD_OF]->(t2:Track{{name:'{t}'}})"
-           f"RETURN distinct w2.name AS word"
+           f"MATCH (w2:Word)-[:WORD_OF]->(t2:Track)"
+           f"WHERE id(t2) = {t} RETURN distinct lower(w2.name) AS word"
         )
         res = graph.run(q).to_table()
+        print(res)
         union = len(res)
         coeff = intercept/union
         jaccard.append(coeff)
@@ -82,7 +83,7 @@ if __name__ == "__main__":
         exit()
     
     # Tracks retrieval (already liked tracks are excluded)
-    q = f"match (:Person{{name:'{args.username}'}})-[]->(t:Track) with collect(distinct t) as likedTracks match (t2:Track)-[]->(:Album)-[]->(a:Artist) where  NOT t2 IN likedTracks  return distinct t2.name, a.name"
+    q = f"match (:Person{{name:'{args.username}'}})-[]->(t:Track) with collect(distinct id(t)) as likedTracks match (t2:Track)-[]->(:Album)-[]->(a:Artist) where  NOT id(t2) IN likedTracks return distinct id(t2), a.name"
     res = graph.run(q).to_table()
     tracks = []
     cpt = 0
