@@ -23,20 +23,21 @@ except:
 # Musical genre match
 def fb(u,t):
     # Get genres liked by user u
-    listGenre = []
     q =(f"MATCH (:Person{{name:'{u}'}})-[]->(:Track)-[]->(:Album)-[]->(:Artist)-[]->(g:Genre) "
          "RETURN distinct g.name")
-    res = graph.run(q).to_table()
-    for el in res : 
-        listGenre.append(el[0])
+    userGenres = graph.run(q).to_table()
+    
     # Get track t genre
     q =(f"MATCH (t:Track)-[]->(:Album)-[]->(:Artist)-[]->(g:Genre) "
         f"WHERE id(t) = {t} "
         f"RETURN distinct g.name")
-    res = graph.run(q).to_table()
+    trackGenres = graph.run(q).to_table()
+
+    # those two queries could be combined but has been written independantly for more readibility
+    
     # Check musical genre match
-    for el in res:
-        if el[0] in listGenre:
+    for tgenre in trackGenres:
+        if tgenre in userGenres:
             return 2
     return 1
 
@@ -46,8 +47,8 @@ def fs(u,t):
     q =(f"MATCH path=allShortestPaths((u:Person{{name:'{u}'}})-[*]->(t:Track)) "
         f"WHERE id(t) = {t} "
         f"RETURN length(path), count(*)")
-    res = graph.run(q).to_table()
-    return res[0][0] * res[0][1]
+    shortestpaths = graph.run(q).to_table()
+    return shortestpaths[0][0] * shortestpaths[0][1]
 
 # Thematics coherence
 def ft(u,t):
@@ -56,24 +57,23 @@ def ft(u,t):
     q=(f"MATCH (p:Person{{name:'{u}'}})-[:LIKE]->(t:Track)"
        f"RETURN id(t)")
     res = graph.run(q).to_table()
-    for el in res : 
-        tracksliked.append(el[0])
+    tracksliked = [el[0] for el in res]
+   
     #computes jaccard coefficient for each track pair
+    #Jaccard coefficient function exists in version 4 and + of neo4j () version 3.5.29 
     jaccard = []
     for track in tracksliked:
         q=(f"MATCH (t1:Track)<-[:WORD_OF]-(w:Word)-[:WORD_OF]->(t2:Track) "
            f"WHERE id(t1) = {track} AND id(t2) = {t} "
            f"RETURN COUNT (distinct w.name)")
-        res = graph.run(q).to_table()
-        intercept = res[0][0] 
+        intercept = graph.run(q).to_table()[0][0]
         q=(f"MATCH (w1:Word)-[:WORD_OF]->(t1:Track)"
            f"WHERE id(t1) = {track} RETURN distinct lower(w1.name) AS word " # Case insensitive
            f"UNION "
            f"MATCH (w2:Word)-[:WORD_OF]->(t2:Track)"
            f"WHERE id(t2) = {t} RETURN distinct lower(w2.name) AS word"
         )
-        res = graph.run(q).to_table()
-        union = len(res)
+        union = len(graph.run(q).to_table())
         coeff = intercept/union
         jaccard.append(coeff)
     #Get max jaccard coefficient
@@ -97,19 +97,23 @@ if __name__ == "__main__":
         f"MATCH (t2:Track) "
         f"WHERE  NOT id(t2) IN likedTracks "
         f"RETURN distinct id(t2)")
-    res = graph.run(q).to_table()
-    tracks = []
+    notYetLiked = graph.run(q).to_table()
+
+    #Progression
+    recommendedTracks = []
     cpt = 0
-    for el in res:
+    for track in notYetLiked:
         cpt += 1
-        print(f"In progress : {cpt}/{len(res)} track's scores computed", end = "\r") 
-        tracks.append([el[0],score(args.username, el[0], args.alpha, args.beta)])
-    tracks = sorted(tracks, key=lambda x:x[1], reverse = True)
+        print(f"In progress : {cpt}/{len(notYetLiked)} track's scores computed", end = "\r") 
+        recommendedTracks.append([track[0],score(args.username, track[0], args.alpha, args.beta)])
+    recommendedTracks = sorted(recommendedTracks, key=lambda x:x[1], reverse = True)
+
+    #Recommended Tracks
     print("\nTracks recommendation : ")
-    for n in range(20):
-        q = f"MATCH (t:Track)-[]->(:Album)-[]->(a:Artist) WHERE id(t) = {tracks[n][0]} RETURN t.name, a.name"
+    for t in range(20):
+        q = f"MATCH (t:Track)-[]->(:Album)-[]->(a:Artist) WHERE id(t) = {recommendedTracks[t][0]} RETURN t.name, a.name"
         res = graph.run(q).to_table()
-        print(f"#{n+1} : " + res[0][0]+ " by "+ res[0][1] )
-        print("Score = " + str(round(tracks[n][1], 2)))
+        print(f"#{t+1} : " + res[0][0]+ " by "+ res[0][1] )
+        print("Score = " + str(round(recommendedTracks[t][1], 2)))
 
 
