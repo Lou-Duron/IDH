@@ -27,7 +27,7 @@ def fb(u,t):
          "RETURN distinct g.name")
     userGenres = graph.run(q).to_table()
     
-    # Get track t genre
+    # Get track t genres
     q =(f"MATCH (t:Track)-[]->(:Album)-[]->(:Artist)-[]->(g:Genre) "
         f"WHERE id(t) = {t} "
         f"RETURN distinct g.name")
@@ -60,13 +60,17 @@ def ft(u,t):
     tracksliked = [el[0] for el in res]
    
     #computes jaccard coefficient for each track pair
-    #Jaccard coefficient function exists in version 4 and + of neo4j () version 3.5.29 
+    #Jaccard coefficient function exists in version 4 and + of neo4j (here : version 3.5.29)
+    
     jaccard = []
     for track in tracksliked:
+		# Intercept between words in trackliked and track t
         q=(f"MATCH (t1:Track)<-[:WORD_OF]-(w:Word)-[:WORD_OF]->(t2:Track) "
            f"WHERE id(t1) = {track} AND id(t2) = {t} "
            f"RETURN COUNT (distinct w.name)")
         intercept = graph.run(q).to_table()[0][0]
+        
+        # Union between words in trackliked and track t 
         q=(f"MATCH (w1:Word)-[:WORD_OF]->(t1:Track)"
            f"WHERE id(t1) = {track} RETURN distinct lower(w1.name) AS word " # Case insensitive
            f"UNION "
@@ -104,11 +108,11 @@ if __name__ == "__main__":
     cpt = 0
     for track in notYetLiked:
         cpt += 1
-        print(f"In progress : {cpt}/{len(notYetLiked)} track's scores computed", end = "\r") 
+        print(f"In progress : {cpt}/{len(notYetLiked)} tracks' scores computed", end = "\r") 
         recommendedTracks.append([track[0],score(args.username, track[0], args.alpha, args.beta)])
-    recommendedTracks = sorted(recommendedTracks, key=lambda x:x[1], reverse = True)
 
     #Recommended Tracks
+    recommendedTracks = sorted(recommendedTracks, key=lambda x:x[1], reverse = True)
     print("\nTracks recommendation : ")
     for t in range(20):
         q = f"MATCH (t:Track)-[]->(:Album)-[]->(a:Artist) WHERE id(t) = {recommendedTracks[t][0]} RETURN t.name, a.name"
