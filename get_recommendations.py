@@ -26,19 +26,25 @@ def fb(u,t):
     q =(f"MATCH (:Person{{name:'{u}'}})-[]->(:Track)-[]->(:Album)-[]->(:Artist)-[]->(g:Genre) "
          "RETURN distinct g.name")
     userGenres = graph.run(q).to_table()
+    print(userGenres)
     
     # Get track t genres
     q =(f"MATCH (t:Track)-[]->(:Album)-[]->(:Artist)-[]->(g:Genre) "
         f"WHERE id(t) = {t} "
         f"RETURN distinct g.name")
     trackGenres = graph.run(q).to_table()
+    print(trackGenres)
 
     # those two queries could be combined but has been written independantly for more readibility
     
     # Check musical genre match
     for tgenre in trackGenres:
         if tgenre in userGenres:
+            print("t")
+            exit()
             return 2
+    print("t2")
+    exit()
     return 1
 
 # Social factor
