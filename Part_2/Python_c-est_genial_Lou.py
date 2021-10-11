@@ -29,34 +29,31 @@ else: # parse string
 if param.verbose:
   print(f'query set: {query}')
 
-
-
 # LOAD REFERENCE SETS
 sets = json.loads(open(param.sets).read())
 if param.verbose:
     print('first target sets: ', sets[0:2])
-
-#print(sets)
-
 
 # COMPUTE POPULATION SIZE
 population = set()
 pop = []
 for dict in sets:
   for id in dict['elements']:
-      if id not in pop:
-        pop.append(id)
-print(len(pop))
+    population.add(id)
+popSize = len(population)
+if param.verbose:
+  print("Population size : ", popSize)
+
 
 # EVALUATE SETS
 results = []
 query_size = len(query)
 for s in sets:
     elements = set(s['elements' ])
-    common_elements = elements.intersection( query )
+    common_elements = elements.intersection(query)
     if param.measure=='binomial': # binom.cdf(>=success, attempts, proba)
-        pvalue = 100000 # TO DO 
-    else:
+        pvalue = binom.cdf( query_size - len(common_elements), query_size, 1 - float(len(elements))/popSize)
+    else:       
         print(f'sorry, {param.measure} not (yet) implemented')
         exit(1)
     r = { 'id': s['id'], 'desc': s['desc'], 'common.n':len(common_elements), 'target.n': len(elements), 'p-value': pvalue, 'elements.target': elements, 'elements.common': common_elements }
@@ -64,10 +61,21 @@ for s in sets:
 if param.verbose:
   print(results)
 
+
 # PRINT SIGNIFICANT RESULTS
 results.sort(key=lambda an_item: an_item['p-value'])
-for r in results:
-    if r['p-value'] > param.alpha: 
-      break
-    # OUTPUT
-    print("{}\t{}\t{}/{}\t{}\t{}".format( r['id'], r['p-value'], r['common.n'], r['target.n'], r['desc'], ', '.join(r['elements.common'])))
+
+if param.adjust:
+    for i, r in enumerate(results):
+        if r['p-value'] > ((i+1) / len(results)) * param.alpha:
+            break
+        print("{}\t{}\t{}/{}\t{}\t{}".format( r['id'], r['p-value'], r['common.n'], r['target.n'], r['desc'], ', '.join(r['elements.common'])))
+else:
+    for r in results:
+        if r['p-value'] > param.alpha: 
+            break
+            # OUTPUT
+        print("{}\t{}\t{}/{}\t{}\t{}".format( r['id'], r['p-value'], r['common.n'], r['target.n'], r['desc'], ', '.join(r['elements.common'])))
+
+
+
