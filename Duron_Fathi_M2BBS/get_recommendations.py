@@ -38,6 +38,7 @@ def fb(u,t):
     # those two queries could be combined but has been written independantly for more readibility
     
     # Check musical genre match
+    # If at least one genre shared boost is set at 2 otherwise 1 
     for tgenre in trackGenres:
         if tgenre in userGenres:
             print("t")
