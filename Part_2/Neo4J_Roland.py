@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 
-# ./enrichment/blastsets.neo4j.py -q ecoli/query.sets/set.01.txt  -t Keyword -s 511145 -c
-
 import argparse
 from os.path import isfile
+import json
 from scipy.stats import binom, hypergeom
-from pprint import pprint
+import numpy as np
+import pprint
 from py2neo import *
-from py2neo.matching import *
 
 # SCRIPT PARAMETERS
 parser = argparse.ArgumentParser(description='Search enriched terms/categories in the provided (gene) set')
@@ -35,7 +34,7 @@ if param.verbose:
   print(f'query set: {query}')
 
 # CONNECT TO Neo4J
-neo = Graph("bolt://localhost:7687", auth=("neo4j", "bioinfo"))
+neo = Graph("http://localhost:7474/", auth=("neo4j", "bioinfo"))
 nodes = NodeMatcher(neo)
 
 # COMPUTE POPULATION SIZE
@@ -98,5 +97,4 @@ for r in results:
 	pval = "{:.4f}".format(r['p-value']) if r['p-value']>0.01 else "{:.2e}".format(r['p-value'])
 	print("{}\t{}\t{}/{}\t{}\t{}".format( r['id'], pval, r['common.n'], r['target.n'], r['desc'], ', '.join(r['elements.common'])))
 	i+=1
-
 
