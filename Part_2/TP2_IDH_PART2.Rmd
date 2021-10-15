@@ -1,0 +1,278 @@
+---
+title: E. coli - Gestion de données non structurées - Applications post-génomiques
+  - Mise en oeuvre
+author: "Roland Barriot"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 6
+    df_print: paged
+  html_notebook:
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 4
+    theme: paper
+    highlight: tango
+---
+
+
+```{r setup, include=TRUE}
+#knitr::opts_chunk$set(echo = TRUE)
+options(width = 120) # nombre de colonnes pour l'affichage sur la sorties HTML
+# knitr::opts_chunk$set(cache=F)
+# knitr::opts_chunk$set(fig.width=6, fig.height=6) # for rstudio
+# knitr::opts_chunk$set(fig.width=14, fig.height=14) # for html
+``` 
+
+```{r}
+library(jsonlite)
+library(tidyverse)
+library(reticulate)
+library(STRINGdb)
+library(DT) 
+library(tibble)
+library(readr)
+library(kableExtra)
+```
+
+```{r}
+uniprot = read_tsv("uniprot/uniprot.proteome.UP000000625.tab")
+mapping = uniprot %>% 
+  select(Entry, names = `Gene names  (ordered locus )`) %>%
+  mutate(bnumber=str_extract(names, 'b\\d+')) %>%
+  select(bnumber, uniprotID=Entry) %>%
+  filter(!is.na(bnumber)) %>% # 2021 → P0DQD7 and P0A6D5 are lost (no bnumber)
+  arrange(bnumber)
+keywords = uniprot %>% 
+  select(uniprotID=Entry, keyword=Keywords) %>%
+  right_join(mapping) %>% # right join to remove those without bnumber
+  separate_rows(keyword, sep=';') %>%
+  select(bnumber, keyword) %>%
+  arrange(bnumber)
+```
+
+```{r}
+ref_sets = keywords %>% 
+  group_by(keyword) %>%
+  summarise(count=n(), elements = list(bnumber)) %>%
+  ungroup %>%
+  filter(count>1)  %>%
+  select(id=keyword, desc=count, elements)
+ref_sets
+```
+
+```{r}
+ref_sets %>% toJSON %>% write("reference.sets/uniprot.keywords.sets.json")
+```
+
+
+```{r echo=F, warning=F, message=F}
+pmids = read_tsv("ncbi/bnumber.PMID.tsv", col_types = "cc")
+pmids %>%
+  group_by(PMID) %>%
+  summarise(count=n(), elements = str_c(sort(bnumber), collapse=' ')) %>%
+  ungroup %>%
+  filter(count>1)  %>%
+  mutate(desc=paste0("https://pubmed.ncbi.nlm.nih.gov/", PMID)) %>%
+  select(id=PMID, desc, elements)
+```
+
+```{r}
+if (!require('neo4r')) { # client neo4j 
+  install.packages('neo4r')
+}
+library(neo4r)
+neodb = neo4j_api$new(
+  url = "http://localhost:7474", 
+  user = "neo4j", 
+  password = "a"
+)
+cypher = function(query, neo4j=neodb, ...) call_neo4j(query=query, con=neo4j, ...)
+```
+
+
+```{r}
+genes = read_tsv("neo.data/ncbi.bnumber.location.tsv")
+genes$organism=511145
+genes %>% rename(gene_id=bnumber) %>% write_csv("neo4j.import/ncbi.bnumber.location.csv")
+```
+
+
+Client R 
+```{r}
+
+kabex = function(o) o %>% kable(format="html", escape=F) %>% kable_styling(bootstrap_options = c("striped"))
+
+dted = function(o) o %>% datatable(rownames=F, filter="top", options=list(pageLength = 10), escape=F)
+```
+
+
+Connexion au serveur de STRING (NCBI taxon id de Ecoli est 511145: https://string-db.org/cgi/input.pl?input_page_active_form=organism )
+```{r echo=TRUE}
+confidence_threshold = 333
+stringdb = STRINGdb$new(version='11', species=511145, score_threshold=confidence_threshold, input_directory='stringdb')
+```
+
+Téléchargement du génome/protéome :
+```{r}
+proteins = stringdb$get_proteins() %>% as_tibble
+proteins %>% dted
+```
+
+### Données de coexpression
+
+Nous allons utiliser les données d’expression déjà intégrées dans STRINGdb. Il est bien sûr possible de calculer un score de co-expression entre les paires de gènes à partir de données de microarray et/ou RNAseq.
+
+
+### STRINGdb detailed links → neo4j
+
+Il faut passer par la page de téléchargement sur https://string-db.org/cgi/download.pl en restreignant l'organisme d'intérêt. 
+
+Le fichier complet faisant ~150Go (au 15/10/2021), il est conseillé de d'abord sélectionner un organisme avant le téléchargement (~10Mo pour *E. coli*). Une copie est disponible sur silico à récupérer sur http://silico.biotoul.fr/enseignement/m2bbs/idh/2021/
+
+Qu'y a-t-il dedans ? shell:
+```{bash}
+zcat stringdb/511145.protein.links.detailed.v11.5.txt.gz | head
+```
+
+Chargement sous forme de tibble :
+```{r}
+links.detailed = read_delim("stringdb/511145.protein.links.detailed.v11.5.txt.gz", delim=" ", col_types = "ccnnnnnnnn")
+links.detailed
+```
+
+C'est la **colonne coexpression** qui nous intéresse pour commencer.
+
+
+Génération des fichiers CSV pour l'import
+```{r}
+links.detailed %>%
+  filter(coexpression>0 & protein1 < protein2) %>%
+  select(protein1, protein2, coexpression) %>%
+  mutate(organism=str_extract(protein1, '^\\d+'), id1=str_extract(protein1, 'b\\d+'), id2=str_extract(protein2, 'b\\d+')) %>%
+  select(organism:id2,coexpression) %>%
+  write_csv("import/string.coexpression.csv")
+```
+
+Import dans neo4j
+```{r eval=F}
+'
+LOAD CSV WITH HEADERS FROM "file:///string.coexpression.csv" AS line
+MATCH (g1:Gene),(g2:Gene)
+WHERE g1.id=line.id1 AND g2.id=line.id2
+WITH g1,g2, toInteger(line.coexpression) AS value 
+MERGE (g1)-[:STRINGdb {coexpression: value}]-(g2)
+'  %>% cypher
+```
+
+
+Vérification
+```{r}
+'MATCH ()-[r:STRINGdb]-() RETURN count(r)' %>% cypher %>% unlist
+```
+### Autres liens à intégrer
+
+```{r}
+coex = "MATCH (g1:Gene)-[r:STRINGdb]-(g2:Gene) WHERE r.coexpression>=400 RETURN g1.id, g2.id, r.coexpression" %>% cypher 
+tibble(id1=coex$g1.id$value, id2=coex$g2.id$value, coexpression=coex$r.coexpression$value)
+```
+
+```{r}
+g.coexpr = 'MATCH p = ()-[r:STRINGdb]-() WHERE r.coexpression>=400 RETURN p'  %>% cypher(type="graph")
+g.coexpr$nodes = g.coexpr$nodes %>% unnest_nodes(what="properties")
+g.coexpr$nodes %>% dted
+```
+
+```{r}
+g.coexpr$relationships = g.coexpr$relationships %>% 
+  unnest_relationships %>% 
+  select(startNode, endNode, type, everything()) %>% 
+  mutate(coexpression = unlist(coexpression))
+g.coexpr$relationships %>% dted
+```
+
+```{r}
+library(igraph)
+igraph.options(vertex.color=NA)
+igraph.options(vertex.label.cex=.6) # font size
+igraph.options(vertex.label.family='sans')
+igraph.options(vertex.size=2)
+igraph.options(edge.label.cex=.6)
+igraph.options(edge.label.family='sans')
+```
+
+```{r}
+g.coexpr = graph_from_data_frame(d=g.coexpr$relationships, directed=F, vertices = g.coexpr$nodes)
+g.coexpr
+```
+
+```{r}
+plot(g.coexpr, vertex.label=NA, main='coexpression')
+```
+
+Faire de même avec les liens correspondant aux
+
+  * interactions protéines--protéines → `experiment`, 
+  * les associations basées sur la conservation des paires de gènes dans le voisinage sur le chromosome dans d'autres génomes → `neighborhood`,
+  * les associations basées sur la littérature bio-médicale →  `textmining`, (que l'on pourra comparer aux identifiants PubMed→Gene )
+  * les associations basées sur les annotations → `database`, (quele l'on pourra comparer aux liens Keyword→Gene, Pathway→Gene et GOTerm→Gene)
+  * le score combiné → `combined_score`
+  
+
+## Exploration
+
+  * Comparer la co-expression entre les gènes de mêmes opérons et d'opérons différents
+  * Quelles sont les unités de transcription co-exprimées ?
+  * Correspondent-elles à certains pathways ? partagent-elles des annotations GO ?
+  
+## Génération de matrices de similarité
+
+```{r}
+keyword.mat = keywords %>% unique %>% mutate(true=T)
+keyword.mat 
+```
+
+```{r}
+keyword.tab = keyword.mat %>% pivot_wider(names_from = keyword, values_from = true, values_fill = F) %>% as.data.frame
+keyword.tab %>% head
+```
+
+```{r}
+rownames(keyword.tab) = keyword.tab$bnumber
+keyword.tab = keyword.tab %>% select(-bnumber)
+keyword.dist = keyword.tab %>% dist(method='binary')
+keyword.dist[1:10]
+```
+
+```{r}
+keyword.scores = round( (1-keyword.dist) * 1000) %>% as.matrix
+keyword.scores[1:10,1:10]
+```
+
+
+
+
+A partir des liens Keyword, TUs, Pathway, PubMed et GOTerm, il s'agit de générer des matrices pivots individus(bnumber)--variables(Keyword ou TUs ou ...) pour ensuite calculer la distance/similarité entre paires de gènes.
+
+→ Comparer les poids des liens obtenus avec ceux de StringDB.  
+
+→ A partir de la matrice Gene-GOTerm, calculer les fréquences d'utilisation des GOTerms, en déduire leur IC (Information Content) et une matrice de similarité sémantique entre paires de GOTerms basée sur la relation MICA (*Maximum Information Common Ancestor*).   
+→ A partir de la matrice de similarité sémantique entre GOTerm, en déduire le poids de l'association entre paires de gènes 
+
+## Combinaison de matrices de similarité
+
+
+Calcul du score combiné par StringDB (source: http://version11.string-db.org/help/faq/#how-are-the-scores-computed).
+
+En utilisant la librairie `igraph` et après avoir chargé le graphe $g$ avec les liens de *coexpression*, *neighborhood* et *experiment* à partir de neo4j :
+```{r}
+prior=0.041
+no_prior = function(x, prior = 0.041) (ifelse(is.na(x), 0, x) / 1000 - prior) / (1-prior)
+s_coexp_nop = no_prior(E(g)$coexpression)
+s_ppi_nop = no_prior(E(g)$ppi)
+s_neighborhood_nop = no_prior(E(g)$neighborhood)
+s_tot_nop = 1 - (1 - s_coexp_nop) * (1 - s_ppi_nop) * (1 - s_neighborhood_nop)
+E(g)$combined_score = round(1000 * (s_tot_nop + prior *(1 - s_tot_nop)))
+```
