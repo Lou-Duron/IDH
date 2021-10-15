@@ -61,7 +61,7 @@ library(jsonlite)
 
 Transformation du format tibble à json
 ```{r}
-ref_sets %>% toJSON %>% write("reference.sets/uniprot.keywords.sets.json")
+ref_sets %>% toJSON %>% write("sets/uniprot.keywords.sets.json")
 ```
 
 ```{r}
@@ -88,7 +88,7 @@ ref_sets_interpro = interpro %>%
 
 ref_sets_interpro
 
-ref_sets_interpro %>% toJSON %>% write("reference.sets/uniprot.uniprot.sets.json")
+ref_sets_interpro %>% toJSON %>% write("sets/uniprot.uniprot.sets.json")
 ```
 
 ```{r}
@@ -140,6 +140,10 @@ TU_per_gene = TU %>% select(Site, names = "Genes of transcription unit") %>%
   arrange(genes)
 
 TU_per_gene
+```
+```{r}
+pmids %>% select(PMID) %>% unique %>% write_csv("import/ncbi.pmid.csv")
+pmids %>% rename(gene_id = bnumber) %>% write_csv("import/ncbi.pmid.genes.csv")
 ```
 
 

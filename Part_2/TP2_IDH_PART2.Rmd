@@ -39,12 +39,14 @@ library(kableExtra)
 
 ```{r}
 uniprot = read_tsv("ecoli/uniprot-proteome_UP000000625.tab")
+
 mapping = uniprot %>% 
   select(Entry, names = `Gene names  (ordered locus )`) %>%
   mutate(bnumber=str_extract(names, 'b\\d+')) %>%
   select(bnumber, uniprotID=Entry) %>%
   filter(!is.na(bnumber)) %>% # 2021 → P0DQD7 and P0A6D5 are lost (no bnumber)
   arrange(bnumber)
+
 keywords = uniprot %>% 
   select(uniprotID=Entry, keyword=Keywords) %>%
   right_join(mapping) %>% # right join to remove those without bnumber
@@ -252,6 +254,23 @@ Faire de même avec les liens correspondant aux
   
 
 ## Exploration
+```{r}
+g2 = 'MATCH p = ()-[r:STRINGdb]-() WHERE r.coexpression>=400 OR r.neighbohood>=400 OR r.experimental>=400 RETURN p'  %>% cypher(type="graph")
+
+g2$nodes = g2$nodes %>% unnest_nodes(what="properties")
+g2$nodes
+
+
+g2$relationships = g2$relationships %>% 
+  unnest_relationships %>% 
+  select(startNode, endNode, type, everything()) %>% 
+  mutate(coexpression = unlist(coexpression))
+
+
+
+g2i = graph_from_data_frame(d=g2$relationships, directed=F, vertices = g2$nodes)
+g2i
+```
 
   * Comparer la co-expression entre les gènes de mêmes opérons et d'opérons différents
   * Quelles sont les unités de transcription co-exprimées ?
@@ -300,9 +319,17 @@ En utilisant la librairie `igraph` et après avoir chargé le graphe $g$ avec le
 ```{r}
 prior=0.041
 no_prior = function(x, prior = 0.041) (ifelse(is.na(x), 0, x) / 1000 - prior) / (1-prior)
-s_coexp_nop = no_prior(E(g)$coexpression)
-s_ppi_nop = no_prior(E(g)$ppi)
-s_neighborhood_nop = no_prior(E(g)$neighborhood)
+s_coexp_nop = no_prior(E(g2i)$coexpression)
+s_ppi_nop = no_prior(E(g2i)$experimental)
+s_neighborhood_nop = no_prior(E(g2i)$neighborhood)
 s_tot_nop = 1 - (1 - s_coexp_nop) * (1 - s_ppi_nop) * (1 - s_neighborhood_nop)
-E(g)$combined_score = round(1000 * (s_tot_nop + prior *(1 - s_tot_nop)))
+E(g2i)$combined_score = round(1000 * (s_tot_nop + prior *(1 - s_tot_nop)))
 ```
+
+```{r}
+coms = cluster_louvain(g2i, weights=E(g2i)$comnined_score)
+plot(coms, g2i, vertex.label=NA)
+```
+
+
+
