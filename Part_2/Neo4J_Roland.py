@@ -34,7 +34,7 @@ if param.verbose:
   print(f'query set: {query}')
 
 # CONNECT TO Neo4J
-neo = Graph("http://localhost:7474/", auth=("neo4j", "bioinfo"))
+neo = Graph("http://localhost:7474/", auth=("neo4j", "a"))
 nodes = NodeMatcher(neo)
 
 # COMPUTE POPULATION SIZE
