@@ -35,6 +35,7 @@ library(DT)
 library(tibble)
 library(readr)
 library(kableExtra)
+library(igraph)
 ```
 
 ```{r}
@@ -94,9 +95,9 @@ cypher = function(query, neo4j=neodb, ...) call_neo4j(query=query, con=neo4j, ..
 
 
 ```{r}
-genes = read_tsv("neo.data/ncbi.bnumber.location.tsv")
+genes = read_tsv("import/ncbi.bnumber.location.tsv")
 genes$organism=511145
-genes %>% rename(gene_id=bnumber) %>% write_csv("neo4j.import/ncbi.bnumber.location.csv")
+genes %>% rename(gene_id=bnumber) %>% write_csv("import/ncbi.bnumber.location.csv")
 ```
 
 
@@ -203,12 +204,13 @@ Vérification
 'MATCH ()-[r:STRINGdb]-() RETURN count(r)' %>% cypher %>% unlist
 ```
 ### Autres liens à intégrer
-
+# On recupere les pairs de gènes dont le score de co-expression est superieur à 400
 ```{r}
 coex = "MATCH (g1:Gene)-[r:STRINGdb]-(g2:Gene) WHERE r.coexpression>=400 RETURN g1.id, g2.id, r.coexpression" %>% cypher 
 tibble(id1=coex$g1.id$value, id2=coex$g2.id$value, coexpression=coex$r.coexpression$value)
 ```
 
+#retrieval des pairs co-exprimés
 ```{r}
 g.coexpr = 'MATCH p = ()-[r:STRINGdb]-() WHERE r.coexpression>=400 RETURN p'  %>% cypher(type="graph")
 g.coexpr$nodes = g.coexpr$nodes %>% unnest_nodes(what="properties")
@@ -251,6 +253,54 @@ Faire de même avec les liens correspondant aux
   * le score combiné → `combined_score`
   
 
+Génération des fichiers CSV pour l'import
+```{r}
+links.detailed %>%
+  filter(protein1 < protein2) %>%
+  mutate(organism=str_extract(protein1, '^\\d+'), id1=str_extract(protein1, 'b\\d+'), id2=str_extract(protein2, 'b\\d+')) %>%
+  select(organism:id2,experimental, neighborhood, textmining, database, combined_score) %>%
+  write_csv("import/string_other.csv") # mettre ce fichier dans l'import de Neo4J
+```
+
+```{r}
+'MATCH (n:Gene) return count(n)' %>% cypher %>% unlist
+```
+
+```{r}
+'
+LOAD CSV WITH HEADERS FROM "file:///string_other.csv" AS line
+MATCH (g1:Gene),(g2:Gene)
+WHERE g1.id=line.id1 AND g2.id=line.id2
+WITH g1,g2, toInteger(line.experimental) AS expe,
+toInteger(line.neighborhood) AS neigh, toInteger(line.textmining) AS textm, toInteger(line.database) AS db, toInteger(line.combined_score) AS cs 
+MERGE (g1)-[:STRINGdb {experimental: expe, neighborhood: neigh, textmining: textm, database: db, combined_score: cs}]-(g2)
+'  %>% cypher
+```
+
+
+
+```{r}
+g2 = 'MATCH p = ()-[r:STRINGdb]-() WHERE r.coexpression>=400 OR r.neighborhood>=400 OR r.experimental>=400 RETURN p'  %>% cypher(type="graph")
+
+
+g2$nodes = g2$nodes %>% unnest_nodes(what="properties")
+g2$nodes %>% dted
+
+
+g2$relationships = g2$relationships %>% 
+  unnest_relationships %>% 
+  select(startNode, endNode, type, everything()) %>% 
+  mutate(coexpression = unlist(coexpression))
+
+
+
+g2i = graph_from_data_frame(d=g2$relationships, directed=F, vertices = g2$nodes)
+g2i
+
+
+plot(g2i, vertex.label=NA, main="vous l'appelez comme vous voulez")
+```
+
 ## Exploration
 
   * Comparer la co-expression entre les gènes de mêmes opérons et d'opérons différents
@@ -268,7 +318,8 @@ keyword.mat
 keyword.tab = keyword.mat %>% pivot_wider(names_from = keyword, values_from = true, values_fill = F) %>% as.data.frame
 keyword.tab %>% head
 ```
-
+Je convertie un tableau avec une col nbumber et une col keyword
+en ligne bnumber et colonne keywords avec true ou false si le mot clé est là
 ```{r}
 rownames(keyword.tab) = keyword.tab$bnumber
 keyword.tab = keyword.tab %>% select(-bnumber)
@@ -283,8 +334,8 @@ keyword.scores[1:10,1:10]
 
 
 
-
 A partir des liens Keyword, TUs, Pathway, PubMed et GOTerm, il s'agit de générer des matrices pivots individus(bnumber)--variables(Keyword ou TUs ou ...) pour ensuite calculer la distance/similarité entre paires de gènes.
+
 
 → Comparer les poids des liens obtenus avec ceux de StringDB.  
 
@@ -300,9 +351,18 @@ En utilisant la librairie `igraph` et après avoir chargé le graphe $g$ avec le
 ```{r}
 prior=0.041
 no_prior = function(x, prior = 0.041) (ifelse(is.na(x), 0, x) / 1000 - prior) / (1-prior)
-s_coexp_nop = no_prior(E(g)$coexpression)
-s_ppi_nop = no_prior(E(g)$ppi)
-s_neighborhood_nop = no_prior(E(g)$neighborhood)
+s_coexp_nop = no_prior(E(g2i)$coexpression)
+s_ppi_nop = no_prior(E(g2i)$experimental)
+s_neighborhood_nop = no_prior(E(g2i)$neighborhood)
 s_tot_nop = 1 - (1 - s_coexp_nop) * (1 - s_ppi_nop) * (1 - s_neighborhood_nop)
-E(g)$combined_score = round(1000 * (s_tot_nop + prior *(1 - s_tot_nop)))
+E(g2i)$combined_score = round(1000 * (s_tot_nop + prior *(1 - s_tot_nop)))
 ```
+
+
+communautés
+
+```{r}
+coms = cluster_louvain(g2i, weights=E(g2i)$comnined_score)
+plot(coms, g2i, vertex.label=NA)
+```
+

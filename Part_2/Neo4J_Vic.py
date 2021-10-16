@@ -16,6 +16,7 @@ parser.add_argument('-c', '--adjust', required=False, action="store_true", help=
 parser.add_argument('-m', '--measure', required=False, default='binomial', help='Dissimilarity index: binomial (default), hypergeometric, chi2 or coverage. chi2 and coverage are NOT YET IMPLEMENTED')
 parser.add_argument('-l', '--limit', required=False, type=int, default=0, help='Maximum number of results to report.')
 parser.add_argument('-s', '--taxon_id', required=True, type=int, help='Taxon id.')
+parser.add_argument('-v', '--verbose', required=False, action="store_true", help='Talk a lot.')
 param = parser.parse_args()
 ################################################################################################
 
@@ -44,8 +45,12 @@ print(f"population size is {population_size}")
 
 # Get keyword associated to the genes query 
 path = '[:is_a|part_of|annotates*]' if param.sets=='GOTerm' else ''
-cypher = f"MATCH (t:{param.sets})-{path}->(n:Gene {{taxon_id:{param.taxon_id} }}) WHERE n.id IN ['"+"', '".join(query)+"'] RETURN t"
+cypher = f"MATCH (t:{param.sets})-{path}->(n:Gene {{taxon_id:{param.taxon_id} }}) WHERE n.id IN ['"+"', '".join(query)+"'] RETURN distinct t"
 sets = graph.run(cypher)
+
+if param.verbose:
+    print(cypher)
+    print(sets)
 
 #EVALUATE SETS
 results = []
@@ -53,14 +58,14 @@ query_size = len(query)
 
 for s in sets:
     sid = s['t']['id']
+    print(sid)
 	# RETRIEVE TARGET SET ELEMENTS
     path = '[:is_a|part_of|annotates*]' if param.sets=='GOTerm' else ''
-    cypher = "MATCH (t:{})-{}->(n:Gene {{taxon_id:{} }}) WHERE t.id='{}' RETURN n.id".format(param.sets, path, param.taxon_id, sid)
+    cypher = "MATCH (t:{})-{}->(n:Gene {{taxon_id:{} }}) WHERE t.id='{}' RETURN distinct n.id".format(param.sets, path, param.taxon_id, sid)
     table = graph.run(cypher).to_table()
     elements = set( map(lambda x: x[0], table))
 	#print("elements:", elements)
-    common_elements = elements.intersection( query )
-    
+    common_elements = elements.intersection(query)
     if param.measure=='binomial': # binom.cdf(>=success, attempts, proba)
     	pvalue = binom.cdf( query_size - len(common_elements), query_size, 1 - float(len(elements))/population_size)
     else:
