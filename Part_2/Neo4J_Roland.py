@@ -75,6 +75,12 @@ for s in sets: #_ids:
 	i += 1
 	#print(i)
 	common_elements = elements.intersection( query ) # C
+	# common_elements : C
+		# query : Q
+		# elements : T
+		# population_size : G
+
+		
 
 	if len(common_elements) < 2:
 		next
@@ -88,10 +94,7 @@ for s in sets: #_ids:
 	if param.measure =='chi2':
 		contengency_table = np.array([[len(common_elements), len(query)-len(common_elements)],[len(elements)-len(common_elements),population_size-len(query)-len(elements)+len(common_elements)]])
 		g, measure, dof, expctd = chi2_contingency(contengency_table)
-		# common_elements : C
-		# query : Q
-		# elements : T
-		# population_size : G
+		
 	#else:
 	#	print(f'sorry, {param.measure} not (yet) implemented')
 	#	exit(1)
