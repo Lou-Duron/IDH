@@ -4,10 +4,11 @@
 
 import argparse
 from os.path import isfile
-from scipy.stats import binom, hypergeom
+from scipy.stats import binom, hypergeom, chi2_contingency
 from pprint import pprint
 from py2neo import *
 from py2neo.matching import *
+import numpy as np
 
 # SCRIPT PARAMETERS
 parser = argparse.ArgumentParser(description='Search enriched terms/categories in the provided (gene) set')
@@ -83,9 +84,14 @@ for s in sets: #_ids:
 		measure = (len(common_elements)/len(query)) * (len(common_elements)/len(elements))
 		print(measure)
 	if param.measure =='hypergeometric':
-		break
+		measure = hypergeom.cdf( query_size - len(common_elements), query_size, 1 - float(len(elements))/population_size)
 	if param.measure =='chi2':
-		break
+		contengency_table = np.array([[len(common_elements), len(query)-len(common_elements)],[len(elements)-len(common_elements),population_size-len(query)-len(elements)+len(common_elements)]])
+		g, measure, dof, expctd = chi2_contingency(contengency_table)
+		# common_elements : C
+		# query : Q
+		# elements : T
+		# population_size : G
 	#else:
 	#	print(f'sorry, {param.measure} not (yet) implemented')
 	#	exit(1)
@@ -94,7 +100,6 @@ for s in sets: #_ids:
 if param.verbose:
   print(results)
 
-aze
 # PRINT SIGNIFICANT RESULTS
 results.sort(key=lambda an_item: an_item['measure'])
 i=1
