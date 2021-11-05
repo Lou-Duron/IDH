@@ -48,7 +48,9 @@ cypher = f"MATCH (t:{param.sets})-{path}->(n:Gene {{taxon_id:{param.species} }})
 if param.verbose:
 	print(cypher)
 sets = neo.run(cypher)
-
+#cypher = f"MATCH (t:{param.sets})-{path}->(n:Gene {{taxon_id:{param.species} }}) WHERE n.id IN ['"+"', '".join(query)+"'] RETURN count(DISTINCT t)"
+#aze = neo.run(cypher).to_table()
+#print(aze[0][0])
 
 # EVALUATE SETS
 i = 0
@@ -63,7 +65,7 @@ for s in sets: #_ids:
 	if param.verbose:
 		print(cypher)
 	table = neo.run(cypher).to_table()
-	elements = set( map(lambda x: x[0], table))
+	elements = set(map(lambda x: x[0], table))
 	i += 1
 	print(i)
 	common_elements = elements.intersection(query)
@@ -72,9 +74,13 @@ for s in sets: #_ids:
 	if param.measure == 'coverage':
 		measure = (len(common_elements)/len(query)) * (len(common_elements)/len(elements))
 	if param.measure =='binomial': # binom.cdf(>=success, attempts, proba)
+		# prendre le probleme à l'envers
+		# quelle est la probabilité qu'il y ait x elements pas en commun, 
+		# sachant un tirage de z elements et que la probabilité de tiré des elements 
+		# pas en commun est 1 - proba de tiré des elements en commun
 		measure = binom.cdf(query_size - len(common_elements), query_size, 1 - float(len(elements))/population_size)
 	if param.measure =='hypergeometric':
-		measure = hypergeom.cdf(query_size - len(common_elements), query_size, 1 - float(len(elements))/population_size)
+	measure = hypergeom.cdf(query_size - len(common_elements),population_size, int((1 - float(len(elements))/population_size)*population_size), query_size)
 	if param.measure =='chi2':
 		a = len(common_elements)
 		b = len(query) - len(common_elements)
@@ -100,11 +106,14 @@ for r in results:
 	# FDR
 	if param.adjust and r['measure'] > param.alpha * i / len(results): break
 	# limited output
+	
 	if param.limit > 0 and i>param.limit: break
 	# alpha threshold
+	
 	elif r['measure'] > param.alpha: break
 	# OUTPUT
 	pval = "{:.4f}".format(r['measure']) if r['measure']>0.01 else "{:.2e}".format(r['measure'])
+	
 	print("{}\t{}\t{}/{}\t{}\t{}".format( r['id'], pval, r['common.n'], r['target.n'], r['desc'], ', '.join(r['elements.common'])))
 	i+=1
 
