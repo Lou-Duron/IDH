@@ -1,0 +1,132 @@
+---
+title: "Script get data"
+author: "Lou Duron and Victoria Fathi"
+output:
+  html_document:
+    code_folding: show
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 4
+    theme: paper
+    highlight: tango
+editor_options: 
+  chunk_output_type: console
+---
+
+# Set root of project 
+
+```{r, warning=FALSE, message=FALSE}
+setwd('/home/victoriafathi/Bureau/M2/m2idh/Part_2/') #to modify
+library(tidyverse)
+library(jsonlite)
+```
+
+# Uniprot 
+## Get proteom of e coli k12
+```{r}
+uniprot = read_tsv("data/uniprot-proteome_UP000000625.tab.gz")
+head(uniprot)
+```
+
+## Map uniprot id to bnumber
+```{r}
+uniprot_mapping = uniprot %>% 
+  select(Entry, names = `Gene names  (ordered locus )`) %>%
+  mutate(bnumber=str_extract(names, 'b\\d+')) %>%
+  select(bnumber, uniprotID=Entry) %>%
+  filter(!is.na(bnumber)) %>% # 2021 → P0DQD7 and P0A6D5 are lost (no bnumber)
+  arrange(bnumber)
+uniprot_mapping
+#write_delim(uniprot_mapping, "import/Alias/uniprot_mapping.tsv", delim='\t')
+```
+
+
+## Keyword
+
+```{r}
+keywords_genes = uniprot %>% 
+  select(uniprotID=Entry, keyword=Keywords) %>%
+  right_join(uniprot_mapping) %>% # right join to remove those without bnumber
+  separate_rows(keyword, sep=';') %>%
+  select(bnumber, keyword) %>%
+  arrange(bnumber)
+#write_delim(keywords_genes, "import/import/Keyword/keyword_link.tsv",", delim='\t')
+```
+
+```{r}
+keywords = length(unique(keywords_genes$keyword))
+#write_delim(keywords, "import/import/Keyword/keyword.tsv",", delim='\t')
+```
+
+## Interpro domain
+```{r}
+domains_genes = uniprot %>% 
+  select(uniprotID=Entry, interpro='Cross-reference (InterPro)') %>%
+  right_join(uniprot_mapping) %>% # right join to remove those without bnumber
+  separate_rows(interpro, sep=';') %>%
+  select(bnumber, interpro) %>%
+  arrange(bnumber)
+#write_delim(domains_genes, "import/Interpro/interpro_link.tsv", delim='\t')
+```
+
+```{r}
+interpro = length(unique(domains_genes$interpro))
+#write_delim(interpro, "import/import/Interpro/interpro.tsv", delim='\t')
+```
+
+## GO Terms
+```{r}
+GO_genes = uniprot %>% 
+  select(uniprotID=Entry, GO="Gene ontology IDs") %>%
+  right_join(uniprot_mapping) %>% # right join to remove those without bnumber
+  separate_rows(GO, sep='; ') %>%
+  select(bnumber, GO) %>%
+  arrange(bnumber)
+#write_delim(GO_genes, "import/GO/GO_link.tsv", delim='\t')
+```
+
+# Ecocyc
+```{r}
+ecocyc = read_tsv("data/All_instances_of_Genes_in_Escherichia_coli_K-12_substr._MG1655.txt")
+```
+
+## Map ecocyc id to bnumber
+```{r}
+ecocyc_mapping = ecocyc %>% 
+  select(Genes, names = `Names`) %>%
+  mutate(bnumber=str_extract(names, 'b\\d+')) %>%
+  select(bnumber, ecocyc=Genes) %>%
+  filter(!is.na(bnumber)) %>% # 2021 → P0DQD7 and P0A6D5 are lost (no bnumber)
+  arrange(bnumber)
+#write_delim(ecocyc_mapping, "import/Alias/ecocyc_mapping.tsv", delim='\t')
+```
+
+## TU
+```{r}
+TU = read_tsv("data/all_transcription-units.txt")
+```
+
+```{r}
+TU_genes = TU %>% 
+  select(Site, ecocyc = "Genes of transcription unit") %>% 
+  separate_rows(ecocyc, sep = ' // ') %>% 
+  right_join(ecocyc_mapping) %>% 
+  select(bnumber, Site) %>% 
+  arrange(bnumber)
+#write_delim(TU_genes, "import/TU/TU_link.tsv", delim='\t')
+```
+
+## Pathway
+```{r}
+pathway = read_tsv("data/All_instances_of_Pathways_in_Escherichia_coli_K-12_substr._MG1655.txt")
+```
+
+```{r}
+pathway_gene = pathway %>% 
+  select(Pathways, ecocyc = "Genes of pathway") %>% 
+  separate_rows(ecocyc, sep = ' // ') %>% 
+  right_join(ecocyc_mapping) %>% 
+  select(bnumber, Pathways) %>% 
+  arrange(bnumber)
+#write_delim(pathway_gene, "import/Pathway/pathway_link.tsv", delim='\t')
+```
