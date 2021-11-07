@@ -54,7 +54,7 @@ cpt = 0
 results = []
 for s in sets: #_ids:
 	cpt += 1
-	print(f"In progress : {cpt}/{sample_size}", end = "\r") # Feedback
+	print(f"In progress : {cpt}/{sample_size} ({round(cpt/sample_siz*100,2}%)", end = "\r") # Feedback
 	sid = s['t']['id']
 	# RETRIEVE TARGET SET ELEMENTS
 	path = '[:is_a|part_of|annotates*1..20]' if arg.sets=='GOTerm' else ''
