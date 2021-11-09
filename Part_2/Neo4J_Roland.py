@@ -31,7 +31,17 @@ try:
 	nodes = NodeMatcher(neo)
 	print('Connection to the DBMS successful')
 except Exception:
-	print('An error occurred while trying to connect to the DBMS please check your password')
+	print('Error : An error occurred while trying to connect to the DBMS please check your password')
+	exit(1)
+
+# Parameters checks
+# Type validity check
+if arg.type not in ['Alias', 'GOTerm', 'Interpro', 'Keyword', 'Pathway', 'PubMed', 'TU'] :
+	print("Error : Please choose a valid node type : Alias, GOTerm, Interpro, Keyword, Pathway, PubMed, TU")
+	exit(1)
+# Taxon id check
+if neo.run(f"MATCH (n:Gene {{taxon_id:{arg.species}}}) RETURN COUNT(n)").to_table()[0][0] == 0:
+	print("Error : Taxon id not in the Database")
 	exit(1)
 
 # Query loading
@@ -43,6 +53,7 @@ if isfile(text):
 		query |= set(content)
 else: # parse string
 	query |= set(text.split())
+
 if arg.verbose:
   print(f'query set: {query}')
 
@@ -52,9 +63,13 @@ if arg.verbose:
 	print("Population_size: ", population_size)
 
 # Retrieve target sets for query
+
 path = '[:is_a|part_of|annotates*]' if arg.type=='GOTerm' else ''
 cypher = f"MATCH (t:{arg.type})-{path}->(n:Gene {{taxon_id:{arg.species} }}) WHERE n.id IN ['"+"', '".join(query)+"'] RETURN COUNT(DISTINCT t)"
 sample_size = neo.run(cypher).to_table()[0][0] # Get sample size for feedback purpose
+if sample_size == 0:
+	print("Error : It seems that the query is not valid, please check the documentation for more informations")
+	exit(1)
 cypher = f"MATCH (t:{arg.type})-{path}->(n:Gene {{taxon_id:{arg.species} }}) WHERE n.id IN ['"+"', '".join(query)+"'] RETURN DISTINCT t"
 sets = neo.run(cypher)
 if arg.verbose:
@@ -107,7 +122,7 @@ for count, s in enumerate(sets):
 			measure = chi2(c, q, t, g)
 		else:
 			print(f'Sorry, {arg.measure} not implemented')
-			print("Please choose an implemented method : binomial, coverage, hypergeometric, chi2")
+			print("Error : Please choose an implemented method : binomial, coverage, hypergeometric, chi2")
 			exit(1)
 		r = { 'id': sid, 'desc': s['t']['desc'], 'common.n':c, 'target.n': t, 'measure': measure, 'elements.target': elements, 'elements.common': common_elements }
 		results.append(r)
