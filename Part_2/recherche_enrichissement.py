@@ -34,10 +34,20 @@ except Exception:
 	print('Error : An error occurred while trying to connect to the DBMS please check your password')
 	exit(1)
 
+cypher = "match (g:Gene)-[n:associated_with]->(g2:Gene) return g.id, count(DISTINCT n)"
+t = neo.run(cypher).to_table()
+sum = 0
+for el in t:
+	if el[1] > sum:
+		sum = el[1]
+
+print(sum)
+
+exit(1)
 # Parameters checks
 # Type validity check
-if arg.type not in ['Alias', 'GOTerm', 'Interpro', 'Keyword', 'Pathway', 'PubMed', 'TU'] :
-	print("Error : Please choose a valid node type : Alias, GOTerm, Interpro, Keyword, Pathway, PubMed, TU")
+if arg.type not in ['GOTerm', 'Interpro', 'Keyword', 'Pathway', 'PubMed', 'TU'] :
+	print("Error : Please choose a valid node type : GOTerm, Interpro, Keyword, Pathway, PubMed, TU")
 	exit(1)
 # Taxon id check
 if neo.run(f"MATCH (n:Gene {{taxon_id:{arg.species}}}) RETURN COUNT(n)").to_table()[0][0] == 0:
@@ -70,8 +80,8 @@ sample_size = neo.run(cypher).to_table()[0][0] # Get sample size for feedback pu
 if sample_size == 0:
 	print("Error : It seems that the query is not valid, please check the documentation for more informations")
 	exit(1)
-cypher = f"MATCH (t:{arg.type})-{path}->(n:Gene {{taxon_id:{arg.species} }}) WHERE n.id IN ['"+"', '".join(query)+"'] RETURN DISTINCT t"
-sets = neo.run(cypher)
+cypher = f"MATCH (t:{arg.type})-{path}->(n:Gene {{taxon_id:{arg.species} }}) WHERE n.id IN ['"+"', '".join(query)+"'] RETURN DISTINCT t.id"
+sets = set(map(lambda x: x[0], neo.run(cypher).to_table()))
 if arg.verbose:
 	print(cypher)
 
@@ -97,9 +107,8 @@ def chi2(c, q, t, g):
 # Enrichment evaluation
 for count, s in enumerate(sets):
 	print(f"In progress : {count}/{sample_size} ({round(count/sample_size*100,1)}%)", end = "\r") # Feedback
-	sid = s['t']['id']
 	path = '[:is_a|part_of|annotates*1..20]' if arg.type=='GOTerm' else '' # Get correct path
-	cypher = f"MATCH (t:{arg.type})-{path}->(n:Gene {{taxon_id:{arg.species} }}) WHERE t.id='{sid}' RETURN n.id"
+	cypher = f"MATCH (t:{arg.type})-{path}->(n:Gene {{taxon_id:{arg.species} }}) WHERE t.id='{s}' RETURN n.id"
 	if arg.verbose:
 		print(cypher)
 	table = neo.run(cypher).to_table()
@@ -124,7 +133,7 @@ for count, s in enumerate(sets):
 			print(f'Sorry, {arg.metric} not implemented')
 			print("Error : Please choose an implemented method : binomial, coverage, hypergeometric, chi2")
 			exit(1)
-		r = { 'id': sid, 'desc': s['t']['desc'], 'common.n':c, 'target.n': t, 'measure': measure, 'elements.target': elements, 'elements.common': common_elements }
+		r = { 'id': s, 'common.n':c, 'target.n': t, 'measure': measure, 'elements.target': elements, 'elements.common': common_elements }
 		results.append(r)
 
 	else: # Metrics evaluation
@@ -134,7 +143,7 @@ for count, s in enumerate(sets):
 		temp_results.append(hypergeometric(q, t, g)) # Hypergeometric
 		temp_results.append(chi2(c, q, t, g)) # Chi2
 		for count, key in enumerate(results.keys()):
-			r = { 'id': sid, 'desc': s['t']['desc'], 'common.n':c, 'target.n': t, 'measure': temp_results[count], 'elements.target': elements, 'elements.common': common_elements }
+			r = { 'id': s, 'common.n':c, 'target.n': t, 'measure': temp_results[count], 'elements.target': elements, 'elements.common': common_elements }
 			results[key].append(r)
 	
 if arg.verbose:
@@ -145,14 +154,14 @@ print(f"Finished in {round(time.time() - start_time, 3)} seconds !   ")
 print("Significant results :")
 if not arg.eval:
 	results.sort(key=lambda an_item: an_item['measure'])
-	print("ID   p_value   ratio   Description   Common_elements") #################
+	print("ID   p_value   ratio   Common_elements") #################
 	for count, r in enumerate(results):
 		if arg.adjust and r['measure'] > arg.alpha * count+1 / len(results): break # FDR
 		if arg.limit > 0 and count+1>arg.limit: break # Limited output
 		elif r['measure'] > arg.alpha: break # Alpha threshold
 		# OUTPUT
 		pval = "{:.4f}".format(r['measure']) if r['measure']>0.01 else "{:.2e}".format(r['measure'])
-		print(f"{r['id']}\t{pval}\t{r['common.n']}/{r['target.n']}\t{r['desc']}", end=' ')
+		print(f"{r['id']}\t{pval}\t{r['common.n']}/{r['target.n']}", end=' ')
 		if arg.verbose : 
 			print(r['elements.common'])
 		else :
@@ -161,14 +170,14 @@ else:
 	for key in results.keys():
 		results[key].sort(key=lambda an_item: an_item['measure'])
 		print(f"\n{key} :")
-		print("ID   p_value   ratio   Description   Common_elements") #################
+		print("ID   p_value   ratio   Common_elements") #################
 		for count, r in enumerate(results[key]):
 			if arg.adjust and r['measure'] > arg.alpha * count+1 / len(results): break # FDR
 			if arg.limit > 0 and count+1>arg.limit: break # Limited output
 			elif r['measure'] > arg.alpha: break # Alpha threshold
 			# OUTPUT
 			pval = "{:.4f}".format(r['measure']) if r['measure']>0.01 else "{:.2e}".format(r['measure'])
-			print(f"{r['id']}\t{pval}\t{r['common.n']}/{r['target.n']}\t{r['desc']}", end=' ')
+			print(f"{r['id']}\t{pval}\t{r['common.n']}/{r['target.n']}", end=' ')
 			if arg.verbose : 
 				print(r['elements.common'])
 			else :
