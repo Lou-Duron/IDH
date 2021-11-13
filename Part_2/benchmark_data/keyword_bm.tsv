@@ -1,0 +1,638 @@
+bnumber	keyword
+b0059	3D-structure
+b0059	ATP-binding
+b0059	Activator
+b0059	DNA-binding
+b0059	Direct protein sequencing
+b0059	Helicase
+b0059	Hydrolase
+b0059	Nucleotide-binding
+b0059	Reference proteome
+b0059	Transcription
+b0059	Transcription regulation
+b0098	3D-structure
+b0098	ATP-binding
+b0098	Cell inner membrane
+b0098	Cell membrane
+b0098	Cytoplasm
+b0098	Direct protein sequencing
+b0098	Membrane
+b0098	Metal-binding
+b0098	Nucleotide-binding
+b0098	Protein transport
+b0098	Reference proteome
+b0098	Translocase
+b0098	Translocation
+b0098	Transport
+b0098	Zinc
+b0148	3D-structure
+b0148	ATP-binding
+b0148	Helicase
+b0148	Hydrolase
+b0148	Nucleotide-binding
+b0148	Reference proteome
+b0169	3D-structure
+b0169	Direct protein sequencing
+b0169	Reference proteome
+b0169	Ribonucleoprotein
+b0169	Ribosomal protein
+b0184	3D-structure
+b0184	Cytoplasm
+b0184	DNA replication
+b0184	DNA-binding
+b0184	DNA-directed DNA polymerase
+b0184	Nucleotidyltransferase
+b0184	Reference proteome
+b0184	Transferase
+b0215	3D-structure
+b0215	DNA replication
+b0215	DNA-directed DNA polymerase
+b0215	Exonuclease
+b0215	Hydrolase
+b0215	Magnesium
+b0215	Manganese
+b0215	Metal-binding
+b0215	Nuclease
+b0215	Nucleotidyltransferase
+b0215	Reference proteome
+b0215	Transferase
+b0470	3D-structure
+b0470	ATP-binding
+b0470	DNA replication
+b0470	DNA-directed DNA polymerase
+b0470	Direct protein sequencing
+b0470	Nucleotide-binding
+b0470	Nucleotidyltransferase
+b0470	Reference proteome
+b0470	Ribosomal frameshifting
+b0470	Transferase
+b0640	3D-structure
+b0640	DNA replication
+b0640	DNA-directed DNA polymerase
+b0640	Direct protein sequencing
+b0640	Nucleotidyltransferase
+b0640	Reference proteome
+b0640	Transferase
+b0779	3D-structure
+b0779	ATP-binding
+b0779	Cytoplasm
+b0779	DNA damage
+b0779	DNA excision
+b0779	DNA repair
+b0779	Direct protein sequencing
+b0779	Excision nuclease
+b0779	Nucleotide-binding
+b0779	Reference proteome
+b0779	SOS response
+b0797	ATP-binding
+b0797	Cytoplasm
+b0797	Helicase
+b0797	Hydrolase
+b0797	Nucleotide-binding
+b0797	RNA-binding
+b0797	Reference proteome
+b0797	Ribosome biogenesis
+b0799	3D-structure
+b0799	4Fe-4S
+b0799	ATP-binding
+b0799	DNA damage
+b0799	DNA recombination
+b0799	DNA repair
+b0799	DNA-binding
+b0799	Helicase
+b0799	Hydrolase
+b0799	Iron
+b0799	Iron-sulfur
+b0799	Metal-binding
+b0799	Nucleotide-binding
+b0799	Reference proteome
+b0890	3D-structure
+b0890	ATP-binding
+b0890	Cell cycle
+b0890	Cell division
+b0890	Cell inner membrane
+b0890	Cell membrane
+b0890	Chromosome partition
+b0890	DNA-binding
+b0890	Membrane
+b0890	Nucleotide-binding
+b0890	Reference proteome
+b0890	Transmembrane
+b0890	Transmembrane helix
+b0892	3D-structure
+b0892	ATP-binding
+b0892	DNA replication
+b0892	Nucleotide-binding
+b0892	Reference proteome
+b0911	3D-structure
+b0911	Acetylation
+b0911	Chaperone
+b0911	Cytoplasm
+b0911	Direct protein sequencing
+b0911	Phosphoprotein
+b0911	RNA-binding
+b0911	Reference proteome
+b0911	Repeat
+b0911	Repressor
+b0911	Ribonucleoprotein
+b0911	Ribosomal protein
+b0912	3D-structure
+b0912	Conjugation
+b0912	Cytoplasm
+b0912	DNA recombination
+b0912	DNA-binding
+b0912	Direct protein sequencing
+b0912	Reference proteome
+b0912	Transcription
+b0912	Transcription regulation
+b0912	Translation regulation
+b0961	Cell inner membrane
+b0961	Cell membrane
+b0961	Membrane
+b0961	Reference proteome
+b0961	Transmembrane
+b0961	Transmembrane helix
+b0962	ATP-binding
+b0962	DNA-binding
+b0962	Direct protein sequencing
+b0962	Helicase
+b0962	Hydrolase
+b0962	Nucleotide-binding
+b0962	Reference proteome
+b0963	3D-structure
+b0963	Cytoplasm
+b0963	Direct protein sequencing
+b0963	Lyase
+b0963	Reference proteome
+b1084	3D-structure
+b1084	Cell inner membrane
+b1084	Cell membrane
+b1084	Cytoplasm
+b1084	Direct protein sequencing
+b1084	Endonuclease
+b1084	Hydrolase
+b1084	Magnesium
+b1084	Membrane
+b1084	Metal-binding
+b1084	Nuclease
+b1084	RNA-binding
+b1084	Reference proteome
+b1084	Zinc
+b1084	rRNA processing
+b1084	rRNA-binding
+b1084	tRNA processing
+b1084	tRNA-binding
+b1099	3D-structure
+b1099	DNA replication
+b1099	DNA-directed DNA polymerase
+b1099	Nucleotidyltransferase
+b1099	Reference proteome
+b1099	Transferase
+b1114	3D-structure
+b1114	ATP-binding
+b1114	Cytoplasm
+b1114	DNA damage
+b1114	DNA repair
+b1114	DNA-binding
+b1114	Helicase
+b1114	Hydrolase
+b1114	Nucleotide-binding
+b1114	Reference proteome
+b1343	ATP-binding
+b1343	Cytoplasm
+b1343	Helicase
+b1343	Hydrolase
+b1343	Nucleotide-binding
+b1343	RNA-binding
+b1343	Reference proteome
+b1343	Ribosome biogenesis
+b1412	3D-structure
+b1412	Direct protein sequencing
+b1412	FMN
+b1412	Flavoprotein
+b1412	NAD
+b1412	Oxidoreductase
+b1412	Reference proteome
+b1413	ATP-binding
+b1413	Helicase
+b1413	Hydrolase
+b1413	Nucleotide-binding
+b1413	Reference proteome
+b1653	ATP-binding
+b1653	Helicase
+b1653	Hydrolase
+b1653	Nucleotide-binding
+b1653	Reference proteome
+b1654	2Fe-2S
+b1654	3D-structure
+b1654	Cytoplasm
+b1654	Iron
+b1654	Iron-sulfur
+b1654	Metal-binding
+b1654	Redox-active center
+b1654	Reference proteome
+b1712	3D-structure
+b1712	Conjugation
+b1712	Cytoplasm
+b1712	DNA recombination
+b1712	DNA-binding
+b1712	Direct protein sequencing
+b1712	Reference proteome
+b1712	Transcription
+b1712	Transcription regulation
+b1712	Translation regulation
+b1808	ATP-binding
+b1808	DNA damage
+b1808	DNA repair
+b1808	DNA-binding
+b1808	Helicase
+b1808	Hydrolase
+b1808	Iron
+b1808	Iron-sulfur
+b1808	Metal-binding
+b1808	Nucleotide-binding
+b1808	Reference proteome
+b1860	ATP-binding
+b1860	Cytoplasm
+b1860	DNA damage
+b1860	DNA recombination
+b1860	DNA repair
+b1860	Helicase
+b1860	Hydrolase
+b1860	Nucleotide-binding
+b1860	Reference proteome
+b1860	SOS response
+b1861	3D-structure
+b1861	ATP-binding
+b1861	Cytoplasm
+b1861	DNA damage
+b1861	DNA recombination
+b1861	DNA repair
+b1861	DNA-binding
+b1861	Helicase
+b1861	Hydrolase
+b1861	Nucleotide-binding
+b1861	Reference proteome
+b1861	SOS response
+b2184	3D-structure
+b2184	ATP-binding
+b2184	DNA damage
+b2184	DNA repair
+b2184	DNA-binding
+b2184	Helicase
+b2184	Hydrolase
+b2184	Metal-binding
+b2184	Nucleotide-binding
+b2184	Reference proteome
+b2184	Zinc
+b2474	3D-structure
+b2474	ATP-binding
+b2474	Acyltransferase
+b2474	Cytoplasm
+b2474	Nucleotide-binding
+b2474	RNA-binding
+b2474	Reference proteome
+b2474	Transferase
+b2474	tRNA processing
+b2474	tRNA-binding
+b2533	3D-structure
+b2533	Chaperone
+b2533	Cytoplasm
+b2533	Hydrolase
+b2533	Magnesium
+b2533	Metal-binding
+b2533	RNA-binding
+b2533	Reference proteome
+b2533	Ribosome biogenesis
+b2533	Transcription
+b2533	Transcription antitermination
+b2533	Transcription regulation
+b2576	3D-structure
+b2576	ATP-binding
+b2576	Cytoplasm
+b2576	Helicase
+b2576	Hydrolase
+b2576	Nucleotide-binding
+b2576	RNA-binding
+b2576	Reference proteome
+b2576	Ribosome biogenesis
+b2627	Reference proteome
+b2756	3D-structure
+b2756	Antiviral defense
+b2756	Endonuclease
+b2756	Hydrolase
+b2756	Nuclease
+b2756	RNA-binding
+b2756	Reference proteome
+b2757	3D-structure
+b2757	Antiviral defense
+b2757	Reference proteome
+b2758	3D-structure
+b2758	Antiviral defense
+b2758	RNA-binding
+b2758	Reference proteome
+b2761	ATP-binding
+b2761	Antiviral defense
+b2761	DNA-binding
+b2761	Endonuclease
+b2761	Exonuclease
+b2761	Helicase
+b2761	Hydrolase
+b2761	Magnesium
+b2761	Metal-binding
+b2761	Nuclease
+b2761	Nucleotide-binding
+b2761	Reference proteome
+b2779	3D-structure
+b2779	Acetylation
+b2779	Cytoplasm
+b2779	Cytoskeleton
+b2779	Direct protein sequencing
+b2779	Glycolysis
+b2779	Lyase
+b2779	Magnesium
+b2779	Metal-binding
+b2779	Reference proteome
+b2779	Secreted
+b2819	3D-structure
+b2819	ATP-binding
+b2819	DNA damage
+b2819	DNA repair
+b2819	DNA-binding
+b2819	Direct protein sequencing
+b2819	Exonuclease
+b2819	Helicase
+b2819	Hydrolase
+b2819	Nuclease
+b2819	Nucleotide-binding
+b2819	Reference proteome
+b2820	3D-structure
+b2820	ATP-binding
+b2820	DNA damage
+b2820	DNA repair
+b2820	DNA-binding
+b2820	Direct protein sequencing
+b2820	Exonuclease
+b2820	Helicase
+b2820	Hydrolase
+b2820	Magnesium
+b2820	Metal-binding
+b2820	Nuclease
+b2820	Nucleotide-binding
+b2820	Reference proteome
+b2822	3D-structure
+b2822	ATP-binding
+b2822	DNA damage
+b2822	DNA repair
+b2822	DNA-binding
+b2822	Direct protein sequencing
+b2822	Exonuclease
+b2822	Helicase
+b2822	Hydrolase
+b2822	Nuclease
+b2822	Nucleotide-binding
+b2822	Reference proteome
+b3066	3D-structure
+b3066	DNA replication
+b3066	DNA-binding
+b3066	DNA-directed RNA polymerase
+b3066	Magnesium
+b3066	Metal-binding
+b3066	Nucleotidyltransferase
+b3066	Primosome
+b3066	Reference proteome
+b3066	Transcription
+b3066	Transferase
+b3066	Zinc
+b3066	Zinc-finger
+b3162	3D-structure
+b3162	ATP-binding
+b3162	Cytoplasm
+b3162	Direct protein sequencing
+b3162	Helicase
+b3162	Hydrolase
+b3162	Nucleotide-binding
+b3162	RNA-binding
+b3162	Reference proteome
+b3162	Stress response
+b3163	3D-structure
+b3163	Cell cycle
+b3163	Cell division
+b3163	Cell membrane
+b3163	Direct protein sequencing
+b3163	Lipoprotein
+b3163	Membrane
+b3163	Palmitate
+b3163	Reference proteome
+b3163	Repeat
+b3163	Signal
+b3163	TPR repeat
+b3164	3D-structure
+b3164	Cytoplasm
+b3164	Direct protein sequencing
+b3164	Magnesium
+b3164	Metal-binding
+b3164	Nucleotidyltransferase
+b3164	RNA-binding
+b3164	Reference proteome
+b3164	Stress response
+b3164	Transferase
+b3296	3D-structure
+b3296	Antibiotic resistance
+b3296	Direct protein sequencing
+b3296	RNA-binding
+b3296	Reference proteome
+b3296	Repressor
+b3296	Ribonucleoprotein
+b3296	Ribosomal protein
+b3296	Ribosome biogenesis
+b3296	Transcription
+b3296	Transcription antitermination
+b3296	Transcription regulation
+b3296	Transcription termination
+b3296	Translation regulation
+b3296	rRNA-binding
+b3303	3D-structure
+b3303	Acetylation
+b3303	Antibiotic resistance
+b3303	Direct protein sequencing
+b3303	RNA-binding
+b3303	Reference proteome
+b3303	Ribonucleoprotein
+b3303	Ribosomal protein
+b3303	rRNA-binding
+b3314	3D-structure
+b3314	Direct protein sequencing
+b3314	RNA-binding
+b3314	Reference proteome
+b3314	Ribonucleoprotein
+b3314	Ribosomal protein
+b3314	rRNA-binding
+b3652	ATP-binding
+b3652	DNA damage
+b3652	DNA recombination
+b3652	DNA repair
+b3652	DNA-binding
+b3652	Helicase
+b3652	Hydrolase
+b3652	Nucleotide-binding
+b3652	Reference proteome
+b3701	3D-structure
+b3701	Alternative promoter usage
+b3701	Cytoplasm
+b3701	DNA replication
+b3701	DNA-binding
+b3701	DNA-directed DNA polymerase
+b3701	Nucleotidyltransferase
+b3701	Reference proteome
+b3701	Transferase
+b3702	3D-structure
+b3702	ATP-binding
+b3702	Acetylation
+b3702	Cytoplasm
+b3702	DNA replication
+b3702	DNA replication inhibitor
+b3702	DNA-binding
+b3702	Nucleotide-binding
+b3702	Reference proteome
+b3702	Repressor
+b3702	Transcription
+b3702	Transcription regulation
+b3778	3D-structure
+b3778	ATP-binding
+b3778	DNA replication
+b3778	DNA-binding
+b3778	Helicase
+b3778	Hydrolase
+b3778	Nucleotide-binding
+b3778	Reference proteome
+b3779	3D-structure
+b3779	Hydrolase
+b3779	Reference proteome
+b3780	ATP-binding
+b3780	Cytoplasm
+b3780	Direct protein sequencing
+b3780	Helicase
+b3780	Hydrolase
+b3780	Nucleotide-binding
+b3780	RNA-binding
+b3780	Reference proteome
+b3783	3D-structure
+b3783	ATP-binding
+b3783	Direct protein sequencing
+b3783	Helicase
+b3783	Hydrolase
+b3783	Nucleotide-binding
+b3783	RNA-binding
+b3783	Reference proteome
+b3783	Transcription
+b3783	Transcription regulation
+b3783	Transcription termination
+b3813	3D-structure
+b3813	ATP-binding
+b3813	DNA damage
+b3813	DNA repair
+b3813	DNA replication
+b3813	DNA-binding
+b3813	Direct protein sequencing
+b3813	Helicase
+b3813	Hydrolase
+b3813	Nucleotide-binding
+b3813	Reference proteome
+b3813	SOS response
+b3822	3D-structure
+b3822	ATP-binding
+b3822	DNA damage
+b3822	DNA recombination
+b3822	DNA repair
+b3822	DNA-binding
+b3822	Direct protein sequencing
+b3822	Helicase
+b3822	Hydrolase
+b3822	Nucleotide-binding
+b3822	Reference proteome
+b3822	SOS response
+b3871	3D-structure
+b3871	Chaperone
+b3871	Cytoplasm
+b3871	Direct protein sequencing
+b3871	GTP-binding
+b3871	Hydrolase
+b3871	Nucleotide-binding
+b3871	RNA-binding
+b3871	Reference proteome
+b3871	Ribosome biogenesis
+b3871	rRNA-binding
+b3871	tRNA-binding
+b3929	3D-structure
+b3929	Cytoplasm
+b3929	Reference proteome
+b3935	3D-structure
+b3935	ATP-binding
+b3935	DNA replication
+b3935	DNA-binding
+b3935	Direct protein sequencing
+b3935	Helicase
+b3935	Hydrolase
+b3935	Metal-binding
+b3935	Nucleotide-binding
+b3935	Primosome
+b3935	Reference proteome
+b3935	Zinc
+b3935	Zinc-finger
+b4052	3D-structure
+b4052	ATP-binding
+b4052	DNA replication
+b4052	DNA-binding
+b4052	Helicase
+b4052	Hydrolase
+b4052	Nucleotide-binding
+b4052	Primosome
+b4052	Reference proteome
+b4059	3D-structure
+b4059	DNA damage
+b4059	DNA recombination
+b4059	DNA repair
+b4059	DNA replication
+b4059	DNA-binding
+b4059	Direct protein sequencing
+b4059	Phosphoprotein
+b4059	Reference proteome
+b4170	3D-structure
+b4170	ATP-binding
+b4170	DNA damage
+b4170	DNA repair
+b4170	Nucleotide-binding
+b4170	Reference proteome
+b4179	Acetylation
+b4179	Cytoplasm
+b4179	Direct protein sequencing
+b4179	Exonuclease
+b4179	Hydrolase
+b4179	Nuclease
+b4179	RNA-binding
+b4179	Reference proteome
+b4179	Stress response
+b4179	Virulence
+b4259	3D-structure
+b4259	DNA replication
+b4259	DNA-directed DNA polymerase
+b4259	Direct protein sequencing
+b4259	Nucleotidyltransferase
+b4259	Reference proteome
+b4259	Transferase
+b4350	ATP-binding
+b4350	Coiled coil
+b4350	DNA-binding
+b4350	Helicase
+b4350	Host-virus interaction
+b4350	Hydrolase
+b4350	Nucleotide-binding
+b4350	Reference proteome
+b4350	Restriction system
+b4372	3D-structure
+b4372	DNA replication
+b4372	DNA-directed DNA polymerase
+b4372	Nucleotidyltransferase
+b4372	Reference proteome
+b4372	Transferase

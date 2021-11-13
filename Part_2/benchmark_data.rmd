@@ -44,10 +44,6 @@ mapping = benchmark_set %>%
 dim(mapping)
 ```
 
-```{r}
-bnumber_bm = paste(mapping$bnumber, sep=" ", collapse=" ")
-write_file(bnumber_bm, "benchmark_data/bnumber_bm.txt")
-```
 
 # GoTerm benchmark
 ```{r}
@@ -66,12 +62,10 @@ write_delim(GO_genes_bm, "benchmark_data/GO_bm.tsv", delim='\t')
 ```{r}
 domains_genes_bm = benchmark_set %>% 
   select(uniprotID=Entry, interpro='Cross-reference (InterPro)') %>%
-  right_join(mapping) %>% # right join to remove those without bnumber
+  right_join(uniprot_mapping) %>% # right join to remove those without bnumber
   separate_rows(interpro, sep=';') %>%
   select(bnumber, interpro) %>%
-  filter(interpro != '') %>%
   arrange(bnumber)
-
 length(unique(domains_genes_bm$bnumber))
 write_delim(domains_genes_bm, "benchmark_data/interpro_bm.tsv", delim='\t')
 ```
@@ -80,7 +74,7 @@ write_delim(domains_genes_bm, "benchmark_data/interpro_bm.tsv", delim='\t')
 ```{r}
 keywords_genes_bm = benchmark_set %>% 
   select(uniprotID=Entry, keyword=Keywords) %>%
-  right_join(mapping) %>% # right join to remove those without bnumber
+  right_join(uniprot_mapping) %>% # right join to remove those without bnumber
   separate_rows(keyword, sep=';') %>%
   select(bnumber, keyword) %>%
   arrange(bnumber)
@@ -97,6 +91,7 @@ TU_genes_bm = mapping %>%
   left_join(TU_genes)
 length(unique(TU_genes_bm$bnumber))
 write_delim(TU_genes_bm, "benchmark_data/TU_bm.tsv", delim='\t')
+
 ```
 
 
