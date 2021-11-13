@@ -79,7 +79,8 @@ for i, target in enumerate(target_sets): #_ids:
 	if param.measure =='binomial': # binom.cdf(>=success, attempts, proba)
 		measure = binom.cdf(query_size - len(common_elements), query_size, 1 - float(target_elements_size)/population_size)
 	if param.measure =='hypergeometric':
-		measure = hypergeom.cdf(query_size - common_elements_size, population_size, int((1 - float(target_elements_size)/population_size)*population_size), query_size)
+		inverse_freq = int((1 - float(target_elements_size)/population_size)*population_size)
+		measure = hypergeom.cdf(query_size - common_elements_size, population_size, inverse_freq, query_size)
 	if param.measure =='chi2':
 		unique_query = query_size - common_elements_size
 		unique_target = target_elements_size - common_elements_size
@@ -100,16 +101,17 @@ if param.verbose:
 # PRINT SIGNIFICANT RESULTS
 results.sort(key=lambda an_item: an_item['measure'])
 
-for r in results:
-	# FDR
-	if param.adjust and r['measure'] > param.alpha * i / len(results): break
-	# limited output
-	
-	if param.limit > 0 and i+1>param.limit: break
-	# alpha threshold
-	
-	elif r['measure'] > param.alpha: break
-	# OUTPUT
-	pval = "{:.4f}".format(r['measure']) if r['measure']>0.01 else "{:.2e}".format(r['measure'])
-	print(f"{r['id']}\t{pval}\t{r['common_size']}\t{r['target_size']}")
+if param.measure != "coverage":
+	for r in results:
+		# FDR
+		if param.adjust and r['measure'] > param.alpha * i / len(results): break
+		
+		# limited output
+		if param.limit > 0 and i+1>param.limit: break
+		# alpha threshold
+		
+		elif r['measure'] > param.alpha: break
+		# OUTPUT
+		pval = "{:.4f}".format(r['measure']) if r['measure']>0.01 else "{:.2e}".format(r['measure'])
+		print(f"{r['id']}\t{pval}\t{r['common_size']}\t{r['target_size']}")
 
