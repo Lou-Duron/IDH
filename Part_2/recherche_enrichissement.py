@@ -13,15 +13,15 @@ start_time = time.time() # Execution time
 
 # Parameters
 parser = argparse.ArgumentParser(description='Search enriched terms/categories in the provided (gene) set')
+parser.add_argument('-p', '--password', required=True, help='Password to connect to the DBMS')
 parser.add_argument('-q', '--query', required=True, help='Query set.')
 parser.add_argument('-t', '--type', required=True, help='Target sets node type.')
 parser.add_argument('-s', '--species', required=True, type=int, help='Taxon id.')
-parser.add_argument('-p', '--password', required=True, help='Password to connect to the DBMS')
 parser.add_argument('-a', '--alpha', required=False, type=float, default=0.05, help='Significance threshold.')
 parser.add_argument('-c', '--adjust', required=False, action="store_true", help='Adjust for multiple testing (FDR).')
-parser.add_argument('-m', '--measure', required=False, default='binomial', help='Dissimilarity index: binomial (default), hypergeometric, chi2, coverage .')
+parser.add_argument('-m', '--metric', required=False, default='binomial', help='Dissimilarity method: binomial (default), hypergeometric, chi2, coverage.')
 parser.add_argument('-l', '--limit', required=False, type=int, default=0, help='Maximum number of results to report.')
-parser.add_argument('-e', '--eval', required=False, action="store_true", help='Metrics evaluation if true')
+parser.add_argument('-e', '--eval', required=False, action="store_true", help='Metrics evaluation')
 parser.add_argument('-v', '--verbose', required=False, action="store_true", help='Talk a lot.')
 arg = parser.parse_args()
 
@@ -112,16 +112,16 @@ for count, s in enumerate(sets):
 	if c < 2:
 		next
 	if not arg.eval: # If we are not evaluating the metrics
-		if arg.measure=='binomial':
+		if arg.metric=='binomial':
 			measure = binomial(c, q, t, g)
-		elif arg.measure == 'coverage':
+		elif arg.metric == 'coverage':
 			measure = coverage(c, q, t)
-		elif arg.measure =='hypergeometric':
+		elif arg.metric =='hypergeometric':
 			measure = hypergeometric(q, t, g)
-		elif arg.measure =='chi2':
+		elif arg.metric =='chi2':
 			measure = chi2(c, q, t, g)
 		else:
-			print(f'Sorry, {arg.measure} not implemented')
+			print(f'Sorry, {arg.metric} not implemented')
 			print("Error : Please choose an implemented method : binomial, coverage, hypergeometric, chi2")
 			exit(1)
 		r = { 'id': sid, 'desc': s['t']['desc'], 'common.n':c, 'target.n': t, 'measure': measure, 'elements.target': elements, 'elements.common': common_elements }
