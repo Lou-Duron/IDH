@@ -1,0 +1,65 @@
+---
+title: "benchmark data analysis"
+author: "Lou Duron and Victoria Fathi"
+output:
+  html_document:
+    code_folding: show
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 4
+    theme: paper
+    highlight: tango
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+setwd('/home/victoriafathi/Bureau/M2/m2idh/Part_2/') #to modify
+library("tidyverse")
+```
+
+# Load data
+```{r}
+benchmark_set = read_tsv('sets/uniprot-helicaseorganism__EscherichiacolistrainK12ECOLI--.tab')
+benchmark_set_filter = read.table('benchmark_data/bnumber_bm.txt', sep = "" , header = F)
+unlist(benchmark_set_filter, use.names = FALSE)
+GO = read_tsv('benchmark_data/GO_bm.tsv')
+Interpro = read_tsv('benchmark_data/interpro_bm.tsv')
+Keyword = read_tsv('benchmark_data/keyword_bm.tsv')
+Pathway = read_tsv('benchmark_data/Pathway_bm.tsv')
+TU = read_tsv('benchmark_data/TU_bm.tsv')
+Pubmed = read_tsv('benchmark_data/Pubmed_bm.tsv')
+```
+
+The first step was to keep genes present in Uniprot database and Ecocyc database
+```{r}
+length(benchmark_set$Entry)-length(benchmark_set_filter)
+```
+6 genes are lost during this process on 75.
+-> montre le problème avec l'utilisation de plusieurs bases de données pour la recherche d'enrichement et notre benchmark
+
+# enrichment target set distribution
+
+```{r}
+genes_without_GO = sum(is.na(GO$GO))
+genes_without_Pubmed = sum(is.na(Pubmed$PMID))
+genes_without_Interpro = sum(is.na(Interpro$interpro))
+genes_without_Keyword = sum(is.na(Keyword$keyword))
+genes_without_TU = sum(is.na(TU$Site))
+genes_without_Pathway = sum(is.na(Pathway$Pathways))
+```
+
+```{r}
+aze = data.frame(GOTerms = genes_without_GO, Pubmed_Ref = genes_without_Pubmed, Interpro_domains = genes_without_Interpro, Keyword_annotation = genes_without_Keyword, TU_annotations = genes_without_TU, Pathway_annotation =  genes_without_Pathway )
+```
+
+```{r}
+aze = GO %>% group_by(bnumber) %>% count('GO') %>% select(bnumber, n)
+```
+
+
+
+They all have at least one GOTerm associated
+ 
+
+
