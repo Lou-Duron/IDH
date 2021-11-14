@@ -13,16 +13,16 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r}
+```{r, message = FALSE}
 setwd('/home/victoriafathi/Bureau/M2/m2idh/Part_2/') #to modify
 library("tidyverse")
 ```
 
 # Load data
-```{r}
-benchmark_set = read_tsv('sets/uniprot-helicaseorganism__EscherichiacolistrainK12ECOLI--.tab')
+```{r, message=FALSE}
+benchmark_set = read_tsv('benchmark_data//uniprot-helicaseorganism__EscherichiacolistrainK12ECOLI--.tab')
 benchmark_set_filter = read.table('benchmark_data/bnumber_bm.txt', sep = "" , header = F)
-unlist(benchmark_set_filter, use.names = FALSE)
+benchmark_set_filter = unlist(benchmark_set_filter, use.names = FALSE)
 GO = read_tsv('benchmark_data/GO_bm.tsv')
 Interpro = read_tsv('benchmark_data/interpro_bm.tsv')
 Keyword = read_tsv('benchmark_data/keyword_bm.tsv')
@@ -31,14 +31,14 @@ TU = read_tsv('benchmark_data/TU_bm.tsv')
 Pubmed = read_tsv('benchmark_data/Pubmed_bm.tsv')
 ```
 
-The first step was to keep genes present in Uniprot database and Ecocyc database
+
+# Genes present in Uniprot database and Ecocyc database
 ```{r}
 length(benchmark_set$Entry)-length(benchmark_set_filter)
 ```
-6 genes are lost during this process on 75.
--> montre le problème avec l'utilisation de plusieurs bases de données pour la recherche d'enrichement et notre benchmark
+6 genes are lost during this process on 75. We see here that genes don't necessarily have an entry in Uniprot and Ecocyc. This shows that the choice of the database(s) is crucial for enrichment analysis.
 
-# enrichment target set distribution
+# Enrichment target set distribution
 
 ```{r}
 genes_without_GO = sum(is.na(GO$GO))
@@ -50,16 +50,56 @@ genes_without_Pathway = sum(is.na(Pathway$Pathways))
 ```
 
 ```{r}
-aze = data.frame(GOTerms = genes_without_GO, Pubmed_Ref = genes_without_Pubmed, Interpro_domains = genes_without_Interpro, Keyword_annotation = genes_without_Keyword, TU_annotations = genes_without_TU, Pathway_annotation =  genes_without_Pathway )
+data.frame(GOTerms = genes_without_GO, Pubmed_Ref = genes_without_Pubmed, Interpro_domains = genes_without_Interpro, Keyword_annotation = genes_without_Keyword, TU_annotations = genes_without_TU, Pathway_annotation =  genes_without_Pathway )
 ```
+On all the annotations, Pathway annotations are lacking for 65 genes on 69. This means we won't use this annotation to test our benchmark. Note that the benchmark dataset has been acquired through the uniprot database.
+
+Let's see the number of annotations per genes for each type of target set
+```{r}
+GO_count_genes  = GO %>% group_by(bnumber) %>% count('GO', name = 'GO_count') %>% select(bnumber, GO_count) %>% arrange(GO_count) %>% group_by(GO_count) %>% count('bnumber', name = 'bnumber_count') %>% select (GO_count, bnumber_count)
+hist(GO_count_genes$GO_count, xlab = 'number of GOTerm', main= "Distribution of the number of GOTerms in genes annotation")
+summary(GO_count_genes$GO_count)
+```
+On average, genes are annotated with 10 GOTerms which is higher than in our database. 
+This is not surprising considering those genes have been chosen as "reviewed".
+However, we don't know if the GOTerms poorly described our  or not (closed to the root?)
 
 ```{r}
-aze = GO %>% group_by(bnumber) %>% count('GO') %>% select(bnumber, n)
+Keyword_count_genes  = Keyword %>% group_by(bnumber) %>% count('keyword', name = 'Keyword_count') %>% select(bnumber, Keyword_count) %>% arrange(Keyword_count) %>% group_by(Keyword_count) %>% count('bnumber', name = 'bnumber_count') %>% select (Keyword_count, bnumber_count)
+
+hist(Keyword_count_genes$Keyword_count, xlab = 'number of Keyword', main = 'Distribution of the number of Keyword in genes annotation')
+summary(Keyword_count_genes$Keyword_count)
 ```
+The number of Keyword and GOTerms associated with genes are similar. This is because
+Uniprot manually mapped GOTerm to keywords, EC number, InterPro matches or HAMAP family rules and only then transferred automatically to the entries. Keyword and GOTerms are not independent in the uniprot database. GOTerms are a summary of multiple annotations and seems the best option for an enrichment analysis. 
+
+```{r}
+Interpro_count_genes  = Interpro %>% group_by(bnumber) %>% count('interpro', name = 'Interpro_count') %>% select(bnumber, Interpro_count) %>% arrange(Interpro_count) %>% group_by(Interpro_count) %>% count('bnumber', name = 'bnumber_count') %>% select (Interpro_count, bnumber_count)
 
 
+hist(Interpro_count_genes$Interpro_count, xlab = 'number of Interpro Domain annotated', main="Distribution of the number of Interpro in genes annotation", breaks=4)
+summary(Interpro_count_genes$Interpro_count)
+```
+There are on average 7 keywords associated with each gene. This target set is complementary to GOTerms and Keyword sets that are described at the functional level.
 
-They all have at least one GOTerm associated
- 
+
+```{r}
+TU_count_genes  = TU %>% group_by(bnumber) %>% count('Site', name = 'TU_count') %>% select(bnumber, TU_count) %>% arrange(TU_count) %>% group_by(TU_count) %>% count('bnumber', name = 'bnumber_count') %>% select (TU_count, bnumber_count)
+
+hist(TU_count_genes$TU_count, xlab = 'number of TU', main = "Distribution of the number of TU in genes annotation ")
+summary(Keyword_count_genes$Keyword_count)
+```
+Transcription Unit described the genomics organization. This is thus not a good approach as a first target set for enrichment analysis. However, associated with gene coexpression (StringDB data), this target set is complementary to GOTerms and Keyword enrichment analysis.
+
+```{r}
+Pubmed_count_genes  = Pubmed %>% group_by(bnumber) %>% count('PMID', name = 'PMID_count') %>% select(bnumber, PMID_count) %>% arrange(PMID_count) %>% group_by(PMID_count) %>% count('bnumber', name = 'bnumber_count') %>% select (PMID_count, bnumber_count)
+hist(Pubmed_count_genes$PMID_count, xlab = 'number of GOTerm', main='Distribution of the number of Pubmed references in genes annotation')
+summary(Pubmed_count_genes$PMID_count)
+```
+Since the genes chosen for the benchmark are reviewed, they are very well described in the literature. However pubmed references require to go through the literature referenced to better understand the query dataset. 
+
+Functional annotation can guide an enrichment analysis and points towards other target sets to refine the analysis. That is why we will use GOTerms and Keywords annotation to test four different metrics.  
+
+
 
 
