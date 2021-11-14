@@ -16,7 +16,7 @@ editor_options:
 # Set root of project 
 
 ```{r, warning=FALSE, message=FALSE}
-setwd('/home/victoriafathi/Bureau/M2/m2idh/Part_2/') #to modify
+setwd('/home/lou/Desktop/M2/m2idh/Part_2/')
 library(tidyverse)
 library(jsonlite)
 ```
@@ -37,7 +37,7 @@ uniprot_mapping = uniprot %>%
   filter(!is.na(bnumber)) %>% # 2021 → P0DQD7 and P0A6D5 are lost (no bnumber)
   arrange(bnumber)
 uniprot_mapping
-#write_delim(uniprot_mapping, "import/Alias/uniprot_mapping.tsv", delim='\t')
+write_delim(uniprot_mapping, "import/Alias/uniprot_mapping.tsv", delim='\t')
 ```
 
 
@@ -50,12 +50,12 @@ keywords_genes = uniprot %>%
   separate_rows(keyword, sep=';') %>%
   select(bnumber, keyword) %>%
   arrange(bnumber)
-#write_delim(keywords_genes, "import/import/Keyword/keyword_link.tsv",", delim='\t')
+write_delim(keywords_genes, "import/import/Keyword/keyword_link.tsv",", delim='\t')
 ```
 
 ```{r}
 keywords = length(unique(keywords_genes$keyword))
-#write_delim(keywords, "import/import/Keyword/keyword.tsv",", delim='\t')
+write_delim(keywords, "import/import/Keyword/keyword.tsv",", delim='\t')
 ```
 
 ## Interpro domain
@@ -66,12 +66,12 @@ domains_genes = uniprot %>%
   separate_rows(interpro, sep=';') %>%
   select(bnumber, interpro) %>%
   arrange(bnumber)
-#write_delim(domains_genes, "import/Interpro/interpro_link.tsv", delim='\t')
+write_delim(domains_genes, "import/Interpro/interpro_link.tsv", delim='\t')
 ```
 
 ```{r}
 interpro = length(unique(domains_genes$interpro))
-#write_delim(interpro, "import/import/Interpro/interpro.tsv", delim='\t')
+write_delim(interpro, "import/import/Interpro/interpro.tsv", delim='\t')
 ```
 
 ## GO Terms
@@ -82,7 +82,7 @@ GO_genes = uniprot %>%
   separate_rows(GO, sep='; ') %>%
   select(bnumber, GO) %>%
   arrange(bnumber)
-#write_delim(GO_genes, "import/GO/GO_link.tsv", delim='\t')
+write_delim(GO_genes, "import/GO/GO_link.tsv", delim='\t')
 ```
 
 # Ecocyc
@@ -98,7 +98,7 @@ ecocyc_mapping = ecocyc %>%
   select(bnumber, ecocyc=Genes) %>%
   filter(!is.na(bnumber)) %>% # 2021 → P0DQD7 and P0A6D5 are lost (no bnumber)
   arrange(bnumber)
-#write_delim(ecocyc_mapping, "import/Alias/ecocyc_mapping.tsv", delim='\t')
+write_delim(ecocyc_mapping, "import/Alias/ecocyc_mapping.tsv", delim='\t')
 ```
 
 ## TU
@@ -113,7 +113,7 @@ TU_genes = TU %>%
   right_join(ecocyc_mapping) %>% 
   select(bnumber, Site) %>% 
   arrange(bnumber)
-#write_delim(TU_genes, "import/TU/TU_link.tsv", delim='\t')
+write_delim(TU_genes, "import/TU/TU_link.tsv", delim='\t')
 ```
 
 ## Pathway
@@ -128,5 +128,5 @@ pathway_gene = pathway %>%
   right_join(ecocyc_mapping) %>% 
   select(bnumber, Pathways) %>% 
   arrange(bnumber)
-#write_delim(pathway_gene, "import/Pathway/pathway_link.tsv", delim='\t')
+write_delim(pathway_gene, "import/Pathway/pathway_link.tsv", delim='\t')
 ```

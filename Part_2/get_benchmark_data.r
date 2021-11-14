@@ -2,7 +2,7 @@
  
  
 ####### LIBRARY #####
-setwd('/home/victoriafathi/Bureau/M2/m2idh/Part_2/') #to modify
+setwd('/home/lou/Desktop/M2/m2idh/Part_2/')
 library("tidyverse")
 ####### LIBRARY #####
 
@@ -30,7 +30,7 @@ dim(mapping) # check
 
 # Conversion to sets format: space separated
 bnumber_bm = paste(mapping$bnumber, sep=" ", collapse=" ")
-#write_file(bnumber_bm, "benchmark_data/bnumber_bm.txt")
+write_file(bnumber_bm, "benchmark_data/bnumber_bm.txt")
 
 
 # GoTerm benchmark
@@ -41,7 +41,7 @@ GO_genes_bm = benchmark_set %>%
   separate_rows(GO, sep='; ')%>%
   arrange(bnumber)
 length(unique(GO_genes_bm$bnumber)) #check
-#write_delim(GO_genes_bm, "benchmark_data/GO_bm.tsv", delim='\t')
+write_delim(GO_genes_bm, "benchmark_data/GO_bm.tsv", delim='\t')
 
 
 # Interpro Domains 
@@ -54,7 +54,7 @@ domains_genes_bm = benchmark_set %>%
   arrange(bnumber)
 
 length(unique(domains_genes_bm$bnumber)) #check
-#write_delim(domains_genes_bm, "benchmark_data/interpro_bm.tsv", delim='\t')
+write_delim(domains_genes_bm, "benchmark_data/interpro_bm.tsv", delim='\t')
 
 
 # Keywords
@@ -65,7 +65,7 @@ keywords_genes_bm = benchmark_set %>%
   select(bnumber, keyword) %>%
   arrange(bnumber)
 length(unique(GO_genes_bm$bnumber)) #check
-#write_delim(keywords_genes_bm, "benchmark_data/keyword_bm.tsv", delim='\t')
+write_delim(keywords_genes_bm, "benchmark_data/keyword_bm.tsv", delim='\t')
 
 
 # TU
@@ -74,7 +74,7 @@ TU_genes_bm = mapping %>%
   select(bnumber) %>%
   left_join(TU_genes)
 length(unique(TU_genes_bm$bnumber)) #Check
-#write_delim(TU_genes_bm, "benchmark_data/TU_bm.tsv", delim='\t')
+write_delim(TU_genes_bm, "benchmark_data/TU_bm.tsv", delim='\t')
 
 
 # Pathway
@@ -83,7 +83,7 @@ Pathway_genes_bm = mapping %>%
   select(bnumber) %>%
   left_join(Pathway_genes)
 length(unique(Pathway_genes_bm$bnumber))
-#write_delim(Pathway_genes_bm, "benchmark_data/Pathway_bm.tsv", delim='\t')
+write_delim(Pathway_genes_bm, "benchmark_data/Pathway_bm.tsv", delim='\t')
 
 
 # PubMed
@@ -92,6 +92,6 @@ Pubmed_bm = mapping %>%
   select(bnumber) %>%
   left_join(PubMed)
 length(unique(Pubmed_bm$bnumber))
-#write_delim(Pubmed_bm, "benchmark_data/Pubmed_bm.tsv", delim='\t')
+write_delim(Pubmed_bm, "benchmark_data/Pubmed_bm.tsv", delim='\t')
 
 

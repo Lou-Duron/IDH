@@ -13,27 +13,16 @@ editor_options:
   chunk_output_type: console
 ---
 
-<<<<<<< HEAD
-```{r}
-=======
 ```{r, message = FALSE}
->>>>>>> main
-setwd('/home/victoriafathi/Bureau/M2/m2idh/Part_2/') #to modify
+setwd('/home/lou/Desktop/M2/m2idh/Part_2/')
 library("tidyverse")
 ```
 
 # Load data
-<<<<<<< HEAD
-```{r}
-benchmark_set = read_tsv('sets/uniprot-helicaseorganism__EscherichiacolistrainK12ECOLI--.tab')
-benchmark_set_filter = read.table('benchmark_data/bnumber_bm.txt', sep = "" , header = F)
-unlist(benchmark_set_filter, use.names = FALSE)
-=======
 ```{r, message=FALSE}
 benchmark_set = read_tsv('benchmark_data//uniprot-helicaseorganism__EscherichiacolistrainK12ECOLI--.tab')
 benchmark_set_filter = read.table('benchmark_data/bnumber_bm.txt', sep = "" , header = F)
 benchmark_set_filter = unlist(benchmark_set_filter, use.names = FALSE)
->>>>>>> main
 GO = read_tsv('benchmark_data/GO_bm.tsv')
 Interpro = read_tsv('benchmark_data/interpro_bm.tsv')
 Keyword = read_tsv('benchmark_data/keyword_bm.tsv')
@@ -42,16 +31,6 @@ TU = read_tsv('benchmark_data/TU_bm.tsv')
 Pubmed = read_tsv('benchmark_data/Pubmed_bm.tsv')
 ```
 
-<<<<<<< HEAD
-The first step was to keep genes present in Uniprot database and Ecocyc database
-```{r}
-length(benchmark_set$Entry)-length(benchmark_set_filter)
-```
-6 genes are lost during this process on 75.
--> montre le problème avec l'utilisation de plusieurs bases de données pour la recherche d'enrichement et notre benchmark
-
-# enrichment target set distribution
-=======
 
 # Genes present in Uniprot database and Ecocyc database
 ```{r}
@@ -60,7 +39,6 @@ length(benchmark_set$Entry)-length(benchmark_set_filter)
 6 genes are lost during this process on 75. We see here that genes don't necessarily have an entry in Uniprot and Ecocyc. This shows that the choice of the database(s) is crucial for enrichment analysis.
 
 # Enrichment target set distribution
->>>>>>> main
 
 ```{r}
 genes_without_GO = sum(is.na(GO$GO))
@@ -72,19 +50,6 @@ genes_without_Pathway = sum(is.na(Pathway$Pathways))
 ```
 
 ```{r}
-<<<<<<< HEAD
-aze = data.frame(GOTerms = genes_without_GO, Pubmed_Ref = genes_without_Pubmed, Interpro_domains = genes_without_Interpro, Keyword_annotation = genes_without_Keyword, TU_annotations = genes_without_TU, Pathway_annotation =  genes_without_Pathway )
-```
-
-```{r}
-aze = GO %>% group_by(bnumber) %>% count('GO') %>% select(bnumber, n)
-```
-
-
-
-They all have at least one GOTerm associated
- 
-=======
 data.frame(GOTerms = genes_without_GO, Pubmed_Ref = genes_without_Pubmed, Interpro_domains = genes_without_Interpro, Keyword_annotation = genes_without_Keyword, TU_annotations = genes_without_TU, Pathway_annotation =  genes_without_Pathway )
 ```
 On all the annotations, Pathway annotations are lacking for 65 genes on 69. This means we won't use this annotation to test our benchmark. Note that the benchmark dataset has been acquired through the uniprot database.
@@ -136,6 +101,5 @@ Since the genes chosen for the benchmark are reviewed, they are very well descri
 Functional annotation can guide an enrichment analysis and points towards other target sets to refine the analysis. That is why we will use GOTerms and Keywords annotation to test four different metrics.  
 
 
->>>>>>> main
 
 

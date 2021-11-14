@@ -145,7 +145,7 @@ print(f"Finished in {round(time.time() - start_time, 3)} seconds !   ")
 print("Significant results :")
 if not arg.eval:
 	results.sort(key=lambda an_item: an_item['measure'])
-	print("ID   metric   ratio   Common_elements") #################
+	print("ID   metric   ratio   Common_elements") 
 	for count, r in enumerate(results):
 		if arg.metric != 'coverage' and arg.adjust and r['measure'] > arg.alpha * count+1 / len(results): break # FDR
 		if arg.limit > 0 and count+1>arg.limit: break # Limited output
@@ -161,7 +161,7 @@ else:
 	for key in results.keys():
 		results[key].sort(key=lambda an_item: an_item['measure'])
 		print(f"\n{key} :")
-		print("ID   metric   ratio   Common_elements") #################
+		print("ID   metric   ratio   Common_elements") 
 		for count, r in enumerate(results[key]):
 			if key != 'Coverage' and arg.adjust and r['measure'] > arg.alpha * count+1 / len(results): break # FDR
 			if arg.limit > 0 and count+1>arg.limit: break # Limited output
