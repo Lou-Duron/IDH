@@ -29,6 +29,8 @@ The first part has been done in collaboration as part of IDH class. The second p
 
 ## How to navigate between branches
 
+:warning: By switching branches, the documentation (README.md) will change according to work done by each student. :warning:  
+
 ### Directly from GitLab
 
 You can switch between branches directly from GitLab. This allows you to preview selected branch files and access the documentation (README.md). 
