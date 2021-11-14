@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
     <title>
-        HackMD - Collaborative Markdown Knowledge Base
+        Intégration des données avec Neo4J - HackMD
     </title>
     <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
     <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
@@ -34,7 +34,7 @@
 </head>
 
 <body>
-    <div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true"><h2 id="Intégration-des-données" data-id="Intégration-des-données"><a class="anchor hidden-xs" href="#Intégration-des-données" title="Intégration-des-données"><span class="octicon octicon-link"></span></a><span>Intégration des données</span></h2><h3 id="Genes" data-id="Genes"><a class="anchor hidden-xs" href="#Genes" title="Genes"><span class="octicon octicon-link"></span></a><span>Genes</span></h3><pre><code class="typescript hljs"><span class="token constant">LOAD</span> <span class="token constant">CSV</span> <span class="token constant">WITH</span> <span class="token constant">HEADERS</span> <span class="token constant">FROM</span> <span class="token string">'file:///Gene/gene.tsv'</span> <span class="token constant">AS</span> row <span class="token constant">FIELDTERMINATOR</span> <span class="token string">'\t'</span> 
+    <div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true"><h1 id="Intégration-des-données-avec-Neo4J" data-id="Intégration-des-données-avec-Neo4J"><a class="anchor hidden-xs" href="#Intégration-des-données-avec-Neo4J" title="Intégration-des-données-avec-Neo4J"><span class="octicon octicon-link"></span></a><span>Intégration des données avec Neo4J</span></h1><h2 id="Genes" data-id="Genes"><a class="anchor hidden-xs" href="#Genes" title="Genes"><span class="octicon octicon-link"></span></a><span>Genes</span></h2><pre><code class="typescript hljs"><span class="token constant">LOAD</span> <span class="token constant">CSV</span> <span class="token constant">WITH</span> <span class="token constant">HEADERS</span> <span class="token constant">FROM</span> <span class="token string">'file:///Gene/gene.tsv'</span> <span class="token constant">AS</span> row <span class="token constant">FIELDTERMINATOR</span> <span class="token string">'\t'</span> 
 <span class="token constant">CREATE</span> <span class="token punctuation">(</span>n<span class="token operator">:</span>Gene<span class="token punctuation">)</span>
 <span class="token constant">SET</span> n <span class="token operator">=</span> row<span class="token punctuation">,</span>
  n<span class="token punctuation">.</span>id <span class="token operator">=</span> row<span class="token punctuation">.</span>bnumber<span class="token punctuation">,</span>
@@ -169,8 +169,8 @@
 <span class="token constant">MATCH</span> <span class="token punctuation">(</span>g1<span class="token operator">:</span>Gene<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span>g2<span class="token operator">:</span>Gene<span class="token punctuation">)</span> 
 <span class="token constant">WHERE</span> g1<span class="token punctuation">.</span>id<span class="token operator">=</span>row<span class="token punctuation">.</span>protein1
 <span class="token constant">AND</span> g2<span class="token punctuation">.</span>id<span class="token operator">=</span>row<span class="token punctuation">.</span>protein2
-<span class="token constant">WITH</span> g1<span class="token punctuation">,</span>g2 
-<span class="token constant">MERGE</span> <span class="token punctuation">(</span>g1<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span><span class="token operator">:</span>associated_with<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>g2<span class="token punctuation">)</span>
+<span class="token constant">WITH</span> g1<span class="token punctuation">,</span> g2<span class="token punctuation">,</span> <span class="token function">toInteger</span><span class="token punctuation">(</span>row<span class="token punctuation">.</span>neighborhood<span class="token punctuation">)</span> <span class="token constant">AS</span> phylo_value<span class="token punctuation">,</span> <span class="token function">toInteger</span><span class="token punctuation">(</span>row<span class="token punctuation">.</span>experimental<span class="token punctuation">)</span> <span class="token constant">AS</span> interaction_value  
+<span class="token constant">MERGE</span> <span class="token punctuation">(</span>g1<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span><span class="token operator">:</span>associated_with<span class="token punctuation">{</span>phylo_link<span class="token operator">:</span> phylo_value<span class="token punctuation">,</span> interaction<span class="token operator">:</span> interaction_value<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>g2<span class="token punctuation">)</span>
 </code></pre></div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
@@ -179,10 +179,8 @@
             </a>
             <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
                 <div class="toc"><ul class="nav">
-<li><a href="#Intégration-des-données" title="Intégration des données">Intégration des données</a><ul class="nav">
+<li class=""><a href="#Intégration-des-données-avec-Neo4J" title="Intégration des données avec Neo4J">Intégration des données avec Neo4J</a><ul class="nav">
 <li><a href="#Genes" title="Genes">Genes</a></li>
-</ul>
-</li>
 <li><a href="#InterPro" title="InterPro">InterPro</a></li>
 <li><a href="#KeyWords" title="KeyWords">KeyWords</a></li>
 <li><a href="#GoTerms" title="GoTerms">GoTerms</a></li>
@@ -190,7 +188,9 @@
 <li><a href="#Pathway" title="Pathway">Pathway</a></li>
 <li><a href="#Alias" title="Alias">Alias</a></li>
 <li><a href="#PubMed" title="PubMed">PubMed</a></li>
-<li class=""><a href="#Co-expression-“Associated_with”" title="Co-expression (“Associated_with”)">Co-expression (“Associated_with”)</a></li>
+<li><a href="#Co-expression-“Associated_with”" title="Co-expression (“Associated_with”)">Co-expression (“Associated_with”)</a></li>
+</ul>
+</li>
 </ul>
 </div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
             </ul>
@@ -198,18 +198,18 @@
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
         <div class="toc"><ul class="nav">
-<li><a href="#Intégration-des-données" title="Intégration des données">Intégration des données</a><ul class="nav">
-<li><a href="#Genes" title="Genes">Genes</a></li>
+<li class=""><a href="#Intégration-des-données-avec-Neo4J" title="Intégration des données avec Neo4J">Intégration des données avec Neo4J</a><ul class="nav">
+<li class=""><a href="#Genes" title="Genes">Genes</a></li>
+<li class=""><a href="#InterPro" title="InterPro">InterPro</a></li>
+<li class=""><a href="#KeyWords" title="KeyWords">KeyWords</a></li>
+<li class=""><a href="#GoTerms" title="GoTerms">GoTerms</a></li>
+<li class=""><a href="#TU" title="TU">TU</a></li>
+<li class=""><a href="#Pathway" title="Pathway">Pathway</a></li>
+<li class=""><a href="#Alias" title="Alias">Alias</a></li>
+<li class=""><a href="#PubMed" title="PubMed">PubMed</a></li>
+<li class=""><a href="#Co-expression-“Associated_with”" title="Co-expression (“Associated_with”)">Co-expression (“Associated_with”)</a></li>
 </ul>
 </li>
-<li><a href="#InterPro" title="InterPro">InterPro</a></li>
-<li><a href="#KeyWords" title="KeyWords">KeyWords</a></li>
-<li><a href="#GoTerms" title="GoTerms">GoTerms</a></li>
-<li><a href="#TU" title="TU">TU</a></li>
-<li><a href="#Pathway" title="Pathway">Pathway</a></li>
-<li><a href="#Alias" title="Alias">Alias</a></li>
-<li><a href="#PubMed" title="PubMed">PubMed</a></li>
-<li class=""><a href="#Co-expression-“Associated_with”" title="Co-expression (“Associated_with”)">Co-expression (“Associated_with”)</a></li>
 </ul>
 </div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
     </div>
