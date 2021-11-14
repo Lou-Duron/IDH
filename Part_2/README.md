@@ -1,57 +1,54 @@
-# Welcome to Enrichment analysis project
+Welcome to Enrichment analysis project (branch : lou)
+===
 
-This Gitlab summarizes the work done during IDH (Heterogenous Data Integration) class as part of the Master Sc in Bioinformatics of Toulouse.
+**Authors : Lou Duron**
 
-**Authors :**
-- **Victoria Fathi**
-- **Lou Duron**
+# Descritpion
+In this GitLab project, you will find all files and documentation related to E.coli enrichment analysis project.
 
-## Organisation
+:warning: You are on the branch "lou", you will find here the documentation regarding the work done by Lou Duron :warning:
+
+# Organisation
 
 - **benchmark_data** : all data related to the benchmark
-- **raw_data** : all data related to E.coli retrieved form UniProt and EcoCyc 
 - **import** : all files needed to create the data base
 - **query_sets** : query sets for enrichment analysis
-- **Neo4j_Roland.py** : initial script (this has been modified in each branch)
-- **data_integration_procedure.hmtl** : procedure used to integrate E.coli data in Neo4j database.
+- **raw_data** : all data related to E.coli retrieved form UniProt and EcoCyc 
+- **CR_projet_IDH_Lou_Duron.pdf** : project report
+- **Enrichment.py** : modified script for enrichment analysis
+- **Intégration_des_données_Neo4j.hmtl** : procedure used to integrate E.coli data in Neo4j database.
 - **get_data.Rmd** : procedure used to prepare data for integration
 - **get_benchmark_data.r** : procedure used to prepare benchmark data for analysis
 - **benchmark_analysis.Rmd** : procedure used for benchmark analysis
 
+# Enrichment.py documentation
 
-## Description
+Required packages :
+- scipy 1.5.3 
+- py2neo 2021.2.3
 
-This project is divided in two parts.
-- Data intregration
-- Enrichment analysis
-
-The first part has been done in collaboration as part of IDH class. The second part had to be done individualy, therefore this GitLab project has been divided in two branches (lou and vic).
-
-## How to navigate between branches
-
-:warning: By switching branches, the documentation (README.md) will change according to work done by each student. :warning:  
-
-### Directly from GitLab
-
-You can switch between branches directly from GitLab. This allows you to preview selected branch files and access the documentation (README.md). 
-![](https://i.imgur.com/1C1CQD0.png)
-
-### From terminal
-
-Once the project has been cloned, you can between switch branches directly from a terminal.
-```
-git checkout <branch_name>
+## How to use
+```tiddlywiki
+Enrichment.py -p [PASSWORD] -q [QUERY] -t [NODE_TYPE] -s [TAXON_ID] [OPTION]
+-p    --password    [required] Password to connect to the DBMS.
+-q    --query    [required] Query set.
+-t    --type    [required] Target sets node type.
+-s    --spieces    [required] Taxon id (int).
+-a    --alpha    [optional] Significance threshold (float).
+-c    --adjust    [optional] Adjust for multiple testing (FDR).
+-m    --metric    [optional] Dissimilarity method: binomial (default), hypergeometric, chi2, coverage.
+-l    --limit    [optional] Maximum number of results to report (int).
+-e    --eval    [optional] Metrics evaluation.
+-v    --verbose    [optional] Talk a lot.
 ```
 
-You can also look in witch branch you are.
+## Example of use
+```typescript
+./Enrichment.py -p password -q query_sets/set01.txt -t GOTerm -s 511145 alpha 0.2 -c -m chi2 -l 10
 ```
-git branch -a
-```
+This will print the first 10 enriched GOTerm in set01.txt, using chi 2 of independance, with a significance threshold of 0.2 and using adjust for mutliple testing
 
-This is an example of all the steps to access the files of 'vic' branch for Part 2.
+```typescript
+./recherche_enrichissement.py -p password -q query_sets/set01.txt -t Keyword -s 511145 -e -l 5
 ```
-git clone git@gitlab.com:best-partnership/m2idh.git
-cd m2idh/Part_2
-git checkout vic
-```
-
+This will print the first 5 enriched Keyword in set01.txt with the 4 methods.
