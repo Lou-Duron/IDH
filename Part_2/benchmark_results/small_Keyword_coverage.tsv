@@ -1,0 +1,60 @@
+id	desc	pval	common_size	target_size
+Membrane		4.06e-05	1	1232
+Cell membrane		4.51e-05	1	1108
+Transmembrane		5.13e-05	1	975
+Cell inner membrane		5.18e-05	1	966
+Transmembrane helix		5.39e-05	1	927
+Iron		2.07e-04	1	242
+Repeat		2.86e-04	1	175
+NAD		3.52e-04	1	142
+Iron-sulfur		3.55e-04	1	141
+4Fe-4S		4.46e-04	1	112
+DNA-binding		4.60e-04	2	435
+Isomerase		4.85e-04	1	103
+Carbohydrate metabolism		5.26e-04	1	95
+Oxidoreductase		5.93e-04	2	337
+DNA damage		7.14e-04	1	70
+Magnesium		7.46e-04	2	268
+DNA repair		7.46e-04	1	67
+Nuclease		7.46e-04	1	67
+Lipopolysaccharide biosynthesis		7.58e-04	1	66
+Pyridoxal phosphate		8.47e-04	1	59
+Zinc		1.01e-03	2	199
+Multifunctional enzyme		1.06e-03	1	47
+Lyase		1.19e-03	2	168
+DNA replication		1.25e-03	1	40
+Potassium		1.79e-03	1	28
+Exonuclease		2.17e-03	1	23
+NADP		2.20e-03	2	91
+Manganese		2.22e-03	2	90
+Kinase		2.68e-03	3	168
+Acyltransferase		2.94e-03	2	68
+Schiff base		3.13e-03	1	16
+Leader peptide		3.13e-03	1	16
+Zinc-finger		3.13e-03	1	16
+Metal-binding		3.59e-03	7	682
+Cytoplasm		3.62e-03	7	676
+Transferase		4.21e-03	7	582
+Thiamine biosynthesis		4.55e-03	1	11
+Purine metabolism		4.55e-03	1	11
+Protein phosphatase		4.55e-03	1	11
+3D-structure		4.59e-03	12	1570
+Reference proteome		4.67e-03	20	4287
+Lysine biosynthesis		5.56e-03	1	9
+RNA-binding		5.97e-03	4	134
+Nucleotide-binding		6.25e-03	8	512
+Pyruvate		6.25e-03	1	8
+Hydrolase		6.75e-03	8	474
+Gluconeogenesis		7.14e-03	1	7
+Primosome		7.14e-03	1	7
+ATP-binding		7.62e-03	8	420
+Acetylation		8.00e-03	4	100
+Direct protein sequencing		9.07e-03	13	932
+Ribosome biogenesis		9.52e-03	2	21
+Diaminopimelate biosynthesis		0.0100	1	5
+Glycolysis		0.0111	2	18
+Allosteric enzyme		0.0118	3	38
+Amino-acid biosynthesis		0.0124	5	101
+Lipoyl		0.0167	1	3
+Tricarboxylic acid cycle		0.0196	3	23
+Helicase		0.0446	5	28

@@ -1,0 +1,154 @@
+id	desc	pval	common_size	target_size
+Electron transport		2.98e-05	1	96
+Protein transport		4.40e-05	1	65
+Toxin-antitoxin system		5.39e-05	1	53
+Glycosidase		7.33e-05	1	39
+Heme		7.52e-05	1	38
+Ion transport		1.01e-04	2	113
+Redox-active center		1.14e-04	1	25
+2Fe-2S		1.19e-04	1	24
+Calcium		1.24e-04	1	23
+S-adenosyl-L-methionine		1.45e-04	2	79
+Glycolysis		1.59e-04	1	18
+Purine biosynthesis		1.68e-04	1	17
+Serine protease		1.79e-04	1	16
+Translocation		2.04e-04	1	14
+Cell outer membrane		2.68e-04	3	96
+Stress response		3.07e-04	4	149
+rRNA processing		3.09e-04	2	37
+Phosphoprotein		3.17e-04	4	144
+Restriction system		3.17e-04	1	9
+Rotamase		3.17e-04	1	9
+CBS domain		3.17e-04	1	9
+Pyruvate		3.57e-04	1	8
+Host-virus interaction		4.08e-04	1	7
+3Fe-4S		4.08e-04	1	7
+Alternative initiation		4.08e-04	1	7
+Methyltransferase		4.43e-04	3	58
+tRNA processing		4.51e-04	3	57
+Pyridoxine biosynthesis		4.76e-04	1	6
+Sulfate transport		4.76e-04	1	6
+DNA-directed RNA polymerase		4.76e-04	1	6
+Zymogen		4.76e-04	1	6
+Detoxification		4.76e-04	1	6
+GTP-binding		4.85e-04	3	53
+Decarboxylase		5.44e-04	2	21
+DNA excision		5.71e-04	1	5
+Activator		6.16e-04	5	116
+4Fe-4S		6.38e-04	5	112
+Schiff base		7.14e-04	2	16
+Excision nuclease		7.14e-04	1	4
+Zinc-finger		7.14e-04	2	16
+Cobalamin		7.14e-04	1	4
+DNA replication inhibitor		7.14e-04	1	4
+Iron		7.56e-04	8	242
+Manganese		7.94e-04	5	90
+DNA integration		8.16e-04	2	14
+Sodium		8.16e-04	2	14
+Secreted		8.79e-04	2	13
+Ribosomal frameshifting		9.52e-04	1	3
+Translation regulation		9.52e-04	3	27
+Virulence		9.52e-04	1	3
+Pyrimidine biosynthesis		1.04e-03	2	11
+TPR repeat		1.04e-03	2	11
+Endonuclease		1.06e-03	4	43
+FMN		1.09e-03	4	42
+Kinase		1.09e-03	8	168
+Lipoprotein		1.11e-03	6	93
+Palmitate		1.11e-03	6	93
+Ribonucleoprotein		1.25e-03	5	57
+Transcription antitermination		1.27e-03	2	9
+Sodium transport		1.27e-03	2	9
+Ribosomal protein		1.28e-03	5	56
+NAD		1.29e-03	8	142
+Iron-sulfur		1.30e-03	8	141
+Translocase		1.34e-03	6	77
+Disulfide bond		1.39e-03	7	101
+Chaperone		1.39e-03	6	74
+One-carbon metabolism		1.43e-03	2	8
+Tryptophan catabolism		1.43e-03	1	2
+Alternative promoter usage		1.43e-03	1	2
+tRNA-binding		1.47e-03	4	31
+Acyltransferase		1.51e-03	6	68
+Flavoprotein		1.76e-03	8	104
+Isomerase		1.78e-03	8	103
+Repressor		1.89e-03	10	151
+rRNA-binding		1.90e-03	6	54
+FAD		2.03e-03	7	69
+Thiamine pyrophosphate		2.14e-03	3	12
+Transcription regulation		2.16e-03	16	339
+Cobalt		2.16e-03	5	33
+Transcription termination		2.29e-03	2	5
+Acetylation		2.31e-03	9	100
+Transcription		2.39e-03	17	345
+Signal-anchor		2.69e-03	4	17
+Antibiotic resistance		2.73e-03	8	67
+ADP-ribosylation		2.86e-03	2	4
+Phenylalanine biosynthesis		2.86e-03	1	1
+Tyrosine biosynthesis		2.86e-03	1	1
+Zinc		3.23e-03	15	199
+Protease		3.44e-03	10	83
+Nuclease		3.45e-03	9	67
+DNA recombination		3.56e-03	11	97
+Antiport		3.57e-03	5	20
+Aminotransferase		3.57e-03	5	20
+Symport		3.59e-03	7	39
+Primosome		3.67e-03	3	7
+Oxidoreductase		3.74e-03	21	337
+Conjugation		3.81e-03	2	3
+DNA condensation		4.29e-03	3	6
+Ligase		4.47e-03	12	92
+Exonuclease		4.47e-03	6	23
+Antiviral defense		4.57e-03	4	10
+Ribosome biogenesis		4.90e-03	6	21
+SOS response		4.90e-03	6	21
+Cytoskeleton		5.71e-03	2	2
+Glutamate biosynthesis		5.71e-03	2	2
+Isoleucine biosynthesis		5.71e-03	2	2
+Asparagine biosynthesis		5.71e-03	2	2
+Repeat		5.89e-03	19	175
+Glutamine amidotransferase		5.95e-03	5	12
+Signal		6.00e-03	32	488
+Allosteric enzyme		6.09e-03	9	38
+Leader peptide		6.43e-03	6	16
+Periplasm		6.96e-03	21	181
+Nucleotidyltransferase		7.68e-03	11	45
+RNA-binding		7.70e-03	19	134
+Magnesium		8.36e-03	28	268
+Serine biosynthesis		8.57e-03	3	3
+Proline biosynthesis		8.57e-03	3	3
+Coiled coil		8.64e-03	11	40
+Metal-binding		8.86e-03	46	682
+NADP		9.07e-03	17	91
+DNA repair		9.59e-03	15	67
+Multifunctional enzyme		0.0103	13	47
+DNA damage		0.0104	16	70
+Lyase		0.0106	25	168
+Glycosyltransferase		0.0107	15	60
+DNA-binding		0.0110	41	435
+Pyridoxal phosphate		0.0124	16	59
+Diaminopimelate biosynthesis		0.0143	5	5
+Leucine biosynthesis		0.0143	5	5
+Threonine biosynthesis		0.0143	5	5
+Chromosome partition		0.0147	6	7
+DNA-directed DNA polymerase		0.0152	8	12
+Tryptophan biosynthesis		0.0171	6	6
+DNA replication		0.0183	16	40
+Cysteine biosynthesis		0.0200	7	7
+Transferase		0.0214	66	582
+Carboxypeptidase		0.0220	10	13
+Transmembrane		0.0243	91	975
+Transmembrane helix		0.0255	91	927
+Lysine biosynthesis		0.0257	9	9
+Transport		0.0260	82	738
+Hydrolase		0.0271	67	474
+Histidine biosynthesis		0.0286	10	10
+Membrane		0.0312	116	1232
+Cell membrane		0.0323	112	1108
+Septation		0.0343	12	12
+Arginine biosynthesis		0.0343	12	12
+Nucleotide-binding		0.0348	79	512
+Cell inner membrane		0.0351	109	966
+ATP-binding		0.0383	75	420
+Methionine biosynthesis		0.0400	14	14
+Cytoplasm		0.0431	101	676

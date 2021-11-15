@@ -1,0 +1,396 @@
+id	desc	pval	common_size	target_size
+GO:0044281	small molecule metabolic process	8.44e-25	57	860
+GO:0019752	carboxylic acid metabolic process	3.44e-21	43	497
+GO:0043436	oxoacid metabolic process	2.13e-20	43	521
+GO:0006082	organic acid metabolic process	5.92e-20	43	535
+GO:0032787	monocarboxylic acid metabolic process	1.93e-17	28	216
+GO:0003824	catalytic activity	1.14e-15	68	1965
+GO:0044237	cellular metabolic process	1.20e-14	65	1833
+GO:0008152	metabolic process	1.85e-14	67	1984
+GO:0009260	ribonucleotide biosynthetic process	7.02e-14	15	56
+GO:0046390	ribose phosphate biosynthetic process	1.48e-13	15	59
+GO:0009259	ribonucleotide metabolic process	2.33e-13	17	88
+GO:0019380	3-phenylpropionate catabolic process	5.70e-13	9	11
+GO:0018962	3-phenylpropionate metabolic process	5.70e-13	9	11
+GO:0019693	ribose phosphate metabolic process	6.60e-13	17	94
+GO:0009165	nucleotide biosynthetic process	3.76e-12	16	89
+GO:1901293	nucleoside phosphate biosynthetic process	3.76e-12	16	89
+GO:0046395	carboxylic acid catabolic process	5.87e-12	21	185
+GO:0016054	organic acid catabolic process	1.06e-11	21	191
+GO:0009117	nucleotide metabolic process	2.72e-11	18	138
+GO:0006753	nucleoside phosphate metabolic process	4.31e-11	18	142
+GO:0016491	oxidoreductase activity	9.19e-11	29	435
+GO:0044282	small molecule catabolic process	9.77e-11	24	291
+GO:0009220	pyrimidine ribonucleotide biosynthetic process	1.09e-10	8	13
+GO:0019856	pyrimidine nucleobase biosynthetic process	1.09e-10	8	13
+GO:0071704	organic substance metabolic process	1.54e-10	60	1846
+GO:0006221	pyrimidine nucleotide biosynthetic process	1.67e-10	9	21
+GO:0009218	pyrimidine ribonucleotide metabolic process	5.51e-10	8	16
+GO:0006220	pyrimidine nucleotide metabolic process	7.58e-10	9	25
+GO:0042178	xenobiotic catabolic process	1.47e-09	9	27
+GO:0003674	molecular_function	1.83e-09	75	3159
+GO:0046112	nucleobase biosynthetic process	2.09e-09	8	19
+GO:0005622	intracellular anatomical structure	3.23e-09	51	1454
+GO:1901564	organonitrogen compound metabolic process	3.30e-09	39	889
+GO:0044205	'de novo' UMP biosynthetic process	3.68e-09	6	7
+GO:0005737	cytoplasm	4.57e-09	50	1415
+GO:0006805	xenobiotic metabolic process	4.83e-09	9	31
+GO:0071466	cellular response to xenobiotic stimulus	4.83e-09	9	31
+GO:0042537	benzene-containing compound metabolic process	4.83e-09	9	31
+GO:0009410	response to xenobiotic stimulus	6.34e-09	9	32
+GO:0072330	monocarboxylic acid biosynthetic process	7.98e-09	10	45
+GO:0009068	aspartate family amino acid catabolic process	9.11e-09	8	23
+GO:0006207	'de novo' pyrimidine nucleobase biosynthetic process	1.62e-08	6	9
+GO:0072528	pyrimidine-containing compound biosynthetic process	1.73e-08	9	36
+GO:1901575	organic substance catabolic process	1.78e-08	27	476
+GO:0090407	organophosphate biosynthetic process	1.82e-08	17	184
+GO:0006222	UMP biosynthetic process	3.00e-08	6	10
+GO:0009174	pyrimidine ribonucleoside monophosphate biosynthetic process	3.00e-08	6	10
+GO:0009056	catabolic process	3.28e-08	27	490
+GO:0006099	tricarboxylic acid cycle	5.35e-08	8	29
+GO:0055086	nucleobase-containing small molecule metabolic process	5.71e-08	18	225
+GO:0006520	cellular amino acid metabolic process	6.10e-08	19	253
+GO:0009063	cellular amino acid catabolic process	7.98e-08	11	74
+GO:0009060	aerobic respiration	8.42e-08	10	58
+GO:0046049	UMP metabolic process	8.71e-08	6	12
+GO:0009173	pyrimidine ribonucleoside monophosphate metabolic process	8.71e-08	6	12
+GO:0006206	pyrimidine nucleobase metabolic process	8.87e-08	8	31
+GO:0043167	ion binding	9.39e-08	46	1329
+GO:0009987	cellular process	9.97e-08	67	2603
+GO:0005829	cytosol	1.28e-07	40	1054
+GO:0009156	ribonucleoside monophosphate biosynthetic process	1.78e-07	8	34
+GO:0006554	lysine catabolic process	1.91e-07	5	7
+GO:0019637	organophosphate metabolic process	2.63e-07	19	278
+GO:0015980	energy derivation by oxidation of organic compounds	2.64e-07	13	124
+GO:0009161	ribonucleoside monophosphate metabolic process	2.73e-07	8	36
+GO:0044248	cellular catabolic process	2.75e-07	22	371
+GO:0009130	pyrimidine nucleoside monophosphate biosynthetic process	3.19e-07	6	15
+GO:0045333	cellular respiration	4.37e-07	12	108
+GO:0009124	nucleoside monophosphate biosynthetic process	4.97e-07	8	39
+GO:0009129	pyrimidine nucleoside monophosphate metabolic process	6.57e-07	6	17
+GO:0072329	monocarboxylic acid catabolic process	6.81e-07	11	92
+GO:0044283	small molecule biosynthetic process	7.17e-07	19	297
+GO:0009123	nucleoside monophosphate metabolic process	7.21e-07	8	41
+GO:0008695	3-phenylpropionate dioxygenase activity	9.09e-07	4	4
+GO:0006091	generation of precursor metabolites and energy	1.01e-06	14	164
+GO:0036094	small molecule binding	1.06e-06	33	822
+GO:0072527	pyrimidine-containing compound metabolic process	1.40e-06	9	61
+GO:0046394	carboxylic acid biosynthetic process	1.73e-06	15	198
+GO:0016053	organic acid biosynthetic process	1.84e-06	15	199
+GO:0004333	fumarate hydratase activity	2.19e-06	4	5
+GO:0016708	oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, NAD(P)H as one donor, and incorporation of two atoms of oxygen into one donor	2.19e-06	4	5
+GO:0015940	pantothenate biosynthetic process	2.19e-06	4	5
+GO:0006796	phosphate-containing compound metabolic process	2.61e-06	19	324
+GO:0034654	nucleobase-containing compound biosynthetic process	2.62e-06	16	233
+GO:1901566	organonitrogen compound biosynthetic process	2.87e-06	24	498
+GO:0009112	nucleobase metabolic process	3.59e-06	8	51
+GO:0051213	dioxygenase activity	3.89e-06	5	13
+GO:1901605	alpha-amino acid metabolic process	4.08e-06	14	185
+GO:0015939	pantothenate metabolic process	4.48e-06	4	6
+GO:0009150	purine ribonucleotide metabolic process	5.34e-06	9	72
+GO:0034033	purine nucleoside bisphosphate biosynthetic process	5.56e-06	5	14
+GO:0033866	nucleoside bisphosphate biosynthetic process	5.56e-06	5	14
+GO:0034030	ribonucleoside bisphosphate biosynthetic process	5.56e-06	5	14
+GO:1901137	carbohydrate derivative biosynthetic process	6.42e-06	16	250
+GO:1901565	organonitrogen compound catabolic process	7.86e-06	14	196
+GO:0006793	phosphorus metabolic process	8.00e-06	19	350
+GO:0044238	primary metabolic process	9.80e-06	46	1539
+GO:0006163	purine nucleotide metabolic process	1.01e-05	9	78
+GO:0009152	purine ribonucleotide biosynthetic process	1.19e-05	7	43
+GO:0005488	binding	1.36e-05	57	2185
+GO:0006113	fermentation	1.41e-05	5	17
+GO:1901606	alpha-amino acid catabolic process	1.47e-05	8	62
+GO:0000166	nucleotide binding	1.49e-05	28	708
+GO:1901265	nucleoside phosphate binding	1.49e-05	28	708
+GO:0046872	metal ion binding	1.81e-05	30	800
+GO:0009066	aspartate family amino acid metabolic process	2.05e-05	8	65
+GO:0006164	purine nucleotide biosynthetic process	2.10e-05	7	47
+GO:0016635	oxidoreductase activity, acting on the CH-CH group of donors, quinone or related compound as acceptor	2.18e-05	4	9
+GO:0008774	acetaldehyde dehydrogenase (acetylating) activity	2.29e-05	3	3
+GO:0044271	cellular nitrogen compound biosynthetic process	2.32e-05	21	449
+GO:0043169	cation binding	2.44e-05	30	812
+GO:0006631	fatty acid metabolic process	2.54e-05	8	67
+GO:0016829	lyase activity	3.02e-05	13	192
+GO:0072522	purine-containing compound biosynthetic process	3.97e-05	7	52
+GO:0006553	lysine metabolic process	4.78e-05	5	22
+GO:0016705	oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen	4.78e-05	5	22
+GO:0051287	NAD binding	5.03e-05	7	54
+GO:0045284	plasma membrane fumarate reductase complex	5.37e-05	3	4
+GO:0045283	fumarate reductase complex	5.37e-05	3	4
+GO:0102040	fumarate reductase (menaquinone)	5.37e-05	3	4
+GO:0034032	purine nucleoside bisphosphate metabolic process	5.89e-05	5	23
+GO:0033865	nucleoside bisphosphate metabolic process	5.89e-05	5	23
+GO:0033875	ribonucleoside bisphosphate metabolic process	5.89e-05	5	23
+GO:0072521	purine-containing compound metabolic process	6.41e-05	9	99
+GO:0016614	oxidoreductase activity, acting on CH-OH group of donors	6.92e-05	9	100
+GO:0006633	fatty acid biosynthetic process	8.69e-05	5	25
+GO:1901135	carbohydrate derivative metabolic process	9.77e-05	18	383
+GO:0009450	gamma-aminobutyric acid catabolic process	1.04e-04	3	5
+GO:0009448	gamma-aminobutyric acid metabolic process	1.04e-04	3	5
+GO:0019477	L-lysine catabolic process	1.04e-04	3	5
+GO:0046440	L-lysine metabolic process	1.04e-04	3	5
+GO:0045274	plasma membrane respiratory chain complex II	1.04e-04	3	5
+GO:0019438	aromatic compound biosynthetic process	1.06e-04	16	315
+GO:0019439	aromatic compound catabolic process	1.15e-04	9	107
+GO:0019541	propionate metabolic process	1.55e-04	4	15
+GO:0006108	malate metabolic process	1.77e-04	3	6
+GO:0045273	respiratory chain complex II	1.77e-04	3	6
+GO:0016616	oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor	1.81e-04	8	89
+GO:0016620	oxidoreductase activity, acting on the aldehyde or oxo group of donors, NAD or NADP as acceptor	2.02e-04	5	30
+GO:0016831	carboxy-lyase activity	2.02e-04	5	30
+GO:0042802	identical protein binding	2.24e-04	19	447
+GO:0042402	cellular biogenic amine catabolic process	2.35e-04	5	31
+GO:0009310	amine catabolic process	2.35e-04	5	31
+GO:0016746	acyltransferase activity	2.43e-04	8	93
+GO:0008150	biological_process	2.45e-04	69	3188
+GO:0018130	heterocycle biosynthetic process	2.63e-04	16	341
+GO:1901576	organic substance biosynthetic process	2.69e-04	29	875
+GO:0016627	oxidoreductase activity, acting on the CH-CH group of donors	2.71e-04	5	32
+GO:0071616	acyl-CoA biosynthetic process	2.77e-04	3	7
+GO:0035384	thioester biosynthetic process	2.77e-04	3	7
+GO:0070887	cellular response to chemical stimulus	3.04e-04	9	122
+GO:0006807	nitrogen compound metabolic process	3.26e-04	39	1369
+GO:0009058	biosynthetic process	3.70e-04	29	891
+GO:0046459	short-chain fatty acid metabolic process	3.79e-04	4	19
+GO:1901361	organic cyclic compound catabolic process	3.84e-04	9	126
+GO:1901362	organic cyclic compound biosynthetic process	4.00e-04	16	354
+GO:0006725	cellular aromatic compound metabolic process	4.49e-04	27	810
+GO:0016903	oxidoreductase activity, acting on the aldehyde or oxo group of donors	5.90e-04	5	38
+GO:0003867	4-aminobutyrate transaminase activity	6.02e-04	2	2
+GO:0034386	4-aminobutyrate:2-oxoglutarate transaminase activity	6.02e-04	2	2
+GO:0004550	nucleoside diphosphate kinase activity	6.02e-04	2	2
+GO:0019413	acetate biosynthetic process	6.02e-04	2	2
+GO:0004088	carbamoyl-phosphate synthase (glutamine-hydrolyzing) activity	6.02e-04	2	2
+GO:0005951	carbamoyl-phosphate synthase complex	6.02e-04	2	2
+GO:0006106	fumarate metabolic process	6.02e-04	2	2
+GO:0008923	lysine decarboxylase activity	6.02e-04	2	2
+GO:0008959	phosphate acetyltransferase activity	6.02e-04	2	2
+GO:0016836	hydro-lyase activity	6.41e-04	6	59
+GO:1901360	organic cyclic compound metabolic process	8.87e-04	27	845
+GO:0070470	plasma membrane respirasome	9.03e-04	4	24
+GO:0034641	cellular nitrogen compound metabolic process	1.05e-03	29	947
+GO:0098803	respiratory chain complex	1.05e-03	4	25
+GO:0044249	cellular biosynthetic process	1.15e-03	27	859
+GO:0042398	cellular modified amino acid biosynthetic process	1.21e-03	4	26
+GO:0051536	iron-sulfur cluster binding	1.32e-03	9	150
+GO:0008861	formate C-acetyltransferase activity	1.34e-03	2	3
+GO:0051540	metal cluster binding	1.38e-03	9	151
+GO:0070469	respirasome	1.39e-03	4	27
+GO:0000287	magnesium ion binding	1.48e-03	10	184
+GO:0016835	carbon-oxygen lyase activity	1.65e-03	6	71
+GO:0006576	cellular biogenic amine metabolic process	1.66e-03	5	48
+GO:0044106	cellular amine metabolic process	1.66e-03	5	48
+GO:0009308	amine metabolic process	1.66e-03	5	48
+GO:0016830	carbon-carbon lyase activity	1.77e-03	6	72
+GO:0051259	protein complex oligomerization	1.81e-03	5	49
+GO:0005515	protein binding	1.87e-03	19	531
+GO:0006567	threonine catabolic process	2.03e-03	3	14
+GO:0009209	pyrimidine ribonucleoside triphosphate biosynthetic process	2.35e-03	2	4
+GO:0006241	CTP biosynthetic process	2.35e-03	2	4
+GO:0046036	CTP metabolic process	2.35e-03	2	4
+GO:0006083	acetate metabolic process	2.35e-03	2	4
+GO:0006085	acetyl-CoA biosynthetic process	2.35e-03	2	4
+GO:0070404	NADH binding	2.35e-03	2	4
+GO:0015937	coenzyme A biosynthetic process	2.35e-03	2	4
+GO:0015936	coenzyme A metabolic process	2.35e-03	2	4
+GO:0006637	acyl-CoA metabolic process	2.46e-03	3	15
+GO:0035383	thioester metabolic process	2.46e-03	3	15
+GO:0006526	arginine biosynthetic process	2.46e-03	3	15
+GO:0051260	protein homooligomerization	2.57e-03	4	32
+GO:0016747	acyltransferase activity, transferring groups other than amino-acyl groups	2.80e-03	6	79
+GO:0046336	ethanolamine catabolic process	2.95e-03	3	16
+GO:0006580	ethanolamine metabolic process	2.95e-03	3	16
+GO:0042439	ethanolamine-containing compound metabolic process	2.95e-03	3	16
+GO:0016740	transferase activity	3.22e-03	21	644
+GO:0044780	bacterial-type flagellum assembly	3.50e-03	3	17
+GO:0009208	pyrimidine ribonucleoside triphosphate metabolic process	3.64e-03	2	5
+GO:0016615	malate dehydrogenase activity	3.64e-03	2	5
+GO:1901160	primary amino compound metabolic process	4.10e-03	3	18
+GO:1901161	primary amino compound catabolic process	4.10e-03	3	18
+GO:0006541	glutamine metabolic process	4.10e-03	3	18
+GO:0006575	cellular modified amino acid metabolic process	4.60e-03	5	61
+GO:0051539	4 iron, 4 sulfur cluster binding	4.68e-03	7	117
+GO:0006066	alcohol metabolic process	4.99e-03	6	89
+GO:0004022	alcohol dehydrogenase (NAD+) activity	5.18e-03	2	6
+GO:0016884	carbon-nitrogen ligase activity, with glutamine as amido-N-donor	5.18e-03	2	6
+GO:0046912	acyltransferase, acyl groups converted into alkyl on transfer	5.18e-03	2	6
+GO:0042364	water-soluble vitamin biosynthetic process	5.26e-03	5	63
+GO:0006566	threonine metabolic process	5.49e-03	3	20
+GO:0009110	vitamin biosynthetic process	5.62e-03	5	64
+GO:0043168	anion binding	5.68e-03	22	721
+GO:0043604	amide biosynthetic process	6.06e-03	8	155
+GO:0046031	ADP metabolic process	6.27e-03	3	21
+GO:0009179	purine ribonucleoside diphosphate metabolic process	6.27e-03	3	21
+GO:0009135	purine nucleoside diphosphate metabolic process	6.27e-03	3	21
+GO:0070689	L-threonine catabolic process to propionate	6.97e-03	2	7
+GO:0009148	pyrimidine nucleoside triphosphate biosynthetic process	6.97e-03	2	7
+GO:0018455	alcohol dehydrogenase [NAD(P)+] activity	6.97e-03	2	7
+GO:0000104	succinate dehydrogenase activity	6.97e-03	2	7
+GO:0034310	primary alcohol catabolic process	7.12e-03	3	22
+GO:0009185	ribonucleoside diphosphate metabolic process	7.12e-03	3	22
+GO:0016407	acetyltransferase activity	7.83e-03	4	44
+GO:0016879	ligase activity, forming carbon-nitrogen bonds	8.45e-03	4	45
+GO:0006097	glyoxylate cycle	9.00e-03	2	8
+GO:0016453	C-acetyltransferase activity	9.00e-03	2	8
+GO:0016743	carboxyl- or carbamoyltransferase activity	9.00e-03	2	8
+GO:0006084	acetyl-CoA metabolic process	9.00e-03	2	8
+GO:0009132	nucleoside diphosphate metabolic process	9.02e-03	3	24
+GO:0046164	alcohol catabolic process	9.80e-03	4	47
+GO:0051289	protein homotetramerization	0.0101	3	25
+GO:0043603	cellular amide metabolic process	0.0104	9	206
+GO:0034308	primary alcohol metabolic process	0.0105	4	48
+GO:0046034	ATP metabolic process	0.0105	4	48
+GO:0051262	protein tetramerization	0.0112	3	26
+GO:0044781	bacterial-type flagellum organization	0.0112	3	26
+GO:0009147	pyrimidine nucleoside triphosphate metabolic process	0.0113	2	9
+GO:0019205	nucleobase-containing compound kinase activity	0.0113	2	9
+GO:0004029	aldehyde dehydrogenase (NAD+) activity	0.0113	2	9
+GO:0004312	fatty acid synthase activity	0.0113	2	9
+GO:0006767	water-soluble vitamin metabolic process	0.0119	5	77
+GO:0006525	arginine metabolic process	0.0124	3	27
+GO:0009084	glutamine family amino acid biosynthetic process	0.0124	3	27
+GO:0006766	vitamin metabolic process	0.0125	5	78
+GO:0016408	C-acyltransferase activity	0.0137	2	10
+GO:0009447	putrescine catabolic process	0.0137	2	10
+GO:0004030	aldehyde dehydrogenase [NAD(P)+] activity	0.0137	2	10
+GO:1901616	organic hydroxy compound catabolic process	0.0138	4	52
+GO:0009061	anaerobic respiration	0.0138	4	52
+GO:0006006	glucose metabolic process	0.0149	3	29
+GO:0006598	polyamine catabolic process	0.0164	2	11
+GO:0009201	ribonucleoside triphosphate biosynthetic process	0.0164	2	11
+GO:0009064	glutamine family amino acid metabolic process	0.0165	4	55
+GO:0047456	2-methylisocitrate dehydratase activity	0.0175	1	1
+GO:0043875	2-ketobutyrate formate-lyase activity	0.0175	1	1
+GO:0018771	2-hydroxy-6-oxonona-2,4-dienedioate hydrolase activity	0.0175	1	1
+GO:0052823	2-hydroxy-6-oxonona-2,4,7-trienedioate hydrolase activity	0.0175	1	1
+GO:0050163	oxaloacetate tautomerase activity	0.0175	1	1
+GO:0006228	UTP biosynthetic process	0.0175	1	1
+GO:0000036	acyl carrier activity	0.0175	1	1
+GO:0140414	phosphopantetheine-dependent carrier activity	0.0175	1	1
+GO:0044620	ACP phosphopantetheine attachment site binding	0.0175	1	1
+GO:0000035	acyl binding	0.0175	1	1
+GO:0046187	acetaldehyde catabolic process	0.0175	1	1
+GO:0006117	acetaldehyde metabolic process	0.0175	1	1
+GO:0018498	2,3-dihydroxy-2,3-dihydro-phenylpropionate dehydrogenase activity	0.0175	1	1
+GO:0004152	dihydroorotate dehydrogenase activity	0.0175	1	1
+GO:0033818	beta-ketoacyl-acyl-carrier-protein synthase III activity	0.0175	1	1
+GO:0008964	phosphoenolpyruvate carboxylase activity	0.0175	1	1
+GO:0015977	carbon fixation	0.0175	1	1
+GO:0019542	propionate biosynthetic process	0.0175	1	1
+GO:0051790	short-chain fatty acid biosynthetic process	0.0175	1	1
+GO:0033737	1-pyrroline dehydrogenase activity	0.0175	1	1
+GO:0019145	aminobutyraldehyde dehydrogenase activity	0.0175	1	1
+GO:0003973	(S)-2-hydroxy-acid oxidase activity	0.0175	1	1
+GO:0016899	oxidoreductase activity, acting on the CH-OH group of donors, oxygen as acceptor	0.0175	1	1
+GO:0047589	5-aminovalerate transaminase activity	0.0175	1	1
+GO:0015527	glycerol-phosphate:inorganic phosphate antiporter activity	0.0175	1	1
+GO:0008684	2-oxopent-4-enoate hydratase activity	0.0175	1	1
+GO:0004455	ketol-acid reductoisomerase activity	0.0175	1	1
+GO:0009347	aspartate carbamoyltransferase complex	0.0175	1	1
+GO:0003864	3-methyl-2-oxobutanoate hydroxymethyltransferase activity	0.0175	1	1
+GO:0004450	isocitrate dehydrogenase (NADP+) activity	0.0175	1	1
+GO:0004448	isocitrate dehydrogenase activity	0.0175	1	1
+GO:0006115	ethanol biosynthetic process	0.0175	1	1
+GO:0004151	dihydroorotase activity	0.0175	1	1
+GO:0004087	carbamoyl-phosphate synthase (ammonia) activity	0.0175	1	1
+GO:0046132	pyrimidine ribonucleoside biosynthetic process	0.0175	1	1
+GO:0046134	pyrimidine nucleoside biosynthetic process	0.0175	1	1
+GO:0004588	orotate phosphoribosyltransferase activity	0.0175	1	1
+GO:0003883	CTP synthase activity	0.0175	1	1
+GO:0097268	cytoophidium	0.0175	1	1
+GO:0004068	aspartate 1-decarboxylase activity	0.0175	1	1
+GO:0004070	aspartate carbamoyltransferase activity	0.0175	1	1
+GO:0006172	ADP biosynthetic process	0.0175	1	1
+GO:0009180	purine ribonucleoside diphosphate biosynthetic process	0.0175	1	1
+GO:0009136	purine nucleoside diphosphate biosynthetic process	0.0175	1	1
+GO:0004592	pantoate-beta-alanine ligase activity	0.0175	1	1
+GO:0030060	L-malate dehydrogenase activity	0.0175	1	1
+GO:0004595	pantetheine-phosphate adenylyltransferase activity	0.0175	1	1
+GO:0008701	4-hydroxy-2-oxovalerate aldolase activity	0.0175	1	1
+GO:0004140	dephospho-CoA kinase activity	0.0175	1	1
+GO:0008860	ferredoxin-NAD+ reductase activity	0.0175	1	1
+GO:0004314	[acyl-carrier-protein] S-malonyltransferase activity	0.0175	1	1
+GO:0016419	S-malonyltransferase activity	0.0175	1	1
+GO:0016420	malonyltransferase activity	0.0175	1	1
+GO:0008677	2-dehydropantoate 2-reductase activity	0.0175	1	1
+GO:0050498	oxidoreductase activity, acting on paired donors, with incorporation or reduction of molecular oxygen, with 2-oxoglutarate as one donor, and the other dehydrogenated	0.0175	1	1
+GO:0106343	glutarate dioxygenase activity	0.0175	1	1
+GO:0102810	glutarate-semialdehyde dehydrogenase (NADP+) activity	0.0175	1	1
+GO:0008531	riboflavin kinase activity	0.0175	1	1
+GO:0003919	FMN adenylyltransferase activity	0.0175	1	1
+GO:0006747	FAD biosynthetic process	0.0175	1	1
+GO:0046443	FAD metabolic process	0.0175	1	1
+GO:0072387	flavin adenine dinucleotide metabolic process	0.0175	1	1
+GO:0072388	flavin adenine dinucleotide biosynthetic process	0.0175	1	1
+GO:0009398	FMN biosynthetic process	0.0175	1	1
+GO:0046444	FMN metabolic process	0.0175	1	1
+GO:1902494	catalytic complex	0.0192	7	154
+GO:0030031	cell projection assembly	0.0193	3	32
+GO:0009199	ribonucleoside triphosphate metabolic process	0.0193	2	12
+GO:1901615	organic hydroxy compound metabolic process	0.0196	6	120
+GO:0044255	cellular lipid metabolic process	0.0200	8	192
+GO:0051537	2 iron, 2 sulfur cluster binding	0.0210	3	33
+GO:0050661	NADP binding	0.0226	3	34
+GO:0006090	pyruvate metabolic process	0.0226	3	34
+GO:0043648	dicarboxylic acid metabolic process	0.0246	5	93
+GO:0005575	cellular_component	0.0251	60	2929
+GO:0006629	lipid metabolic process	0.0255	8	201
+GO:0046487	glyoxylate metabolic process	0.0257	2	14
+GO:0009445	putrescine metabolic process	0.0257	2	14
+GO:0009142	nucleoside triphosphate biosynthetic process	0.0257	2	14
+GO:0030955	potassium ion binding	0.0257	2	14
+GO:0022607	cellular component assembly	0.0327	8	211
+GO:0016862	intramolecular oxidoreductase activity, interconverting keto- and enol-groups	0.0347	1	2
+GO:0046051	UTP metabolic process	0.0347	1	2
+GO:0006183	GTP biosynthetic process	0.0347	1	2
+GO:0046039	GTP metabolic process	0.0347	1	2
+GO:0051192	prosthetic group binding	0.0347	1	2
+GO:0006107	oxaloacetate metabolic process	0.0347	1	2
+GO:0004611	phosphoenolpyruvate carboxykinase activity	0.0347	1	2
+GO:0009329	acetate CoA-transferase complex	0.0347	1	2
+GO:0042759	long-chain fatty acid biosynthetic process	0.0347	1	2
+GO:0001676	long-chain fatty acid metabolic process	0.0347	1	2
+GO:0004108	citrate (Si)-synthase activity	0.0347	1	2
+GO:0036440	citrate synthase activity	0.0347	1	2
+GO:0033883	pyridoxal phosphatase activity	0.0347	1	2
+GO:0015315	organophosphate:inorganic phosphate antiporter activity	0.0347	1	2
+GO:0015793	glycerol transport	0.0347	1	2
+GO:0019427	acetyl-CoA biosynthetic process from acetate	0.0347	1	2
+GO:0045733	acetate catabolic process	0.0347	1	2
+GO:0006067	ethanol metabolic process	0.0347	1	2
+GO:0044210	'de novo' CTP biosynthetic process	0.0347	1	2
+GO:0004470	malic enzyme activity	0.0347	1	2
+GO:0004471	malate dehydrogenase (decarboxylating) (NAD+) activity	0.0347	1	2
+GO:0009188	ribonucleoside diphosphate biosynthetic process	0.0347	1	2
+GO:0015951	purine ribonucleotide interconversion	0.0347	1	2
+GO:0004017	adenylate kinase activity	0.0347	1	2
+GO:0003852	2-isopropylmalate synthase activity	0.0347	1	2
+GO:0008937	ferredoxin-NAD(P) reductase activity	0.0347	1	2
+GO:0009350	ethanolamine ammonia-lyase complex	0.0347	1	2
+GO:0008851	ethanolamine ammonia-lyase activity	0.0347	1	2
+GO:1902912	pyruvate kinase complex	0.0347	1	2
+GO:0004743	pyruvate kinase activity	0.0347	1	2
+GO:0090549	response to carbon starvation	0.0347	1	2
+GO:0036243	succinate-semialdehyde dehydrogenase (NADP+) activity	0.0347	1	2
+GO:0016651	oxidoreductase activity, acting on NAD(P)H	0.0364	3	41
+GO:0008652	cellular amino acid biosynthetic process	0.0365	6	139
+GO:0016776	phosphotransferase activity, phosphate group as acceptor	0.0367	2	17
+GO:0008137	NADH dehydrogenase (ubiquinone) activity	0.0367	2	17
+GO:0070566	adenylyltransferase activity	0.0367	2	17
+GO:0098797	plasma membrane protein complex	0.0385	5	105
+GO:0006595	polyamine metabolic process	0.0407	2	18
+GO:0009141	nucleoside triphosphate metabolic process	0.0407	2	18
+GO:0031420	alkali metal ion binding	0.0407	2	18
+GO:1990234	transferase complex	0.0410	3	43
+GO:1901607	alpha-amino acid biosynthetic process	0.0426	5	108
+GO:0032991	protein-containing complex	0.0435	15	531
+GO:0006096	glycolytic process	0.0448	2	19
+GO:0005524	ATP binding	0.0454	13	442
+GO:0016874	ligase activity	0.0454	5	110
+GO:0006757	ATP generation from ADP	0.0491	2	20
+GO:0006165	nucleoside diphosphate phosphorylation	0.0491	2	20
+GO:0046939	nucleotide phosphorylation	0.0491	2	20
+GO:0032553	ribonucleotide binding	0.0493	15	540
+GO:0006139	nucleobase-containing compound metabolic process	0.0493	18	683
+GO:0110165	cellular anatomical entity	0.0494	58	2878
+GO:0032559	adenyl ribonucleotide binding	0.0496	13	448

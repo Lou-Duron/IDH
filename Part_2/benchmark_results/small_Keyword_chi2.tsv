@@ -1,0 +1,29 @@
+id	desc	pval	common_size	target_size
+Threonine biosynthesis		9.16e-116	4	5
+Helicase		3.99e-34	5	28
+Tricarboxylic acid cycle		1.91e-13	3	23
+Amino-acid biosynthesis		2.43e-09	5	101
+Allosteric enzyme		2.62e-08	3	38
+Glycolysis		8.75e-07	2	18
+Acetylation		6.35e-06	4	100
+Ribosome biogenesis		6.49e-06	2	21
+Direct protein sequencing		8.86e-06	13	932
+ATP-binding		2.80e-05	8	420
+Lipoyl		3.68e-05	1	3
+Hydrolase		1.50e-04	8	474
+RNA-binding		2.06e-04	4	134
+Nucleotide-binding		3.95e-04	8	512
+Diaminopimelate biosynthesis		1.71e-03	1	5
+Gluconeogenesis		9.34e-03	1	7
+Primosome		9.34e-03	1	7
+Transferase		0.0129	7	582
+Pyruvate		0.0161	1	8
+Lysine biosynthesis		0.0246	1	9
+Acyltransferase		0.0334	2	68
+Membrane		0.0361	1	1232
+Cytoplasm		0.0387	7	676
+Metal-binding		0.0410	7	682
+Purine metabolism		0.0464	1	11
+Thiamine biosynthesis		0.0464	1	11
+Protein phosphatase		0.0464	1	11
+Kinase		0.0467	3	168

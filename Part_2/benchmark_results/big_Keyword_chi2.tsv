@@ -1,0 +1,72 @@
+id	desc	pval	common_size	target_size
+Amino-acid biosynthesis		3.16e-253	101	101
+Amino-acid transport		2.27e-194	78	78
+Cell cycle		5.66e-169	68	68
+Cell division		5.66e-169	68	68
+Cell shape		1.59e-118	48	48
+Peptidoglycan synthesis		5.67e-101	41	41
+Helicase		1.64e-68	28	28
+Cell wall biogenesis/degradation		3.22e-56	40	64
+Aromatic amino acid biosynthesis		3.94e-46	19	19
+Branched-chain amino acid biosynthesis		1.20e-43	18	18
+Methionine biosynthesis		1.01e-33	14	14
+Septation		9.18e-29	12	12
+Arginine biosynthesis		9.18e-29	12	12
+Histidine biosynthesis		8.35e-24	10	10
+Lysine biosynthesis		2.52e-21	9	9
+Carboxypeptidase		9.67e-18	10	13
+Cysteine biosynthesis		2.29e-16	7	7
+Direct protein sequencing		6.56e-16	136	932
+ATP-binding		3.52e-14	75	420
+Tryptophan biosynthesis		6.91e-14	6	6
+DNA replication		1.11e-12	16	40
+Cytoplasm		3.11e-12	101	676
+DNA-directed DNA polymerase		5.26e-12	8	12
+Chromosome partition		8.97e-12	6	7
+Leucine biosynthesis		2.09e-11	5	5
+Diaminopimelate biosynthesis		2.09e-11	5	5
+Threonine biosynthesis		2.09e-11	5	5
+Nucleotide-binding		2.21e-10	79	512
+3D-structure		9.78e-10	181	1570
+Pyridoxal phosphate		2.89e-07	16	59
+Hydrolase		6.50e-07	67	474
+Proline biosynthesis		1.88e-06	3	3
+Serine biosynthesis		1.88e-06	3	3
+Multifunctional enzyme		3.24e-06	13	47
+Glycosyltransferase		4.78e-06	15	60
+DNA damage		1.55e-05	16	70
+Coiled coil		2.55e-05	11	40
+DNA repair		4.59e-05	15	67
+Cell inner membrane		6.41e-05	109	966
+Leader peptide		1.20e-04	6	16
+Nucleotidyltransferase		1.78e-04	11	45
+Glutamine amidotransferase		1.95e-04	5	12
+NADP		4.23e-04	17	91
+Glutamate biosynthesis		5.41e-04	2	2
+Isoleucine biosynthesis		5.41e-04	2	2
+Cytoskeleton		5.41e-04	2	2
+Asparagine biosynthesis		5.41e-04	2	2
+Allosteric enzyme		1.27e-03	9	38
+Transport		1.50e-03	82	738
+Lyase		1.82e-03	25	168
+Antiviral defense		1.86e-03	4	10
+SOS response		2.41e-03	6	21
+Ribosome biogenesis		2.41e-03	6	21
+DNA condensation		2.64e-03	3	6
+Transferase		3.08e-03	66	582
+Exonuclease		5.52e-03	6	23
+Cell membrane		6.46e-03	112	1108
+Iron		6.77e-03	8	242
+Primosome		7.56e-03	3	7
+Conjugation		7.97e-03	2	3
+RNA-binding		0.0147	19	134
+Electron transport		0.0172	1	96
+Aminotransferase		0.0185	5	20
+Antiport		0.0185	5	20
+Ion transport		0.0196	2	113
+Stress response		0.0201	4	149
+Transcription regulation		0.0218	16	339
+Phosphoprotein		0.0253	4	144
+Transcription		0.0300	17	345
+ADP-ribosylation		0.0316	2	4
+Transmembrane helix		0.0408	91	927

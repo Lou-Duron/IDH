@@ -1,0 +1,629 @@
+id	desc	pval	common_size	target_size
+GO:0008652	cellular amino acid biosynthetic process	5.50e-178	102	139
+GO:0051301	cell division	1.39e-150	74	88
+GO:0007049	cell cycle	1.39e-150	74	88
+GO:0006865	amino acid transport	8.00e-134	71	90
+GO:1901607	alpha-amino acid biosynthetic process	5.12e-125	76	108
+GO:0008360	regulation of cell shape	9.53e-116	48	49
+GO:0022604	regulation of cell morphogenesis	9.53e-116	48	49
+GO:0022603	regulation of anatomical structure morphogenesis	9.53e-116	48	49
+GO:0050793	regulation of developmental process	9.53e-116	48	49
+GO:0046394	carboxylic acid biosynthetic process	2.43e-114	102	198
+GO:0016053	organic acid biosynthetic process	1.37e-113	102	199
+GO:0015849	organic acid transport	5.10e-94	71	120
+GO:0006520	cellular amino acid metabolic process	4.12e-90	106	253
+GO:0009252	peptidoglycan biosynthetic process	3.43e-86	41	47
+GO:0006024	glycosaminoglycan biosynthetic process	3.43e-86	41	47
+GO:0006023	aminoglycan biosynthetic process	3.43e-86	41	47
+GO:0009273	peptidoglycan-based cell wall biogenesis	1.71e-84	42	50
+GO:0044038	cell wall macromolecule biosynthetic process	4.50e-82	41	49
+GO:0070589	cellular component macromolecule biosynthetic process	4.50e-82	41	49
+GO:0042546	cell wall biogenesis	1.16e-80	42	52
+GO:1901566	organonitrogen compound biosynthetic process	4.90e-79	149	498
+GO:0015171	amino acid transmembrane transporter activity	3.80e-76	43	57
+GO:0004386	helicase activity	1.71e-73	30	30
+GO:0044036	cell wall macromolecule metabolic process	1.66e-68	41	57
+GO:0044283	small molecule biosynthetic process	3.29e-68	104	297
+GO:1901605	alpha-amino acid metabolic process	3.92e-68	79	185
+GO:0032153	cell division site	4.67e-66	31	35
+GO:0009067	aspartate family amino acid biosynthetic process	6.38e-64	31	36
+GO:0000910	cytokinesis	8.04e-56	30	38
+GO:0015179	L-amino acid transmembrane transporter activity	7.12e-54	26	30
+GO:0022402	cell cycle process	2.08e-53	33	47
+GO:0000270	peptidoglycan metabolic process	2.69e-52	42	74
+GO:0030203	glycosaminoglycan metabolic process	2.69e-52	42	74
+GO:0006022	aminoglycan metabolic process	1.53e-50	42	76
+GO:0044249	cellular biosynthetic process	3.05e-48	175	859
+GO:0046943	carboxylic acid transmembrane transporter activity	3.35e-47	44	87
+GO:0005342	organic acid transmembrane transporter activity	3.35e-47	44	87
+GO:0015807	L-amino acid transport	1.27e-46	23	27
+GO:1901576	organic substance biosynthetic process	1.80e-46	175	875
+GO:0009058	biosynthetic process	9.03e-45	175	891
+GO:0071705	nitrogen compound transport	1.05e-43	79	250
+GO:0032506	cytokinetic process	1.20e-43	18	18
+GO:0009082	branched-chain amino acid biosynthetic process	1.61e-43	19	20
+GO:0009081	branched-chain amino acid metabolic process	1.61e-43	19	20
+GO:0071555	cell wall organization	3.07e-42	40	80
+GO:0000097	sulfur amino acid biosynthetic process	8.06e-42	21	25
+GO:0003678	DNA helicase activity	3.63e-41	17	17
+GO:0071554	cell wall organization or biogenesis	2.47e-40	43	94
+GO:0015804	neutral amino acid transport	6.76e-39	22	29
+GO:0000917	division septum assembly	1.10e-38	16	16
+GO:0090529	cell septum assembly	1.10e-38	16	16
+GO:0003333	amino acid transmembrane transport	1.61e-38	25	37
+GO:0046942	carboxylic acid transport	1.33e-37	42	95
+GO:0009073	aromatic amino acid family biosynthetic process	1.35e-37	20	25
+GO:0043093	FtsZ-dependent cytokinesis	4.11e-35	21	29
+GO:0022414	reproductive process	4.11e-35	21	29
+GO:0000003	reproduction	4.11e-35	21	29
+GO:0032505	reproduction of a single-celled organism	4.11e-35	21	29
+GO:0019954	asexual reproduction	4.11e-35	21	29
+GO:0008094	ATP-dependent activity, acting on DNA	1.02e-33	21	30
+GO:0000096	sulfur amino acid metabolic process	2.57e-33	22	33
+GO:0009066	aspartate family amino acid metabolic process	4.35e-33	32	65
+GO:0009072	aromatic amino acid family metabolic process	2.06e-32	21	31
+GO:0004180	carboxypeptidase activity	2.55e-32	17	21
+GO:0065008	regulation of biological quality	1.30e-31	52	154
+GO:1905039	carboxylic acid transmembrane transport	2.93e-31	26	47
+GO:1903825	organic acid transmembrane transport	2.93e-31	26	47
+GO:0004185	serine-type carboxypeptidase activity	3.34e-31	14	15
+GO:0070008	serine-type exopeptidase activity	3.34e-31	14	15
+GO:0043177	organic acid binding	4.33e-31	25	44
+GO:0019752	carboxylic acid metabolic process	9.75e-31	107	497
+GO:1901564	organonitrogen compound metabolic process	2.20e-30	156	889
+GO:1902475	L-alpha-amino acid transmembrane transport	5.67e-30	16	20
+GO:0045229	external encapsulating structure organization	7.16e-30	40	103
+GO:0015711	organic anion transport	4.60e-29	42	114
+GO:0009086	methionine biosynthetic process	5.36e-29	14	16
+GO:0006555	methionine metabolic process	5.36e-29	14	16
+GO:0044085	cellular component biogenesis	1.98e-28	77	310
+GO:0043436	oxoacid metabolic process	5.99e-28	107	521
+GO:0006082	organic acid metabolic process	1.89e-26	107	535
+GO:0009089	lysine biosynthetic process via diaminopimelate	2.68e-26	12	13
+GO:0046451	diaminopimelate metabolic process	2.68e-26	12	13
+GO:0008186	ATP-dependent activity, acting on RNA	2.77e-26	11	11
+GO:0008514	organic anion transmembrane transporter activity	8.65e-26	31	74
+GO:0006807	nitrogen compound metabolic process	6.26e-25	198	1369
+GO:0016043	cellular component organization	8.89e-25	85	389
+GO:0051302	regulation of cell division	1.07e-24	13	16
+GO:0016597	amino acid binding	1.38e-24	15	21
+GO:0008150	biological_process	1.95e-24	340	3188
+GO:0009070	serine family amino acid biosynthetic process	3.54e-24	16	24
+GO:0009987	cellular process	4.40e-24	301	2603
+GO:0009084	glutamine family amino acid biosynthetic process	5.49e-24	17	27
+GO:0009097	isoleucine biosynthetic process	7.46e-24	11	12
+GO:0006549	isoleucine metabolic process	7.46e-24	11	12
+GO:0015173	aromatic amino acid transmembrane transporter activity	8.35e-24	10	10
+GO:0000105	histidine biosynthetic process	8.35e-24	10	10
+GO:0006547	histidine metabolic process	8.35e-24	10	10
+GO:0009423	chorismate biosynthetic process	8.35e-24	10	10
+GO:0071840	cellular component organization or biogenesis	4.43e-23	91	447
+GO:0015175	neutral amino acid transmembrane transporter activity	4.98e-23	13	17
+GO:0009085	lysine biosynthetic process	2.34e-22	12	15
+GO:0006526	arginine biosynthetic process	2.34e-22	12	15
+GO:0006820	anion transport	2.50e-22	43	141
+GO:0140657	ATP-dependent activity	3.08e-22	51	186
+GO:0043650	dicarboxylic acid biosynthetic process	1.53e-21	19	36
+GO:0008658	penicillin binding	2.05e-21	10	11
+GO:0003724	RNA helicase activity	2.52e-21	9	9
+GO:0036094	small molecule binding	3.36e-21	134	822
+GO:0043168	anion binding	2.62e-20	121	721
+GO:0046417	chorismate metabolic process	3.18e-20	13	19
+GO:0031406	carboxylic acid binding	1.89e-19	17	32
+GO:0005575	cellular_component	2.32e-19	314	2929
+GO:0009002	serine-type D-Ala-D-Ala carboxypeptidase activity	5.52e-19	9	10
+GO:0030428	cell septum	7.59e-19	8	8
+GO:0110165	cellular anatomical entity	2.76e-17	306	2878
+GO:0008509	anion transmembrane transporter activity	3.32e-17	32	103
+GO:0009069	serine family amino acid metabolic process	4.09e-17	19	43
+GO:0009099	valine biosynthetic process	4.53e-17	9	11
+GO:0006573	valine metabolic process	4.53e-17	9	11
+GO:0089718	amino acid import across plasma membrane	4.53e-17	9	11
+GO:0043090	amino acid import	4.53e-17	9	11
+GO:0015818	isoleucine transport	2.29e-16	7	7
+GO:0042940	D-amino acid transport	2.29e-16	7	7
+GO:0008955	peptidoglycan glycosyltransferase activity	2.29e-16	7	7
+GO:0000101	sulfur amino acid transport	2.68e-16	10	14
+GO:0071702	organic substance transport	2.77e-16	80	434
+GO:0043648	dicarboxylic acid metabolic process	9.95e-16	29	93
+GO:0000725	recombinational repair	1.78e-15	9	12
+GO:0008238	exopeptidase activity	4.45e-15	17	39
+GO:0019344	cysteine biosynthetic process	9.69e-15	8	10
+GO:0072337	modified amino acid transport	3.15e-14	12	22
+GO:0006553	lysine metabolic process	3.15e-14	12	22
+GO:0009098	leucine biosynthetic process	3.69e-14	7	8
+GO:0006551	leucine metabolic process	3.69e-14	7	8
+GO:0032508	DNA duplex unwinding	3.69e-14	7	8
+GO:0032392	DNA geometric change	3.69e-14	7	8
+GO:0009360	DNA polymerase III complex	3.69e-14	7	8
+GO:0051782	negative regulation of cell division	3.69e-14	7	8
+GO:0015658	branched-chain amino acid transmembrane transporter activity	6.91e-14	6	6
+GO:0043138	3'-5' DNA helicase activity	6.91e-14	6	6
+GO:0015174	basic amino acid transmembrane transporter activity	6.91e-14	6	6
+GO:0015802	basic amino acid transport	6.91e-14	6	6
+GO:0071972	peptidoglycan L,D-transpeptidase activity	6.91e-14	6	6
+GO:0009088	threonine biosynthetic process	6.91e-14	6	6
+GO:0006260	DNA replication	8.74e-14	20	55
+GO:0009064	glutamine family amino acid metabolic process	8.74e-14	20	55
+GO:0005524	ATP binding	9.60e-14	77	442
+GO:0032559	adenyl ribonucleotide binding	2.61e-13	77	448
+GO:0006568	tryptophan metabolic process	3.01e-13	8	11
+GO:0006586	indolalkylamine metabolic process	3.01e-13	8	11
+GO:0042430	indole-containing compound metabolic process	3.01e-13	8	11
+GO:0030554	adenyl nucleotide binding	3.08e-13	77	449
+GO:0003674	molecular_function	3.90e-13	315	3159
+GO:0033293	monocarboxylic acid binding	5.38e-13	10	17
+GO:0098656	anion transmembrane transport	9.49e-13	21	63
+GO:0051276	chromosome organization	1.35e-12	13	28
+GO:0008236	serine-type peptidase activity	1.40e-12	15	36
+GO:0017171	serine hydrolase activity	1.40e-12	15	36
+GO:0015803	branched-chain amino acid transport	1.92e-12	7	9
+GO:0015829	valine transport	1.92e-12	7	9
+GO:0000099	sulfur amino acid transmembrane transporter activity	1.92e-12	7	9
+GO:0000162	tryptophan biosynthetic process	1.92e-12	7	9
+GO:0046219	indolalkylamine biosynthetic process	1.92e-12	7	9
+GO:0042435	indole-containing compound biosynthetic process	1.92e-12	7	9
+GO:0009092	homoserine metabolic process	1.92e-12	7	9
+GO:0035639	purine ribonucleoside triphosphate binding	3.46e-12	80	490
+GO:0006534	cysteine metabolic process	3.85e-12	10	18
+GO:0044272	sulfur compound biosynthetic process	6.63e-12	21	66
+GO:0032555	purine ribonucleotide binding	8.55e-12	81	505
+GO:0010564	regulation of cell cycle process	8.97e-12	6	7
+GO:0051726	regulation of cell cycle	8.97e-12	6	7
+GO:0097367	carbohydrate derivative binding	9.07e-12	88	567
+GO:0017076	purine nucleotide binding	9.83e-12	81	506
+GO:0034645	cellular macromolecule biosynthetic process	1.39e-11	71	423
+GO:0003984	acetolactate synthase activity	2.09e-11	5	5
+GO:1903714	isoleucine transmembrane transport	2.09e-11	5	5
+GO:0015823	phenylalanine transport	2.09e-11	5	5
+GO:0015188	L-isoleucine transmembrane transporter activity	2.09e-11	5	5
+GO:0005304	L-valine transmembrane transporter activity	2.09e-11	5	5
+GO:0015424	ABC-type amino acid transporter activity	2.09e-11	5	5
+GO:0033284	ATPase-coupled carboxylic acid transmembrane transporter activity	2.09e-11	5	5
+GO:0033283	ATPase-coupled organic acid transmembrane transporter activity	2.09e-11	5	5
+GO:1902023	L-arginine transport	2.09e-11	5	5
+GO:0015809	arginine transport	2.09e-11	5	5
+GO:0018104	peptidoglycan-protein cross-linking	2.09e-11	5	5
+GO:0033202	DNA helicase complex	2.09e-11	5	5
+GO:0015616	DNA translocase activity	2.09e-11	5	5
+GO:0015820	leucine transport	2.09e-11	5	5
+GO:0019202	amino acid kinase activity	2.09e-11	5	5
+GO:0019877	diaminopimelate biosynthetic process	2.09e-11	5	5
+GO:0009059	macromolecule biosynthetic process	2.56e-11	71	427
+GO:0032553	ribonucleotide binding	2.73e-11	84	540
+GO:0042575	DNA polymerase complex	4.54e-11	7	10
+GO:0006525	arginine metabolic process	5.04e-11	12	27
+GO:0005622	intracellular anatomical structure	7.58e-11	174	1454
+GO:0006811	ion transport	8.79e-11	53	288
+GO:0044237	cellular metabolic process	9.79e-11	207	1833
+GO:0071704	organic substance metabolic process	1.06e-10	208	1846
+GO:0006812	cation transport	1.94e-10	37	173
+GO:0005737	cytoplasm	2.35e-10	169	1415
+GO:0000166	nucleotide binding	2.94e-10	100	708
+GO:1901265	nucleoside phosphate binding	2.94e-10	100	708
+GO:0050789	regulation of biological process	4.34e-10	87	590
+GO:0071103	DNA conformation change	4.53e-10	10	21
+GO:0003887	DNA-directed DNA polymerase activity	4.70e-10	8	14
+GO:0034061	DNA polymerase activity	4.70e-10	8	14
+GO:0031460	glycine betaine transport	6.03e-10	7	11
+GO:0006261	DNA-dependent DNA replication	1.27e-09	12	30
+GO:0035999	tetrahydrofolate interconversion	2.03e-09	5	6
+GO:0015075	ion transmembrane transporter activity	2.30e-09	42	220
+GO:0044281	small molecule metabolic process	3.01e-09	113	860
+GO:0008324	cation transmembrane transporter activity	4.44e-09	33	157
+GO:0072348	sulfur compound transport	4.53e-09	11	27
+GO:0015838	amino-acid betaine transport	5.19e-09	7	12
+GO:0015697	quaternary ammonium group transport	5.19e-09	7	12
+GO:0015190	L-leucine transmembrane transporter activity	6.29e-09	4	4
+GO:0015808	L-alanine transport	6.29e-09	4	4
+GO:0032328	alanine transport	6.29e-09	4	4
+GO:0015192	L-phenylalanine transmembrane transporter activity	6.29e-09	4	4
+GO:0006268	DNA unwinding involved in DNA replication	6.29e-09	4	4
+GO:0015184	L-cystine transmembrane transporter activity	6.29e-09	4	4
+GO:0015811	L-cystine transport	6.29e-09	4	4
+GO:0016838	carbon-oxygen lyase activity, acting on phosphates	6.29e-09	4	4
+GO:0015821	methionine transport	6.29e-09	4	4
+GO:0032329	serine transport	6.29e-09	4	4
+GO:0017116	single-stranded DNA helicase activity	6.29e-09	4	4
+GO:0015276	ligand-gated ion channel activity	6.29e-09	4	4
+GO:1902022	L-lysine transport	6.29e-09	4	4
+GO:0097638	L-arginine import across plasma membrane	6.29e-09	4	4
+GO:1903400	L-arginine transmembrane transport	6.29e-09	4	4
+GO:1903826	arginine transmembrane transport	6.29e-09	4	4
+GO:1990822	basic amino acid transmembrane transport	6.29e-09	4	4
+GO:0000935	division septum	6.29e-09	4	4
+GO:0009090	homoserine biosynthetic process	6.29e-09	4	4
+GO:0140097	catalytic activity, acting on DNA	9.63e-09	32	153
+GO:0007059	chromosome segregation	1.36e-08	8	16
+GO:1990234	transferase complex	2.06e-08	14	43
+GO:0006563	L-serine metabolic process	3.21e-08	7	13
+GO:1901137	carbohydrate derivative biosynthetic process	3.37e-08	44	250
+GO:0140535	intracellular protein-containing complex	3.78e-08	12	34
+GO:0009314	response to radiation	4.07e-08	23	97
+GO:0043167	ion binding	4.33e-08	154	1329
+GO:0065007	biological regulation	4.56e-08	92	684
+GO:0006996	organelle organization	5.29e-08	25	111
+GO:1903785	L-valine transmembrane transport	5.37e-08	5	7
+GO:1902494	catalytic complex	6.87e-08	31	154
+GO:0005515	protein binding	1.12e-07	75	531
+GO:0008152	metabolic process	1.38e-07	209	1984
+GO:0015695	organic cation transport	1.44e-07	11	31
+GO:0098739	import across plasma membrane	1.55e-07	9	22
+GO:0006810	transport	1.56e-07	82	601
+GO:0016887	ATP hydrolysis activity	1.60e-07	15	52
+GO:0097159	organic cyclic compound binding	1.82e-07	161	1431
+GO:1901363	heterocyclic compound binding	1.82e-07	161	1431
+GO:0032991	protein-containing complex	2.79e-07	74	531
+GO:0043190	ATP-binding cassette (ABC) transporter complex	2.87e-07	18	71
+GO:0004527	exonuclease activity	2.97e-07	11	32
+GO:0051234	establishment of localization	3.48e-07	82	610
+GO:0017038	protein import	4.13e-07	4	5
+GO:0140513	nuclear protein-containing complex	4.13e-07	4	5
+GO:0005634	nucleus	4.13e-07	4	5
+GO:0048476	Holliday junction resolvase complex	4.13e-07	4	5
+GO:0032465	regulation of cytokinesis	4.13e-07	4	5
+GO:0006564	L-serine biosynthetic process	4.13e-07	4	5
+GO:0042401	cellular biogenic amine biosynthetic process	5.88e-07	7	15
+GO:0009309	amine biosynthetic process	5.88e-07	7	15
+GO:0005975	carbohydrate metabolic process	6.20e-07	5	379
+GO:0042450	arginine biosynthetic process via ornithine	6.28e-07	5	8
+GO:0140640	catalytic activity, acting on a nucleic acid	6.87e-07	47	295
+GO:0031226	intrinsic component of plasma membrane	7.53e-07	61	420
+GO:1901681	sulfur compound binding	9.60e-07	12	39
+GO:0098533	ATPase dependent transmembrane transport complex	1.19e-06	18	75
+GO:0005694	chromosome	1.47e-06	8	20
+GO:0030170	pyridoxal phosphate binding	1.51e-06	15	57
+GO:0070279	vitamin B6 binding	1.51e-06	15	57
+GO:0005887	integral component of plasma membrane	1.65e-06	58	400
+GO:0042802	identical protein binding	1.79e-06	63	447
+GO:0032955	regulation of division septum assembly	1.88e-06	3	3
+GO:1901891	regulation of cell septum assembly	1.88e-06	3	3
+GO:0032954	regulation of cytokinetic process	1.88e-06	3	3
+GO:0006571	tyrosine biosynthetic process	1.88e-06	3	3
+GO:0006570	tyrosine metabolic process	1.88e-06	3	3
+GO:0042941	D-alanine transport	1.88e-06	3	3
+GO:0015801	aromatic amino acid transport	1.88e-06	3	3
+GO:0033677	DNA/RNA helicase activity	1.88e-06	3	3
+GO:0005856	cytoskeleton	1.88e-06	3	3
+GO:0000902	cell morphogenesis	1.88e-06	3	3
+GO:0009653	anatomical structure morphogenesis	1.88e-06	3	3
+GO:0048856	anatomical structure development	1.88e-06	3	3
+GO:0009378	four-way junction helicase activity	1.88e-06	3	3
+GO:0043865	methionine transmembrane transporter activity	1.88e-06	3	3
+GO:0042943	D-amino acid transmembrane transporter activity	1.88e-06	3	3
+GO:0048473	D-methionine transport	1.88e-06	3	3
+GO:0015191	L-methionine transmembrane transporter activity	1.88e-06	3	3
+GO:0015648	lipid-linked peptidoglycan transporter activity	1.88e-06	3	3
+GO:0015647	peptidoglycan transmembrane transporter activity	1.88e-06	3	3
+GO:0003849	3-deoxy-7-phosphoheptulonate synthase activity	1.88e-06	3	3
+GO:0034618	arginine binding	1.88e-06	3	3
+GO:0055129	L-proline biosynthetic process	1.88e-06	3	3
+GO:1903401	L-lysine transmembrane transport	1.88e-06	3	3
+GO:0008854	exodeoxyribonuclease V activity	1.88e-06	3	3
+GO:0009338	exodeoxyribonuclease V complex	1.88e-06	3	3
+GO:0022889	serine transmembrane transporter activity	1.88e-06	3	3
+GO:0004072	aspartate kinase activity	1.88e-06	3	3
+GO:0071667	DNA/RNA hybrid binding	1.88e-06	3	3
+GO:0006281	DNA repair	2.08e-06	20	90
+GO:0030894	replisome	4.25e-06	5	9
+GO:1905347	endodeoxyribonuclease complex	4.25e-06	5	9
+GO:0005488	binding	5.52e-06	219	2185
+GO:0022857	transmembrane transporter activity	5.92e-06	74	566
+GO:0072349	modified amino acid transmembrane transporter activity	6.37e-06	6	13
+GO:0005829	cytosol	6.61e-06	121	1054
+GO:0034639	L-amino acid efflux transmembrane transporter activity	6.77e-06	4	6
+GO:0000920	septum digestion after cytokinesis	6.77e-06	4	6
+GO:0043231	intracellular membrane-bounded organelle	6.77e-06	4	6
+GO:0080146	L-cysteine desulfhydrase activity	6.77e-06	4	6
+GO:0047661	amino-acid racemase activity	6.77e-06	4	6
+GO:0036361	racemase activity, acting on amino acids and derivatives	6.77e-06	4	6
+GO:0005416	amino acid:cation symporter activity	6.77e-06	4	6
+GO:0022834	ligand-gated channel activity	6.77e-06	4	6
+GO:0050667	homocysteine metabolic process	6.77e-06	4	6
+GO:0033218	amide binding	7.60e-06	10	32
+GO:1901682	sulfur compound transmembrane transporter activity	8.02e-06	8	22
+GO:0008408	3'-5' exonuclease activity	8.02e-06	8	22
+GO:0005215	transporter activity	8.77e-06	74	571
+GO:0019842	vitamin binding	1.00e-05	18	82
+GO:0051179	localization	1.03e-05	82	653
+GO:0043229	intracellular organelle	1.24e-05	21	104
+GO:0044238	primary metabolic process	1.43e-05	163	1539
+GO:0017111	nucleoside-triphosphatase activity	1.67e-05	17	77
+GO:0016879	ligase activity, forming carbon-nitrogen bonds	1.73e-05	12	45
+GO:0016818	hydrolase activity, acting on acid anhydrides, in phosphorus-containing anhydrides	1.77e-05	22	113
+GO:0016817	hydrolase activity, acting on acid anhydrides	1.77e-05	22	113
+GO:0005657	replication fork	1.96e-05	5	10
+GO:0006591	ornithine metabolic process	1.96e-05	5	10
+GO:0010212	response to ionizing radiation	2.85e-05	9	29
+GO:0016881	acid-amino acid ligase activity	3.09e-05	7	19
+GO:0016757	glycosyltransferase activity	3.64e-05	18	87
+GO:0016462	pyrophosphatase activity	3.66e-05	21	109
+GO:0044262	cellular carbohydrate metabolic process	4.26e-05	1	215
+GO:0032973	amino acid export across plasma membrane	5.02e-05	4	7
+GO:0042834	peptidoglycan binding	5.02e-05	4	7
+GO:0043227	membrane-bounded organelle	5.02e-05	4	7
+GO:0016855	racemase and epimerase activity, acting on amino acids and derivatives	5.02e-05	4	7
+GO:0009295	nucleoid	6.47e-05	7	20
+GO:0006566	threonine metabolic process	6.47e-05	7	20
+GO:0003824	catalytic activity	6.63e-05	196	1965
+GO:0016744	transketolase or transaldolase activity	6.86e-05	5	11
+GO:0006302	double-strand break repair	6.86e-05	5	11
+GO:0009095	aromatic amino acid family biosynthetic process, prephenate pathway	6.92e-05	3	4
+GO:0009094	L-phenylalanine biosynthetic process	6.92e-05	3	4
+GO:1902223	erythrose 4-phosphate/phosphoenolpyruvate family amino acid biosynthetic process	6.92e-05	3	4
+GO:0006535	cysteine biosynthetic process from serine	6.92e-05	3	4
+GO:0032466	negative regulation of cytokinesis	6.92e-05	3	4
+GO:0010948	negative regulation of cell cycle process	6.92e-05	3	4
+GO:0045786	negative regulation of cell cycle	6.92e-05	3	4
+GO:0005283	amino acid:sodium symporter activity	6.92e-05	3	4
+GO:0005343	organic acid:sodium symporter activity	6.92e-05	3	4
+GO:0006561	proline biosynthetic process	6.92e-05	3	4
+GO:0006560	proline metabolic process	6.92e-05	3	4
+GO:0005948	acetolactate synthase complex	6.92e-05	3	4
+GO:0006791	sulfur utilization	6.92e-05	3	4
+GO:0000724	double-strand break repair via homologous recombination	6.92e-05	3	4
+GO:0071265	L-methionine biosynthetic process	6.92e-05	3	4
+GO:0033592	RNA strand annealing activity	6.92e-05	3	4
+GO:0140666	annealing activity	6.92e-05	3	4
+GO:0022607	cellular component assembly	7.51e-05	33	211
+GO:0008233	peptidase activity	1.34e-04	20	108
+GO:0044260	cellular macromolecule metabolic process	1.35e-04	94	819
+GO:0019538	protein metabolic process	1.68e-04	7	305
+GO:0098542	defense response to other organism	1.80e-04	8	27
+GO:0006955	immune response	1.80e-04	8	27
+GO:0002376	immune system process	1.80e-04	8	27
+GO:0006952	defense response	1.80e-04	8	27
+GO:0006730	one-carbon metabolic process	1.95e-04	5	12
+GO:0043412	macromolecule modification	2.08e-04	3	225
+GO:0043213	bacteriocin transport	2.26e-04	4	8
+GO:0005539	glycosaminoglycan binding	2.26e-04	4	8
+GO:0061695	transferase complex, transferring phosphorus-containing groups	2.31e-04	7	22
+GO:0016787	hydrolase activity	2.65e-04	71	590
+GO:0050661	NADP binding	3.05e-04	9	34
+GO:0098655	cation transmembrane transport	3.48e-04	17	90
+GO:0006790	sulfur compound metabolic process	3.73e-04	22	130
+GO:0009628	response to abiotic stimulus	3.73e-04	35	243
+GO:0051607	defense response to virus	4.69e-04	5	13
+GO:0140546	defense response to symbiont	4.69e-04	5	13
+GO:0016846	carbon-sulfur lyase activity	4.69e-04	5	13
+GO:0016774	phosphotransferase activity, carboxyl group as acceptor	4.69e-04	5	13
+GO:0043085	positive regulation of catalytic activity	4.89e-04	6	18
+GO:0006541	glutamine metabolic process	4.89e-04	6	18
+GO:0006793	phosphorus metabolic process	5.34e-04	11	350
+GO:0071237	cellular response to bacteriocin	5.41e-04	2	2
+GO:0046678	response to bacteriocin	5.41e-04	2	2
+GO:1901653	cellular response to peptide	5.41e-04	2	2
+GO:0000918	division septum site selection	5.41e-04	2	2
+GO:0004106	chorismate mutase activity	5.41e-04	2	2
+GO:1990610	acetolactate synthase regulator activity	5.41e-04	2	2
+GO:1903806	L-isoleucine import across plasma membrane	5.41e-04	2	2
+GO:0098713	leucine import across plasma membrane	5.41e-04	2	2
+GO:0015196	L-tryptophan transmembrane transporter activity	5.41e-04	2	2
+GO:0034458	3'-5' RNA helicase activity	5.41e-04	2	2
+GO:0015181	arginine transmembrane transporter activity	5.41e-04	2	2
+GO:0004783	sulfite reductase (NADPH) activity	5.41e-04	2	2
+GO:0016002	sulfite reductase activity	5.41e-04	2	2
+GO:0009337	sulfite reductase complex (NADPH)	5.41e-04	2	2
+GO:0009333	cysteine synthase complex	5.41e-04	2	2
+GO:0004124	cysteine synthase activity	5.41e-04	2	2
+GO:0009379	Holliday junction helicase complex	5.41e-04	2	2
+GO:0070981	L-asparagine biosynthetic process	5.41e-04	2	2
+GO:0070982	L-asparagine metabolic process	5.41e-04	2	2
+GO:0006529	asparagine biosynthetic process	5.41e-04	2	2
+GO:0004071	aspartate-ammonia ligase activity	5.41e-04	2	2
+GO:0009037	tyrosine-based site-specific recombinase activity	5.41e-04	2	2
+GO:0071139	resolution of recombination intermediates	5.41e-04	2	2
+GO:0051781	positive regulation of cell division	5.41e-04	2	2
+GO:0032272	negative regulation of protein polymerization	5.41e-04	2	2
+GO:0032271	regulation of protein polymerization	5.41e-04	2	2
+GO:0031333	negative regulation of protein-containing complex assembly	5.41e-04	2	2
+GO:0043846	DNA polymerase III, clamp loader complex	5.41e-04	2	2
+GO:0006532	aspartate biosynthetic process	5.41e-04	2	2
+GO:0050048	L-leucine:2-oxoglutarate aminotransferase activity	5.41e-04	2	2
+GO:0004355	glutamate synthase (NADPH) activity	5.41e-04	2	2
+GO:0045181	glutamate synthase activity, NAD(P)H as acceptor	5.41e-04	2	2
+GO:0097054	L-glutamate biosynthetic process	5.41e-04	2	2
+GO:0015813	L-glutamate transmembrane transport	5.41e-04	2	2
+GO:0004049	anthranilate synthase activity	5.41e-04	2	2
+GO:0009382	imidazoleglycerol-phosphate synthase complex	5.41e-04	2	2
+GO:0000107	imidazoleglycerol-phosphate synthase activity	5.41e-04	2	2
+GO:1903810	L-histidine import across plasma membrane	5.41e-04	2	2
+GO:0089709	L-histidine transmembrane transport	5.41e-04	2	2
+GO:0005291	high-affinity L-histidine transmembrane transporter activity	5.41e-04	2	2
+GO:0005290	L-histidine transmembrane transporter activity	5.41e-04	2	2
+GO:0005287	high-affinity basic amino acid transmembrane transporter activity	5.41e-04	2	2
+GO:0015189	L-lysine transmembrane transporter activity	5.41e-04	2	2
+GO:0051095	regulation of helicase activity	5.41e-04	2	2
+GO:0004834	tryptophan synthase activity	5.41e-04	2	2
+GO:0042945	D-serine transmembrane transporter activity	5.41e-04	2	2
+GO:0042942	D-serine transport	5.41e-04	2	2
+GO:2000245	negative regulation of FtsZ-dependent cytokinesis	5.41e-04	2	2
+GO:2000244	regulation of FtsZ-dependent cytokinesis	5.41e-04	2	2
+GO:2000241	regulation of reproductive process	5.41e-04	2	2
+GO:2000242	negative regulation of reproductive process	5.41e-04	2	2
+GO:0003861	3-isopropylmalate dehydratase activity	5.41e-04	2	2
+GO:0015426	ATPase-coupled polar amino acid-transporter activity	5.41e-04	2	2
+GO:0004088	carbamoyl-phosphate synthase (glutamine-hydrolyzing) activity	5.41e-04	2	2
+GO:0005951	carbamoyl-phosphate synthase complex	5.41e-04	2	2
+GO:0008716	D-alanine-D-alanine ligase activity	5.41e-04	2	2
+GO:0008705	methionine synthase activity	5.41e-04	2	2
+GO:0042084	5-methyltetrahydrofolate-dependent methyltransferase activity	5.41e-04	2	2
+GO:0070905	serine binding	5.41e-04	2	2
+GO:0004412	homoserine dehydrogenase activity	5.41e-04	2	2
+GO:0033359	lysine biosynthetic process via diaminopimelate and N-succinyl-2-amino-6-ketopimelate	5.41e-04	2	2
+GO:0004765	shikimate kinase activity	5.41e-04	2	2
+GO:1990220	GroEL-GroES complex	5.41e-04	2	2
+GO:0016465	chaperonin ATPase complex	5.41e-04	2	2
+GO:0101031	chaperone complex	5.41e-04	2	2
+GO:0019068	virion assembly	5.41e-04	2	2
+GO:0047804	cysteine-S-conjugate beta-lyase activity	5.41e-04	2	2
+GO:0004121	cystathionine beta-lyase activity	5.41e-04	2	2
+GO:0071266	'de novo' L-methionine biosynthetic process	5.41e-04	2	2
+GO:0006091	generation of precursor metabolites and energy	5.63e-04	1	164
+GO:0071417	cellular response to organonitrogen compound	6.12e-04	3	5
+GO:0071495	cellular response to endogenous stimulus	6.12e-04	3	5
+GO:0009719	response to endogenous stimulus	6.12e-04	3	5
+GO:0015826	threonine transport	6.12e-04	3	5
+GO:0008172	S-methyltransferase activity	6.12e-04	3	5
+GO:0044267	cellular protein metabolic process	6.35e-04	6	259
+GO:0016765	transferase activity, transferring alkyl or aryl (other than methyl) groups	6.48e-04	9	36
+GO:0009432	SOS response	6.97e-04	8	30
+GO:0015291	secondary active transmembrane transporter activity	6.99e-04	21	126
+GO:0016835	carbon-oxygen lyase activity	7.22e-04	14	71
+GO:0055052	ATP-binding cassette (ABC) transporter complex, substrate-binding subunit-containing	7.29e-04	4	9
+GO:0006796	phosphate-containing compound metabolic process	8.03e-04	10	324
+GO:1902495	transmembrane transporter complex	8.77e-04	18	103
+GO:0006259	DNA metabolic process	1.05e-03	32	226
+GO:0098797	plasma membrane protein complex	1.21e-03	18	105
+GO:0043232	intracellular non-membrane-bounded organelle	1.22e-03	17	97
+GO:0016051	carbohydrate biosynthetic process	1.26e-03	1	148
+GO:0034220	ion transmembrane transport	1.31e-03	22	139
+GO:0006310	DNA recombination	1.36e-03	19	114
+GO:0019637	organophosphate metabolic process	1.36e-03	8	278
+GO:1901135	carbohydrate derivative metabolic process	1.37e-03	48	383
+GO:0046677	response to antibiotic	1.41e-03	18	106
+GO:0051707	response to other organism	1.48e-03	8	32
+GO:0043207	response to external biotic stimulus	1.48e-03	8	32
+GO:0043226	organelle	1.60e-03	21	132
+GO:1990351	transporter complex	1.64e-03	18	107
+GO:0004518	nuclease activity	1.70e-03	16	91
+GO:0006629	lipid metabolic process	1.74e-03	4	201
+GO:0042255	ribosome assembly	1.76e-03	11	53
+GO:0032787	monocarboxylic acid metabolic process	2.05e-03	5	216
+GO:0098657	import into cell	2.30e-03	9	40
+GO:0140110	transcription regulator activity	2.31e-03	7	249
+GO:0065009	regulation of molecular function	2.52e-03	12	62
+GO:0071236	cellular response to antibiotic	2.64e-03	3	6
+GO:0016884	carbon-nitrogen ligase activity, with glutamine as amido-N-donor	2.64e-03	3	6
+GO:0030261	chromosome condensation	2.64e-03	3	6
+GO:0006323	DNA packaging	2.64e-03	3	6
+GO:0006289	nucleotide-excision repair	2.64e-03	3	6
+GO:0006458	'de novo' protein folding	2.64e-03	3	6
+GO:0044255	cellular lipid metabolic process	2.67e-03	4	192
+GO:0016052	carbohydrate catabolic process	2.81e-03	1	132
+GO:0016829	lyase activity	3.30e-03	27	192
+GO:0044282	small molecule catabolic process	3.44e-03	10	291
+GO:0043170	macromolecule metabolic process	3.46e-03	99	944
+GO:0044093	positive regulation of molecular function	3.72e-03	6	22
+GO:0022618	ribonucleoprotein complex assembly	3.76e-03	10	49
+GO:0071826	ribonucleoprotein complex subunit organization	3.76e-03	10	49
+GO:0009274	peptidoglycan-based cell wall	4.02e-03	4	11
+GO:0009056	catabolic process	4.07e-03	23	490
+GO:0016758	hexosyltransferase activity	5.13e-03	8	36
+GO:0005886	plasma membrane	5.36e-03	120	1194
+GO:0015293	symporter activity	5.45e-03	13	74
+GO:0046653	tetrahydrofolate metabolic process	5.59e-03	5	17
+GO:0051128	regulation of cellular component organization	6.27e-03	11	59
+GO:0003700	DNA-binding transcription factor activity	6.50e-03	7	226
+GO:0009607	response to biotic stimulus	6.70e-03	8	37
+GO:1901575	organic substance catabolic process	6.79e-03	23	476
+GO:0070206	protein trimerization	7.56e-03	3	7
+GO:0006269	DNA replication, synthesis of RNA primer	7.56e-03	3	7
+GO:1990077	primosome complex	7.56e-03	3	7
+GO:0051345	positive regulation of hydrolase activity	7.56e-03	3	7
+GO:0005618	cell wall	7.62e-03	4	12
+GO:0016646	oxidoreductase activity, acting on the CH-NH group of donors, NAD or NADP as acceptor	7.62e-03	4	12
+GO:0016796	exonuclease activity, active with either ribo- or deoxyribonucleic acids and producing 5'-phosphomonoesters	7.90e-03	6	24
+GO:0009605	response to external stimulus	7.97e-03	20	137
+GO:0043164	Gram-negative-bacterium-type cell wall biogenesis	7.97e-03	2	3
+GO:0044776	DNA polymerase III, core complex	7.97e-03	2	3
+GO:0042150	plasmid recombination	7.97e-03	2	3
+GO:0043087	regulation of GTPase activity	7.97e-03	2	3
+GO:0008784	alanine racemase activity	7.97e-03	2	3
+GO:0015930	glutamate synthase activity	7.97e-03	2	3
+GO:0016639	oxidoreductase activity, acting on the CH-NH2 group of donors, NAD or NADP as acceptor	7.97e-03	2	3
+GO:0015800	acidic amino acid transport	7.97e-03	2	3
+GO:1990145	maintenance of translational fidelity	7.97e-03	2	3
+GO:0044787	bacterial-type DNA replication	7.97e-03	2	3
+GO:0004585	ornithine carbamoyltransferase activity	7.97e-03	2	3
+GO:0019240	citrulline biosynthetic process	7.97e-03	2	3
+GO:0000052	citrulline metabolic process	7.97e-03	2	3
+GO:0005275	amine transmembrane transporter activity	7.97e-03	2	3
+GO:0006995	cellular response to nitrogen starvation	7.97e-03	2	3
+GO:0043562	cellular response to nitrogen levels	7.97e-03	2	3
+GO:0000746	conjugation	7.97e-03	2	3
+GO:0008800	beta-lactamase activity	7.97e-03	2	3
+GO:0009615	response to virus	8.72e-03	5	18
+GO:0008610	lipid biosynthetic process	9.87e-03	3	146
+GO:0050790	regulation of catalytic activity	9.89e-03	9	46
+GO:0016773	phosphotransferase activity, alcohol group as acceptor	0.0104	3	145
+GO:0016740	transferase activity	0.0118	69	644
+GO:0140694	non-membrane-bounded organelle assembly	0.0122	12	71
+GO:0070925	organelle assembly	0.0122	12	71
+GO:0015101	organic cation transmembrane transporter activity	0.0130	5	19
+GO:0022836	gated channel activity	0.0131	4	13
+GO:0055086	nucleobase-containing small molecule metabolic process	0.0140	8	225
+GO:0006576	cellular biogenic amine metabolic process	0.0147	9	48
+GO:0044106	cellular amine metabolic process	0.0147	9	48
+GO:0009308	amine metabolic process	0.0147	9	48
+GO:0042274	ribosomal small subunit biogenesis	0.0149	6	26
+GO:0003676	nucleic acid binding	0.0156	74	706
+GO:0034622	cellular protein-containing complex assembly	0.0163	12	73
+GO:0009055	electron transfer activity	0.0163	1	97
+GO:1901699	cellular response to nitrogen compound	0.0167	3	8
+GO:0071310	cellular response to organic substance	0.0167	3	8
+GO:1902221	erythrose 4-phosphate/phosphoenolpyruvate family amino acid metabolic process	0.0167	3	8
+GO:0006558	L-phenylalanine metabolic process	0.0167	3	8
+GO:0006276	plasmid maintenance	0.0167	3	8
+GO:0000103	sulfate assimilation	0.0167	3	8
+GO:0015370	solute:sodium symporter activity	0.0167	3	8
+GO:0065003	protein-containing complex assembly	0.0182	18	127
+GO:0016020	membrane	0.0183	136	1421
+GO:0000028	ribosomal small subunit assembly	0.0185	5	20
+GO:0006760	folic acid-containing compound metabolic process	0.0185	5	20
+GO:0042558	pteridine-containing compound metabolic process	0.0185	5	20
+GO:0019438	aromatic compound biosynthetic process	0.0199	37	315
+GO:0044248	cellular catabolic process	0.0203	18	371
+GO:1903507	negative regulation of nucleic acid-templated transcription	0.0206	2	112
+GO:1902679	negative regulation of RNA biosynthetic process	0.0206	2	112
+GO:0016645	oxidoreductase activity, acting on the CH-NH group of donors	0.0208	4	14
+GO:0009254	peptidoglycan turnover	0.0208	4	14
+GO:0006835	dicarboxylic acid transport	0.0208	4	14
+GO:0006972	hyperosmotic response	0.0208	4	14
+GO:0044419	biological process involved in interspecies interaction between organisms	0.0211	9	50
+GO:0055085	transmembrane transport	0.0214	36	306
+GO:0016779	nucleotidyltransferase activity	0.0214	12	75
+GO:0045892	negative regulation of transcription, DNA-templated	0.0216	2	111
+GO:0016836	hydro-lyase activity	0.0242	10	59
+GO:1903509	liposaccharide metabolic process	0.0245	1	89
+GO:0030234	enzyme regulator activity	0.0249	8	43
+GO:0015562	efflux transmembrane transporter activity	0.0254	6	28
+GO:0010243	response to organonitrogen compound	0.0255	5	21
+GO:0051336	regulation of hydrolase activity	0.0255	5	21
+GO:0042254	ribosome biogenesis	0.0256	15	103
+GO:0006950	response to stress	0.0263	58	544
+GO:0016491	oxidoreductase activity	0.0278	23	435
+GO:0022613	ribonucleoprotein complex biogenesis	0.0283	15	104
+GO:0022804	active transmembrane transporter activity	0.0291	34	291
+GO:1901362	organic cyclic compound biosynthetic process	0.0299	40	354
+GO:0031668	cellular response to extracellular stimulus	0.0301	11	69
+GO:0071496	cellular response to external stimulus	0.0301	11	69
+GO:0032502	developmental process	0.0310	3	9
+GO:0015489	putrescine transmembrane transporter activity	0.0310	3	9
+GO:0043200	response to amino acid	0.0310	3	9
+GO:0003727	single-stranded RNA binding	0.0310	3	9
+GO:0010467	gene expression	0.0311	17	344
+GO:0043933	protein-containing complex subunit organization	0.0314	18	133
+GO:0006528	asparagine metabolic process	0.0316	2	4
+GO:0016211	ammonia ligase activity	0.0316	2	4
+GO:0043254	regulation of protein-containing complex assembly	0.0316	2	4
+GO:0097718	disordered domain specific binding	0.0316	2	4
+GO:0050380	undecaprenyl-diphosphatase activity	0.0316	2	4
+GO:0044786	cell cycle DNA replication	0.0316	2	4
+GO:0006521	regulation of cellular amino acid metabolic process	0.0316	2	4
+GO:0019346	transsulfuration	0.0316	2	4
+GO:0015565	threonine efflux transmembrane transporter activity	0.0316	2	4
+GO:0015195	L-threonine transmembrane transporter activity	0.0316	2	4
+GO:1902369	negative regulation of RNA catabolic process	0.0316	2	4
+GO:0031330	negative regulation of cellular catabolic process	0.0316	2	4
+GO:0015294	solute:cation symporter activity	0.0342	9	53
+GO:0009991	response to extracellular stimulus	0.0351	12	79
+GO:0043228	non-membrane-bounded organelle	0.0356	17	125
+GO:0090407	organophosphate biosynthetic process	0.0395	7	184
+GO:1903506	regulation of nucleic acid-templated transcription	0.0401	14	292
+GO:0006355	regulation of transcription, DNA-templated	0.0416	14	291
+GO:0098772	molecular function regulator	0.0416	8	46
+GO:0071944	cell periphery	0.0465	123	1304
+GO:0006974	cellular response to DNA damage stimulus	0.0472	31	269
+GO:0019867	outer membrane	0.0478	4	130
+GO:0023052	signaling	0.0499	1	75

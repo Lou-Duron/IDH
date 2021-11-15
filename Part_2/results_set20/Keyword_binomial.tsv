@@ -1,0 +1,41 @@
+id	desc	pval	common_size	target_size
+Aromatic hydrocarbons catabolism		2.49e-12	9	13
+Pyrimidine biosynthesis		2.95e-11	8	11
+Direct protein sequencing		3.92e-11	43	932
+Oxidoreductase		5.39e-11	26	337
+3D-structure		1.61e-08	52	1570
+Tricarboxylic acid cycle		1.98e-07	7	23
+NAD		1.20e-06	13	142
+Pantothenate biosynthesis		2.19e-06	4	5
+Lyase		3.79e-05	12	168
+Fatty acid biosynthesis		1.55e-04	4	15
+Metal-binding		4.87e-04	24	682
+Dioxygenase		7.78e-04	3	10
+Iron-sulfur		8.56e-04	9	141
+Acyltransferase		1.33e-03	6	68
+Coenzyme A biosynthesis		1.34e-03	2	3
+Fatty acid metabolism		1.59e-03	4	28
+Acetylation		1.98e-03	7	100
+Transferase		2.24e-03	20	582
+Iron		3.44e-03	11	242
+4Fe-4S		3.69e-03	7	112
+Allosteric enzyme		4.71e-03	4	38
+Organic radical		5.18e-03	2	6
+Glucose metabolism		5.18e-03	2	6
+Cytoplasm		5.73e-03	21	676
+Decarboxylase		6.27e-03	3	21
+Electron transport		7.13e-03	6	96
+Magnesium		7.32e-03	11	268
+Pyruvate		9.00e-03	2	8
+2Fe-2S		9.02e-03	3	24
+Lipid biosynthesis		0.0113	4	49
+Carbon dioxide fixation		0.0175	1	1
+Arginine biosynthesis		0.0193	2	12
+Glutamine amidotransferase		0.0193	2	12
+Pyridoxal phosphate		0.0208	4	59
+Bacterial microcompartment		0.0224	2	13
+ATP-binding		0.0319	13	420
+FAD		0.0342	4	69
+Flavoprotein		0.0372	5	104
+Lipid metabolism		0.0406	4	73
+Aminotransferase		0.0491	2	20

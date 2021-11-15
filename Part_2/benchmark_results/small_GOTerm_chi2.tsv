@@ -1,0 +1,222 @@
+id	desc	pval	common_size	target_size
+GO:0009088	threonine biosynthetic process	1.45e-96	4	6
+GO:0003724	RNA helicase activity	1.76e-33	3	9
+GO:0004386	helicase activity	7.55e-32	5	30
+GO:0006566	threonine metabolic process	3.06e-29	4	20
+GO:0008186	ATP-dependent activity, acting on RNA	1.63e-27	3	11
+GO:0009067	aspartate family amino acid biosynthetic process	1.57e-26	5	36
+GO:0019202	amino acid kinase activity	2.62e-22	2	5
+GO:0009066	aspartate family amino acid metabolic process	1.30e-21	6	65
+GO:0043138	3'-5' DNA helicase activity	9.49e-19	2	6
+GO:0006553	lysine metabolic process	4.92e-14	3	22
+GO:0004038	allantoinase activity	3.27e-13	1	1
+GO:0004795	threonine synthase activity	3.27e-13	1	1
+GO:1990107	thiazole synthase activity	3.27e-13	1	1
+GO:0033512	L-lysine catabolic process to acetyl-CoA via saccharopine	3.27e-13	1	1
+GO:0019474	L-lysine catabolic process to acetyl-CoA	3.27e-13	1	1
+GO:0004149	dihydrolipoyllysine-residue succinyltransferase activity	3.27e-13	1	1
+GO:0016751	S-succinyltransferase activity	3.27e-13	1	1
+GO:0008913	lauroyltransferase activity	3.27e-13	1	1
+GO:0010332	response to gamma radiation	3.27e-13	1	1
+GO:0046538	2,3-bisphosphoglycerate-dependent phosphoglycerate mutase activity	3.27e-13	1	1
+GO:0004413	homoserine kinase activity	3.27e-13	1	1
+GO:0008839	4-hydroxy-tetrahydrodipicolinate reductase	3.27e-13	1	1
+GO:0006101	citrate metabolic process	3.27e-13	1	1
+GO:0006099	tricarboxylic acid cycle	9.27e-11	3	29
+GO:0006302	double-strand break repair	1.28e-10	2	11
+GO:0008094	ATP-dependent activity, acting on DNA	2.05e-10	3	30
+GO:0044283	small molecule biosynthetic process	3.10e-10	9	297
+GO:0009089	lysine biosynthetic process via diaminopimelate	4.15e-09	2	13
+GO:0046451	diaminopimelate metabolic process	4.15e-09	2	13
+GO:1901607	alpha-amino acid biosynthetic process	1.02e-08	5	108
+GO:0006094	gluconeogenesis	1.63e-08	2	14
+GO:0019319	hexose biosynthetic process	1.63e-08	2	14
+GO:0009085	lysine biosynthetic process	5.38e-08	2	15
+GO:1901605	alpha-amino acid metabolic process	2.96e-07	6	185
+GO:0045252	oxoglutarate dehydrogenase complex	3.36e-07	1	2
+GO:0045240	dihydrolipoyl dehydrogenase complex	3.36e-07	1	2
+GO:1902912	pyruvate kinase complex	3.36e-07	1	2
+GO:0004743	pyruvate kinase activity	3.36e-07	1	2
+GO:0061621	canonical glycolysis	3.36e-07	1	2
+GO:0061718	glucose catabolic process to pyruvate	3.36e-07	1	2
+GO:0061620	glycolytic process through glucose-6-phosphate	3.36e-07	1	2
+GO:0061615	glycolytic process through fructose-6-phosphate	3.36e-07	1	2
+GO:0006735	NADH regeneration	3.36e-07	1	2
+GO:0004412	homoserine dehydrogenase activity	3.36e-07	1	2
+GO:0008143	poly(A) binding	3.36e-07	1	2
+GO:0070717	poly-purine tract binding	3.36e-07	1	2
+GO:0072350	tricarboxylic acid metabolic process	3.36e-07	1	2
+GO:0004108	citrate (Si)-synthase activity	3.36e-07	1	2
+GO:0036440	citrate synthase activity	3.36e-07	1	2
+GO:0034458	3'-5' RNA helicase activity	3.36e-07	1	2
+GO:0003678	DNA helicase activity	3.85e-07	2	17
+GO:0019752	carboxylic acid metabolic process	4.63e-07	10	497
+GO:0036094	small molecule binding	7.52e-07	13	822
+GO:0046394	carboxylic acid biosynthetic process	9.66e-07	6	198
+GO:0043168	anion binding	1.01e-06	12	721
+GO:0008652	cellular amino acid biosynthetic process	1.04e-06	5	139
+GO:0016053	organic acid biosynthetic process	1.05e-06	6	199
+GO:0043436	oxoacid metabolic process	1.16e-06	10	521
+GO:0006096	glycolytic process	1.83e-06	2	19
+GO:0044281	small molecule metabolic process	1.89e-06	13	860
+GO:0006082	organic acid metabolic process	1.91e-06	10	535
+GO:0005524	ATP binding	1.96e-06	9	442
+GO:0032559	adenyl ribonucleotide binding	2.49e-06	9	448
+GO:0030554	adenyl nucleotide binding	2.59e-06	9	449
+GO:0046364	monosaccharide biosynthetic process	3.55e-06	2	20
+GO:0006757	ATP generation from ADP	3.55e-06	2	20
+GO:0006165	nucleoside diphosphate phosphorylation	3.55e-06	2	20
+GO:0046939	nucleotide phosphorylation	3.55e-06	2	20
+GO:0072521	purine-containing compound metabolic process	5.53e-06	4	99
+GO:0043167	ion binding	6.14e-06	16	1329
+GO:0046031	ADP metabolic process	6.49e-06	2	21
+GO:0009179	purine ribonucleoside diphosphate metabolic process	6.49e-06	2	21
+GO:0009135	purine nucleoside diphosphate metabolic process	6.49e-06	2	21
+GO:0009185	ribonucleoside diphosphate metabolic process	1.12e-05	2	22
+GO:0035639	purine ribonucleoside triphosphate binding	1.14e-05	9	490
+GO:0006091	generation of precursor metabolites and energy	1.22e-05	5	164
+GO:0000166	nucleotide binding	1.32e-05	11	708
+GO:1901265	nucleoside phosphate binding	1.32e-05	11	708
+GO:0009060	aerobic respiration	1.46e-05	3	58
+GO:0032555	purine ribonucleotide binding	1.84e-05	9	505
+GO:0017076	purine nucleotide binding	1.89e-05	9	506
+GO:0003824	catalytic activity	2.51e-05	19	1965
+GO:0009132	nucleoside diphosphate metabolic process	2.94e-05	2	24
+GO:0005622	intracellular anatomical structure	3.45e-05	16	1454
+GO:0009338	exodeoxyribonuclease V complex	3.68e-05	1	3
+GO:0008854	exodeoxyribonuclease V activity	3.68e-05	1	3
+GO:0042132	fructose 1,6-bisphosphate 1-phosphatase activity	3.68e-05	1	3
+GO:0106307	protein threonine phosphatase activity	3.68e-05	1	3
+GO:0106306	protein serine phosphatase activity	3.68e-05	1	3
+GO:0008138	protein tyrosine/serine/threonine phosphatase activity	3.68e-05	1	3
+GO:0031405	lipoic acid binding	3.68e-05	1	3
+GO:0016417	S-acyltransferase activity	3.68e-05	1	3
+GO:0004619	phosphoglycerate mutase activity	3.68e-05	1	3
+GO:0019674	NAD metabolic process	3.68e-05	1	3
+GO:0006734	NADH metabolic process	3.68e-05	1	3
+GO:0004072	aspartate kinase activity	3.68e-05	1	3
+GO:0047780	citrate dehydratase activity	3.68e-05	1	3
+GO:0003730	mRNA 3'-UTR binding	3.68e-05	1	3
+GO:0033677	DNA/RNA helicase activity	3.68e-05	1	3
+GO:0006520	cellular amino acid metabolic process	3.80e-05	6	253
+GO:0032553	ribonucleotide binding	5.08e-05	9	540
+GO:0140657	ATP-dependent activity	6.18e-05	5	186
+GO:0044238	primary metabolic process	9.54e-05	16	1539
+GO:0097367	carbohydrate derivative binding	1.02e-04	9	567
+GO:0019637	organophosphate metabolic process	1.25e-04	6	278
+GO:0009150	purine ribonucleotide metabolic process	1.55e-04	3	72
+GO:0005737	cytoplasm	1.57e-04	15	1415
+GO:0006006	glucose metabolic process	1.85e-04	2	29
+GO:0000027	ribosomal large subunit assembly	1.85e-04	2	29
+GO:0042273	ribosomal large subunit biogenesis	1.85e-04	2	29
+GO:0044237	cellular metabolic process	2.99e-04	17	1833
+GO:0006163	purine nucleotide metabolic process	3.30e-04	3	78
+GO:0000724	double-strand break repair via homologous recombination	4.00e-04	1	4
+GO:0030388	fructose 1,6-bisphosphate metabolic process	4.00e-04	1	4
+GO:0009442	allantoin assimilation pathway	4.00e-04	1	4
+GO:0016838	carbon-oxygen lyase activity, acting on phosphates	4.00e-04	1	4
+GO:0004722	protein serine/threonine phosphatase activity	4.00e-04	1	4
+GO:0036104	Kdo2-lipid A biosynthetic process	4.00e-04	1	4
+GO:0036103	Kdo2-lipid A metabolic process	4.00e-04	1	4
+GO:0006268	DNA unwinding involved in DNA replication	4.00e-04	1	4
+GO:0097718	disordered domain specific binding	4.00e-04	1	4
+GO:0006007	glucose catabolic process	4.00e-04	1	4
+GO:0031556	transcriptional attenuation by ribosome	4.00e-04	1	4
+GO:0009090	homoserine biosynthetic process	4.00e-04	1	4
+GO:0033592	RNA strand annealing activity	4.00e-04	1	4
+GO:0140666	annealing activity	4.00e-04	1	4
+GO:0003994	aconitate hydratase activity	4.00e-04	1	4
+GO:0070404	NADH binding	4.00e-04	1	4
+GO:0005829	cytosol	5.83e-04	12	1054
+GO:0006090	pyruvate metabolic process	6.82e-04	2	34
+GO:0050661	NADP binding	6.82e-04	2	34
+GO:0006796	phosphate-containing compound metabolic process	6.94e-04	6	324
+GO:0009259	ribonucleotide metabolic process	9.31e-04	3	88
+GO:0043650	dicarboxylic acid biosynthetic process	1.04e-03	2	36
+GO:0008152	metabolic process	1.07e-03	17	1984
+GO:0097159	organic cyclic compound binding	1.13e-03	14	1431
+GO:1901363	heterocyclic compound binding	1.13e-03	14	1431
+GO:0016746	acyltransferase activity	1.44e-03	3	93
+GO:0043648	dicarboxylic acid metabolic process	1.44e-03	3	93
+GO:0006793	phosphorus metabolic process	1.50e-03	6	350
+GO:0019693	ribose phosphate metabolic process	1.56e-03	3	94
+GO:0015616	DNA translocase activity	1.71e-03	1	5
+GO:0000256	allantoin catabolic process	1.71e-03	1	5
+GO:0043605	cellular amide catabolic process	1.71e-03	1	5
+GO:0000255	allantoin metabolic process	1.71e-03	1	5
+GO:0005504	fatty acid binding	1.71e-03	1	5
+GO:0019477	L-lysine catabolic process	1.71e-03	1	5
+GO:0046440	L-lysine metabolic process	1.71e-03	1	5
+GO:0016748	succinyltransferase activity	1.71e-03	1	5
+GO:0016726	oxidoreductase activity, acting on CH or CH2 groups, NAD or NADP as acceptor	1.71e-03	1	5
+GO:0019877	diaminopimelate biosynthetic process	1.71e-03	1	5
+GO:0071704	organic substance metabolic process	1.73e-03	16	1846
+GO:1901576	organic substance biosynthetic process	2.49e-03	10	875
+GO:1901564	organonitrogen compound metabolic process	2.97e-03	10	889
+GO:0009058	biosynthetic process	3.04e-03	10	891
+GO:0006807	nitrogen compound metabolic process	3.15e-03	13	1369
+GO:0009987	cellular process	3.35e-03	19	2603
+GO:1990234	transferase complex	3.40e-03	2	43
+GO:0045333	cellular respiration	4.21e-03	3	108
+GO:0005488	binding	4.47e-03	17	2185
+GO:0003723	RNA binding	4.48e-03	4	191
+GO:0006270	DNA replication initiation	4.58e-03	1	6
+GO:0046912	acyltransferase, acyl groups converted into alkyl on transfer	4.58e-03	1	6
+GO:0006996	organelle organization	5.04e-03	3	111
+GO:0140640	catalytic activity, acting on a nucleic acid	5.53e-03	5	295
+GO:0046034	ATP metabolic process	6.44e-03	2	48
+GO:0022618	ribonucleoprotein complex assembly	7.21e-03	2	49
+GO:0071826	ribonucleoprotein complex subunit organization	7.21e-03	2	49
+GO:0006145	purine nucleobase catabolic process	9.34e-03	1	7
+GO:0045239	tricarboxylic acid cycle enzyme complex	9.34e-03	1	7
+GO:0006554	lysine catabolic process	9.34e-03	1	7
+GO:0006269	DNA replication, synthesis of RNA primer	9.34e-03	1	7
+GO:1990077	primosome complex	9.34e-03	1	7
+GO:0031555	transcriptional attenuation	9.34e-03	1	7
+GO:0016887	ATP hydrolysis activity	9.86e-03	2	52
+GO:0015980	energy derivation by oxidation of organic compounds	9.97e-03	3	124
+GO:0042255	ribosome assembly	0.0109	2	53
+GO:0065003	protein-containing complex assembly	0.0115	3	127
+GO:0051287	NAD binding	0.0119	2	54
+GO:0055086	nucleobase-containing small molecule metabolic process	0.0135	4	225
+GO:0043933	protein-containing complex subunit organization	0.0148	3	133
+GO:0016020	membrane	0.0150	1	1421
+GO:0019318	hexose metabolic process	0.0155	2	57
+GO:0006084	acetyl-CoA metabolic process	0.0161	1	8
+GO:0006276	plasmid maintenance	0.0161	1	8
+GO:0032508	DNA duplex unwinding	0.0161	1	8
+GO:0032392	DNA geometric change	0.0161	1	8
+GO:0006097	glyoxylate cycle	0.0161	1	8
+GO:0009117	nucleotide metabolic process	0.0181	3	138
+GO:0006753	nucleoside phosphate metabolic process	0.0210	3	142
+GO:0030894	replisome	0.0246	1	9
+GO:0009092	homoserine metabolic process	0.0246	1	9
+GO:0003727	single-stranded RNA binding	0.0246	1	9
+GO:1901566	organonitrogen compound biosynthetic process	0.0257	6	498
+GO:0016051	carbohydrate biosynthetic process	0.0259	3	148
+GO:0071944	cell periphery	0.0261	1	1304
+GO:0140098	catalytic activity, acting on RNA	0.0267	3	149
+GO:0016740	transferase activity	0.0276	7	644
+GO:0046483	heterocycle metabolic process	0.0294	8	800
+GO:0016791	phosphatase activity	0.0296	2	66
+GO:0005975	carbohydrate metabolic process	0.0304	5	379
+GO:0140097	catalytic activity, acting on DNA	0.0304	3	153
+GO:1902494	catalytic complex	0.0314	3	154
+GO:0016310	phosphorylation	0.0314	2	67
+GO:0006725	cellular aromatic compound metabolic process	0.0323	8	810
+GO:1901135	carbohydrate derivative metabolic process	0.0323	5	383
+GO:0016812	hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds, in cyclic amides	0.0348	1	10
+GO:0005657	replication fork	0.0348	1	10
+GO:0016835	carbon-oxygen lyase activity	0.0396	2	71
+GO:0140694	non-membrane-bounded organelle assembly	0.0396	2	71
+GO:0070925	organelle assembly	0.0396	2	71
+GO:0006139	nucleobase-containing compound metabolic process	0.0414	7	683
+GO:0005886	plasma membrane	0.0426	1	1194
+GO:1901360	organic cyclic compound metabolic process	0.0439	8	845
+GO:0034622	cellular protein-containing complex assembly	0.0440	2	73
+GO:0044355	clearance of foreign intracellular DNA	0.0464	1	11
+GO:0099046	clearance of foreign intracellular nucleic acids	0.0464	1	11
+GO:0009229	thiamine diphosphate biosynthetic process	0.0464	1	11
+GO:0042357	thiamine diphosphate metabolic process	0.0464	1	11
+GO:0034214	protein hexamerization	0.0464	1	11
+GO:0044249	cellular biosynthetic process	0.0493	8	859

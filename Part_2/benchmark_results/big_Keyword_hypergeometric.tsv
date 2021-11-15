@@ -1,0 +1,68 @@
+id	desc	pval	common_size	target_size
+Amino-acid biosynthesis		3.11e-117	101	101
+Amino-acid transport		1.90e-89	78	78
+Cell cycle		1.29e-77	68	68
+Cell division		1.29e-77	68	68
+Cell shape		2.22e-54	48	48
+Peptidoglycan synthesis		2.24e-46	41	41
+Helicase		1.12e-31	28	28
+Cell wall biogenesis/degradation		1.31e-28	40	64
+Aromatic amino acid biosynthesis		1.26e-21	19	19
+Branched-chain amino acid biosynthesis		1.62e-20	18	18
+Methionine biosynthesis		4.37e-16	14	14
+Direct protein sequencing		1.64e-14	136	932
+Arginine biosynthesis		7.06e-14	12	12
+Septation		7.06e-14	12	12
+ATP-binding		6.17e-12	75	420
+Histidine biosynthesis		1.13e-11	10	10
+Cytoplasm		5.12e-11	101	676
+Lysine biosynthesis		1.42e-10	9	9
+3D-structure		9.63e-10	181	1570
+Carboxypeptidase		2.58e-09	10	13
+Nucleotide-binding		2.88e-09	79	512
+Cysteine biosynthesis		2.23e-08	7	7
+DNA replication		2.71e-08	16	40
+Tryptophan biosynthesis		2.79e-07	6	6
+DNA-directed DNA polymerase		6.58e-07	8	12
+Chromosome partition		1.82e-06	6	7
+Hydrolase		1.87e-06	67	474
+Threonine biosynthesis		3.47e-06	5	5
+Diaminopimelate biosynthesis		3.47e-06	5	5
+Leucine biosynthesis		3.47e-06	5	5
+Pyridoxal phosphate		1.12e-05	16	59
+Cell inner membrane		5.47e-05	109	966
+Glycosyltransferase		6.00e-05	15	60
+Multifunctional enzyme		6.01e-05	13	47
+DNA damage		1.10e-04	16	70
+DNA repair		2.30e-04	15	67
+Coiled coil		2.36e-04	11	40
+Serine biosynthesis		5.34e-04	3	3
+Proline biosynthesis		5.34e-04	3	3
+Nucleotidyltransferase		7.16e-04	11	45
+NADP		8.66e-04	17	91
+Transport		1.07e-03	82	738
+Leader peptide		1.10e-03	6	16
+Glutamine amidotransferase		1.70e-03	5	12
+Lyase		2.00e-03	25	168
+Transferase		2.18e-03	66	582
+Allosteric enzyme		2.75e-03	9	38
+Cell membrane		3.74e-03	112	1108
+SOS response		5.26e-03	6	21
+Ribosome biogenesis		5.26e-03	6	21
+Antiviral defense		6.09e-03	4	10
+Cytoskeleton		6.60e-03	2	2
+Asparagine biosynthesis		6.60e-03	2	2
+Glutamate biosynthesis		6.60e-03	2	2
+Isoleucine biosynthesis		6.60e-03	2	2
+Exonuclease		8.52e-03	6	23
+DNA condensation		8.87e-03	3	6
+RNA-binding		0.0113	19	134
+Primosome		0.0146	3	7
+Conjugation		0.0187	2	3
+Antiport		0.0193	5	20
+Aminotransferase		0.0193	5	20
+Transmembrane helix		0.0220	91	927
+Membrane		0.0310	116	1232
+Symport		0.0353	7	39
+ADP-ribosylation		0.0355	2	4
+Signal-anchor		0.0439	4	17
