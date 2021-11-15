@@ -70,8 +70,7 @@ Required packages:
 
 ## How to use
 ```tiddlywiki
-enrichment.py -p [PASSWORD] -q [QUERY] -t [NODE_TYPE] -m [METRICS] [OPTION]
-                     
+enrichment.py -p [PASSWORD] -q [QUERY] -t [NODE_TYPE] -m [METRICS] [OPTION]                     
 -p, --password [required] password neo4j database
 -q, --query [required] path to query set
 -t --target_type [required] Target sets node type [GOTerm, Interpro, Keyword,Pathway, PubMed, TU"]
@@ -81,6 +80,7 @@ enrichment.py -p [PASSWORD] -q [QUERY] -t [NODE_TYPE] -m [METRICS] [OPTION]
 -c, --adjust [optional] Adjust for multiple testing (FDR)
 -l --limit [optional] Maximum number of results to report.
 -w, --write [optional] path and name for results (tsv file)
+-r --revigo [optional] only if --write, write id and p value for revigo
 -v, --verbose [optional] print intermediary results/queries
 ```
 
@@ -89,13 +89,5 @@ enrichment.py -p [PASSWORD] -q [QUERY] -t [NODE_TYPE] -m [METRICS] [OPTION]
 ```typescript
 ./enrichment.py -p password -q query_sets/set01.txt -t GOTerm -s 511145 alpha 0.2 -c -m chi2 -l 10
 ```
-This will print the first 10 enriched GOTerm in set01.txt, using Chi-Square Test of Independence , with a significance threshold of 0.2 and using adjust for mutliple testing
+This will print the first 10 enriched GOTerm in set01.txt, using Chi-Square Test of Independence, with a significance threshold of 0.2 and using adjust for mutliple testing
 
-```typescript
-./enrichissement.py -p password -q query_sets/set01.txt -t Keyword -s 511145 -e -l 5
-```
-This will print the first 5 enriched Keyword in set01.txt with the 4 methods.
-
-```
-./enrichment.py -p pwd -q benchmark_data/big_set.txt -t GOTerm -m binomial -c -w benchmark_results/big_GOTerm_binomial.tsv
-```
